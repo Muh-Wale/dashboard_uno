@@ -1,28 +1,28 @@
-import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
-import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
-import { BiColorFill } from 'react-icons/bi';
-import { MdAccountBalanceWallet, MdHealthAndSafety, MdOutlineSavings, MdSavings } from "react-icons/md";
-import { RiContactsLine, RiStockLine, RiUserReceivedLine } from 'react-icons/ri';
+import { FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
+import { BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft, BsApple, BsPlaystation } from 'react-icons/bs';
+import { BiLock } from 'react-icons/bi';
+import { MdAccountBalanceWallet, MdHealthAndSafety,MdSavings } from "react-icons/md";
+import {  RiGoogleLine, } from 'react-icons/ri';
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
 import { HiCreditCard, HiOutlineRefresh } from 'react-icons/hi';
 import { TiHome, TiTick } from 'react-icons/ti';
-import { GiCash, GiExpense, GiLouvrePyramid } from 'react-icons/gi';
-import { GrLocation } from 'react-icons/gr';
+import { GiCash, GiExpense, GiReceiveMoney } from 'react-icons/gi';
+import { GrLocation, GrMoney } from 'react-icons/gr';
 import avatar from './avatar.jpg';
 import avatar2 from './avatar2.jpg';
 import avatar3 from './avatar3.png';
-import avatar4 from './avatar4.jpg';
-import product1 from './product1.jpg';
-import product2 from './product2.jpg';
-import product3 from './product3.jpg';
-import product4 from './product4.jpg';
+import avatar4 from './avatar4.jpg';import product4 from './product4.jpg';
 import product5 from './product5.jpg';
 import product6 from './product6.jpg';
 import product7 from './product7.jpg';
-import { FaTools, FaUser } from 'react-icons/fa';
-import { AiFillSafetyCertificate, AiFillShopping, AiOutlineInsurance, AiOutlineTransaction } from 'react-icons/ai';
+import { FaBriefcase, FaChartPie, FaPiggyBank, FaTools, FaUser } from 'react-icons/fa';
+import { AiFillSafetyCertificate, AiFillShopping, AiOutlineTransaction } from 'react-icons/ai';
 import { VscGraph } from 'react-icons/vsc';
 import { IoArrowDownCircleOutline, IoArrowUpCircleOutline, IoSettingsOutline } from 'react-icons/io5';
+import { FaMoneyBillTransfer } from 'react-icons/fa6';
+import { SiMastercard, SiSamsung, SiTesla } from 'react-icons/si';
+import { FcSimCardChip } from 'react-icons/fc';
+import { PiUser } from 'react-icons/pi';
 
 export const gridOrderImage = (props) => (
   <div>
@@ -1566,96 +1566,7 @@ export const employeesData = [
   },
 ];
 
-export const ordersData = [
-  {
-    Serial: 1,
-    LoanMoney: 100000,
-    LeftToPay: 40500,
-    DurationNo: 8,
-    DurationMonths: 'Months',
-    InterestRate: 12,
-    InstallmentNo: 2000,
-    InstallmentMonths: 'Months',
-    Repay: 'Repay',
-  },
-  {
-    Serial: 2,
-    LoanMoney: 500000,
-    LeftToPay: 250000,
-    DurationNo: 36,
-    DurationMonths: 'Months',
-    InterestRate: 10,
-    InstallmentNo: 8000,
-    InstallmentMonths: 'Months',
-    Repay: 'Repay',
-  },
-  {
-    Serial: 3,
-    LoanMoney: 900000,
-    LeftToPay: 40500,
-    DurationNo: 12,
-    DurationMonths: 'Months',
-    InterestRate: 12,
-    InstallmentNo: 5000,
-    InstallmentMonths: 'Months',
-    Repay: 'Repay',
-  },
-  {
-    Serial: 4,
-    LoanMoney: 50000,
-    LeftToPay: 40500,
-    DurationNo: 25,
-    DurationMonths: 'Months',
-    InterestRate: 5,
-    InstallmentNo: 2000,
-    InstallmentMonths: 'Months',
-    Repay: 'Repay',
-  },
-  {
-    Serial: 5,
-    LoanMoney: 50000,
-    LeftToPay: 40500,
-    DurationNo: 5,
-    DurationMonths: 'Months',
-    InterestRate: 16,
-    InstallmentNo: 10000,
-    InstallmentMonths: 'Months',
-    Repay: 'Repay',
-  },
-  {
-    Serial: 6,
-    LoanMoney: 80000,
-    LeftToPay: 25500,
-    DurationNo: 14,
-    DurationMonths: 'Months',
-    InterestRate: 8,
-    InstallmentNo: 2000,
-    InstallmentMonths: 'Months',
-    Repay: 'Repay',
-  },
-  {
-    Serial: 7,
-    LoanMoney: 12000,
-    LeftToPay: 5500,
-    DurationNo: 9,
-    DurationMonths: 'Months',
-    InterestRate: 13,
-    InstallmentNo: 500,
-    InstallmentMonths: 'Months',
-    Repay: 'Repay',
-  },
-  {
-    Serial: 8,
-    LoanMoney: 160000,
-    LeftToPay: 100800,
-    DurationNo: 3,
-    DurationMonths: 'Months',
-    InterestRate: 12,
-    InstallmentNo: 900,
-    InstallmentMonths: 'Months',
-    Repay: 'Repay',
-  },
-];
+
 
 export const scheduleData = [
   {
@@ -1883,6 +1794,166 @@ export const lineChartData = [
   ],
 ];
 
+
+
+export const LoansMain = [
+  {
+    icon: <FaUser />,
+    TextA: 'Personal Loans',
+    TextB: '$50,000',
+  },
+  {
+    icon: <MdAccountBalanceWallet />,
+    TextA: 'Corporate Loans',
+    TextB: '$100,000',
+  },
+  {
+    icon: <MdSavings />,
+    TextA: 'Business Loans',
+    TextB: '$500,000',
+  },
+  {
+    icon: <FaTools />,
+    TextA: 'Personal Loans',
+    TextB: 'Choose Money',
+  },
+]
+export const loansGrid = [
+  {
+    field: 'Serial',
+    headerText: 'SL NO',
+    textAlign: 'Center',
+    width: '120',
+  },
+  {
+    field: 'LoanMoney',
+    headerText: 'LoanMoney',
+    width: '150',
+    textAlign: 'Center',
+  },
+  { field: 'LeftToRepay',
+    headerText: 'Left to repay',
+    width: '150',
+    textAlign: 'Center',
+  },
+  {
+    field: 'Duration',
+    headerText: 'Duration',
+    textAlign: 'Center',
+    width: '150',
+  },
+  {
+    field: 'InterestRate',
+    headerText: 'Interest rate',
+    textAlign: 'Center',
+    width: '120',
+  },
+  {
+    field: 'Installment',
+    headerText: 'Installment',
+    width: '120',
+    textAlign: 'Center',
+  },
+
+  {
+    field: 'Repay',
+    headerText: 'Repay',
+    width: '150',
+    textAlign: 'Center',
+  },
+];
+export const loansData = [
+  {
+    Serial: 1,
+    LoanMoney: 100000,
+    LeftToPay: 40500,
+    DurationNo: 8,
+    DurationMonths: 'Months',
+    InterestRate: 12,
+    InstallmentNo: 2000,
+    InstallmentMonths: 'Months',
+    Repay: 'Repay',
+  },
+  {
+    Serial: 2,
+    LoanMoney: 500000,
+    LeftToPay: 250000,
+    DurationNo: 36,
+    DurationMonths: 'Months',
+    InterestRate: 10,
+    InstallmentNo: 8000,
+    InstallmentMonths: 'Months',
+    Repay: 'Repay',
+  },
+  {
+    Serial: 3,
+    LoanMoney: 900000,
+    LeftToPay: 40500,
+    DurationNo: 12,
+    DurationMonths: 'Months',
+    InterestRate: 12,
+    InstallmentNo: 5000,
+    InstallmentMonths: 'Months',
+    Repay: 'Repay',
+  },
+  {
+    Serial: 4,
+    LoanMoney: 50000,
+    LeftToPay: 40500,
+    DurationNo: 25,
+    DurationMonths: 'Months',
+    InterestRate: 5,
+    InstallmentNo: 2000,
+    InstallmentMonths: 'Months',
+    Repay: 'Repay',
+  },
+  {
+    Serial: 5,
+    LoanMoney: 50000,
+    LeftToPay: 40500,
+    DurationNo: 5,
+    DurationMonths: 'Months',
+    InterestRate: 16,
+    InstallmentNo: 10000,
+    InstallmentMonths: 'Months',
+    Repay: 'Repay',
+  },
+  {
+    Serial: 6,
+    LoanMoney: 80000,
+    LeftToPay: 25500,
+    DurationNo: 14,
+    DurationMonths: 'Months',
+    InterestRate: 8,
+    InstallmentNo: 2000,
+    InstallmentMonths: 'Months',
+    Repay: 'Repay',
+  },
+  {
+    Serial: 7,
+    LoanMoney: 12000,
+    LeftToPay: 5500,
+    DurationNo: 9,
+    DurationMonths: 'Months',
+    InterestRate: 13,
+    InstallmentNo: 500,
+    InstallmentMonths: 'Months',
+    Repay: 'Repay',
+  },
+  {
+    Serial: 8,
+    LoanMoney: 160000,
+    LeftToPay: 100800,
+    DurationNo: 3,
+    DurationMonths: 'Months',
+    InterestRate: 12,
+    InstallmentNo: 900,
+    InstallmentMonths: 'Months',
+    Repay: 'Repay',
+  },
+];
+
+
 export const ServicesMain = [
   {
     Icon: <MdHealthAndSafety/>,
@@ -1900,7 +1971,6 @@ export const ServicesMain = [
     TextB: 'We are your allies',
   },
 ]
-
 export const ServicesList = [
   {
     Icon: <GiCash />,
@@ -1915,7 +1985,7 @@ export const ServicesList = [
     Details: 'View Details',
   },
   {
-    Icon: <MdAccountBalanceWallet />,
+    Icon: <FaBriefcase/>,
     ColAa: 'Checking Accounts',
     ColAb: 'It is a long established',
     ColBa: 'Lorem ipsum',
@@ -1975,6 +2045,301 @@ export const ServicesList = [
     Details: 'View Details',
   },
 ];
+
+
+export const CardSettings = [
+  {
+    Icon: <HiCreditCard/>,
+    TextA: 'Block Card',
+    TextB: 'Instantly block card',
+  },
+  {
+    Icon: <BiLock/>,
+    TextA: 'Change Pin Code',
+    TextB: 'Choose another pin code',
+  },
+  {
+    Icon: <RiGoogleLine />,
+    TextA: 'Add To Google Pay',
+    TextB: 'Withdraw without any card',
+  },
+  {
+    Icon: <BsApple/>,
+    TextA: 'Add To Apple Pay',
+    TextB: 'Withdraw without any card',
+  },
+  {
+    Icon: <BsApple/>,
+    TextA: 'Add To Apple Store',
+    TextB: 'Withdraw without any card',
+  },
+]
+export const CardList = [
+  {
+    Icon: <HiCreditCard />,
+    ColAa: 'Card Type',
+    ColAb: 'Secondary',
+    ColBa: 'Bank',
+    ColBb: 'DBL Bank',
+    ColCa: 'Card Number',
+    ColCb: '**** **** 5600',
+    ColDa: 'Name In Card',
+    ColDb: 'William',
+    Details: 'View Details',
+  },
+  {
+    Icon: <HiCreditCard />,
+    ColAa: 'Card Type',
+    ColAb: 'Secondary',
+    ColBa: 'Bank',
+    ColBb: ' BRC Bank',
+    ColCa: 'Card Number',
+    ColCb: '**** **** 4300',
+    ColDa: 'Name In Card',
+    ColDb: 'Michel',
+    Details: 'View Details',
+  },
+  {
+    Icon: <HiCreditCard />,
+    ColAa: 'Card Type',
+    ColAb: 'Secondary',
+    ColBa: 'Bank',
+    ColBb: 'ABM Bank',
+    ColCa: 'Card Number',
+    ColCb: '**** **** 7560',
+    ColDa: 'Name In Card',
+    ColDb: 'Edward',
+    Details: 'View Details',
+  },
+];
+export const MyCard = [
+  {
+    IconA: <FcSimCardChip/>,
+    ColAa: 'Balance',
+    ColAb: 5756,
+    ColBa: 'CARD HOLDER',
+    ColBb: 'Eddy Cusuma',
+    ColCa: 'Valid Thru',
+    ColCb: '12/12',
+    ColDa: '3778 **** **** 1234',
+    IconB: <SiMastercard/>,
+  },
+  {
+    IconA: <FcSimCardChip/>,
+    ColAa: 'Balance',
+    ColAb: 5756,
+    ColBa: 'CARD HOLDER',
+    ColBb: 'Eddy Cusuma',
+    ColCa: 'Valid Thru',
+    ColCb: '12/12',
+    ColDa: '3778 **** **** 1234',
+    IconB: <SiMastercard/>,
+  },
+  {
+    IconA: <FcSimCardChip/>,
+    ColAa: 'Balance',
+    ColAb: 5756,
+    ColBa: 'CARD HOLDER',
+    ColBb: 'Eddy Cusuma',
+    ColCa: 'Valid Thru',
+    ColCb: '12/12',
+    ColDa: '3778 **** **** 1234',
+    IconB: <SiMastercard/>,
+  },
+]
+
+
+export const InvestmentsMain = [
+  {
+    icon: <GrMoney />,
+    TextA: 'Total Invested Amount',
+    TextB: '$150,000',
+  },
+  {
+    icon: <FaChartPie />,
+    TextA: 'number of investment',
+    TextB: '$1,250',
+  },
+  {
+    icon: <FaMoneyBillTransfer />,
+    TextA: 'rate of return',
+    TextB: '+5.80%',
+  },
+]
+export const investmentGrid = [
+  {
+    field: 'Serial',
+    headerText: 'SL NO',
+    textAlign: 'Center',
+    width: '120',
+  },
+  {
+    field: 'Name',
+    headerText: 'Name',
+    width: '150',
+    textAlign: 'Center',
+  },
+  { field: 'Price',
+    headerText: 'Price',
+    width: '150',
+    textAlign: 'Center',
+  },
+  {
+    field: 'Return',
+    headerText: 'Return',
+    textAlign: 'Center',
+    width: '150',
+  },
+];
+export const investmentData = [
+  {
+    Serial: 1,
+    Name: 'Trivago',
+    Price: '$520',
+    Return: '+5%',
+    Textcolor: '#16DBAA',
+  },
+  {
+    Serial: 2,
+    Name: 'Canon',
+    Price: '$480',
+    Return: '+10%',
+    Textcolor: '#16DBAA',
+  },
+  {
+    Serial: 3,
+    Name: 'Uber Food',
+    Price: '$350',
+    Return: '-3%',
+    Textcolor: '#FE5C73',
+  },
+  {
+    Serial: 4,
+    Name: 'Nokia',
+    Price: '$940',
+    Return: '+2%',
+    Textcolor: '#16DBAA',
+  },
+  {
+    Serial: 5,
+    Name: 'Tiktok',
+    Price: '$670',
+    Return: '12%',
+    Textcolor: '#FE5C73',
+  },
+];
+export const MyInvestment = [
+  {
+    Icon: <BsApple/>,
+    ColAa: 'Apple Store',
+    ColAb: 'E-Commerce, Marketplace',
+    ColBa: '$54,000',
+    ColBb: 'Investment Value',
+    ColCa: '+16%',
+    ColCb: 'Return Value',
+  },
+  {
+    Icon: <SiSamsung/>,
+    ColAa: 'Samsung Mobile',
+    ColAb: 'E-Commerce, Marketplace',
+    ColBa: '$25,300',
+    ColBb: 'Investment Value',
+    ColCa: '-4%',
+    ColCb: 'Return Value',
+  },
+  {
+    Icon: <SiTesla />,
+    ColAa: 'Tesla Motors',
+    ColAb: 'Electric Vehicles',
+    ColBa: '$8,200',
+    ColBb: 'Investment Value',
+    ColCa: '+25%',
+    ColCb: 'Return Value',
+  },
+]
+
+export const AccountsMain = [
+  {
+    icon: <FaPiggyBank />,
+    TextA: 'Personal Loans',
+    TextB: '$12,750',
+  },
+  {
+    icon: <GiReceiveMoney/>,
+    TextA: 'Income',
+    TextB: '$5,600',
+  },
+  {
+    icon: <MdSavings />,
+    TextA: 'Total Saving',
+    TextB: '$7,920',
+  },
+  {
+    icon: <GiExpense/>,
+    TextA: 'Expense',
+    TextB: '$3,460',
+  },
+]
+export const AccountsInvoice = [
+  {
+    icon: <BsApple />,
+    TextA: 'Apple Store',
+    TextB: '5h ago',
+    TextC: '$450',
+  },
+  {
+    icon: <PiUser />,
+    TextA: 'Michael',
+    TextB: '2 days ago',
+    TextC: '$160',
+  },
+  {
+    icon: <BsPlaystation/>,
+    TextA: 'Playstation',
+    TextB: '5 days ago',
+    TextC: '$1085',
+  },
+  {
+    icon: <PiUser/>,
+    TextA: 'Willian',
+    TextB: '10 days ago',
+    TextC: '$90',
+  },
+]
+export const LastAcct = [
+  {
+    Icon: <BsApple/>,
+    ColAa: 'Spotify Subscription',
+    ColAb: '25 Jan 2021',
+    TextA: 'Shopping',
+    TextB: '1234 ****',
+    TextC: 'Pending',
+    TextD: '-$150',
+    Textcolor: '#FE5C73',
+  },
+  {
+    Icon: <FaTools />,
+    ColAa: 'Mobile Service',
+    ColAb: '25 Jan 2021',
+    TextA: 'Services',
+    TextB: '1234 ****',
+    TextC: 'Pending',
+    TextD: '-$340',
+    Textcolor: '#FE5C73',
+  },
+  {
+    Icon: <PiUser />,
+    ColAa: 'Emilly Wilson',
+    ColAb: '25 Jan 2021',
+    TextA: 'Transfer',
+    TextB: '1234 ****',
+    TextC: 'Completed',
+    TextD: '-$780',
+    Textcolor: '#16DBAA',
+  },
+]
+
+
 export const dropdownData = [
   {
     Id: '1',
