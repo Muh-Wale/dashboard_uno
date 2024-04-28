@@ -1,7 +1,7 @@
 import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
 import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
 import { BiColorFill } from 'react-icons/bi';
-import { IoMdContacts } from 'react-icons/io';
+import { MdAccountBalanceWallet, MdHealthAndSafety, MdOutlineSavings, MdSavings } from "react-icons/md";
 import { RiContactsLine, RiStockLine, RiUserReceivedLine } from 'react-icons/ri';
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
 import { HiCreditCard, HiOutlineRefresh } from 'react-icons/hi';
@@ -20,7 +20,7 @@ import product5 from './product5.jpg';
 import product6 from './product6.jpg';
 import product7 from './product7.jpg';
 import { FaTools, FaUser } from 'react-icons/fa';
-import { AiOutlineInsurance, AiOutlineTransaction } from 'react-icons/ai';
+import { AiFillSafetyCertificate, AiFillShopping, AiOutlineInsurance, AiOutlineTransaction } from 'react-icons/ai';
 import { VscGraph } from 'react-icons/vsc';
 import { IoArrowDownCircleOutline, IoArrowUpCircleOutline, IoSettingsOutline } from 'react-icons/io5';
 
@@ -1885,17 +1885,17 @@ export const lineChartData = [
 
 export const ServicesMain = [
   {
-    Icon: <AiOutlineInsurance/>,
+    Icon: <MdHealthAndSafety/>,
     TextA: 'Life Insurance',
     TextB: 'Unlimited protection',
   },
   {
-    Icon: <AiOutlineInsurance/>,
+    Icon: <AiFillShopping />,
     TextA: 'Shopping',
     TextB: 'Buy.Think.Grow',
   },
   {
-    Icon: <AiOutlineInsurance/>,
+    Icon: <AiFillSafetyCertificate />,
     TextA: 'Safety',
     TextB: 'We are your allies',
   },
@@ -1903,7 +1903,7 @@ export const ServicesMain = [
 
 export const ServicesList = [
   {
-    Icon: <RiUserReceivedLine/>,
+    Icon: <GiCash />,
     ColAa: 'Business loans',
     ColAb: 'It is a long established',
     ColBa: 'Lorem ipsum',
@@ -1915,7 +1915,7 @@ export const ServicesList = [
     Details: 'View Details',
   },
   {
-    Icon: <RiUserReceivedLine/>,
+    Icon: <MdAccountBalanceWallet />,
     ColAa: 'Checking Accounts',
     ColAb: 'It is a long established',
     ColBa: 'Lorem ipsum',
@@ -1927,7 +1927,7 @@ export const ServicesList = [
     Details: 'View Details',
   },
   {
-    Icon: <RiUserReceivedLine/>,
+    Icon: <MdSavings />,
     ColAa: 'Savings Accounts',
     ColAb: 'It is a long established',
     ColBa: 'Lorem ipsum',
@@ -1939,7 +1939,7 @@ export const ServicesList = [
     Details: 'View Details',
   },
   {
-    Icon: <RiUserReceivedLine/>,
+    Icon: <FaUser />,
     ColAa: 'Debit and credit cards',
     ColAb: 'It is a long established',
     ColBa: 'Lorem ipsum',
@@ -1951,7 +1951,7 @@ export const ServicesList = [
     Details: 'View Details',
   },
   {
-    Icon: <RiUserReceivedLine/>,
+    Icon: <AiFillSafetyCertificate />,
     ColAa: 'Life insurance',
     ColAb: 'It is a long established',
     ColBa: 'Lorem ipsum',
@@ -1963,7 +1963,7 @@ export const ServicesList = [
     Details: 'View Details',
   },
   {
-    Icon: <RiUserReceivedLine/>,
+    Icon: <GiCash />,
     ColAa: 'Business Loans',
     ColAb: 'It is a long established',
     ColBa: 'Lorem ipsum',
