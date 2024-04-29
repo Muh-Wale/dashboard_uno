@@ -24,6 +24,809 @@ import { SiMastercard, SiSamsung, SiTesla } from 'react-icons/si';
 import { FcSimCardChip } from 'react-icons/fc';
 import { PiUser } from 'react-icons/pi';
 
+
+export const LoansMain = [
+  {
+    icon: <FaUser />,
+    TextA: 'Personal Loans',
+    TextB: '$50,000',
+  },
+  {
+    icon: <MdAccountBalanceWallet />,
+    TextA: 'Corporate Loans',
+    TextB: '$100,000',
+  },
+  {
+    icon: <MdSavings />,
+    TextA: 'Business Loans',
+    TextB: '$500,000',
+  },
+  {
+    icon: <FaTools />,
+    TextA: 'Personal Loans',
+    TextB: 'Choose Money',
+  },
+]
+export const loansGrid = [
+  {
+    field: 'Serial',
+    headerText: 'SL NO',
+    textAlign: 'Center',
+    width: '120',
+  },
+  {
+    field: 'LoanMoney',
+    headerText: 'LoanMoney',
+    width: '150',
+    textAlign: 'Center',
+  },
+  { field: 'LeftToRepay',
+    headerText: 'Left to repay',
+    width: '150',
+    textAlign: 'Center',
+  },
+  {
+    field: 'Duration',
+    headerText: 'Duration',
+    textAlign: 'Center',
+    width: '150',
+  },
+  {
+    field: 'InterestRate',
+    headerText: 'Interest rate',
+    textAlign: 'Center',
+    width: '120',
+  },
+  {
+    field: 'Installment',
+    headerText: 'Installment',
+    width: '120',
+    textAlign: 'Center',
+  },
+
+  {
+    field: 'Repay',
+    headerText: 'Repay',
+    width: '150',
+    textAlign: 'Center',
+  },
+];
+export const loansData = [
+  {
+    Serial: 1,
+    LoanMoney: 100000,
+    LeftToPay: 40500,
+    DurationNo: 8,
+    DurationMonths: 'Months',
+    InterestRate: 12,
+    InstallmentNo: 2000,
+    InstallmentMonths: 'Months',
+    Repay: 'Repay',
+  },
+  {
+    Serial: 2,
+    LoanMoney: 500000,
+    LeftToPay: 250000,
+    DurationNo: 36,
+    DurationMonths: 'Months',
+    InterestRate: 10,
+    InstallmentNo: 8000,
+    InstallmentMonths: 'Months',
+    Repay: 'Repay',
+  },
+  {
+    Serial: 3,
+    LoanMoney: 900000,
+    LeftToPay: 40500,
+    DurationNo: 12,
+    DurationMonths: 'Months',
+    InterestRate: 12,
+    InstallmentNo: 5000,
+    InstallmentMonths: 'Months',
+    Repay: 'Repay',
+  },
+  {
+    Serial: 4,
+    LoanMoney: 50000,
+    LeftToPay: 40500,
+    DurationNo: 25,
+    DurationMonths: 'Months',
+    InterestRate: 5,
+    InstallmentNo: 2000,
+    InstallmentMonths: 'Months',
+    Repay: 'Repay',
+  },
+  {
+    Serial: 5,
+    LoanMoney: 50000,
+    LeftToPay: 40500,
+    DurationNo: 5,
+    DurationMonths: 'Months',
+    InterestRate: 16,
+    InstallmentNo: 10000,
+    InstallmentMonths: 'Months',
+    Repay: 'Repay',
+  },
+  {
+    Serial: 6,
+    LoanMoney: 80000,
+    LeftToPay: 25500,
+    DurationNo: 14,
+    DurationMonths: 'Months',
+    InterestRate: 8,
+    InstallmentNo: 2000,
+    InstallmentMonths: 'Months',
+    Repay: 'Repay',
+  },
+  {
+    Serial: 7,
+    LoanMoney: 12000,
+    LeftToPay: 5500,
+    DurationNo: 9,
+    DurationMonths: 'Months',
+    InterestRate: 13,
+    InstallmentNo: 500,
+    InstallmentMonths: 'Months',
+    Repay: 'Repay',
+  },
+  {
+    Serial: 8,
+    LoanMoney: 160000,
+    LeftToPay: 100800,
+    DurationNo: 3,
+    DurationMonths: 'Months',
+    InterestRate: 12,
+    InstallmentNo: 900,
+    InstallmentMonths: 'Months',
+    Repay: 'Repay',
+  },
+];
+
+
+export const ServicesMain = [
+  {
+    Icon: <MdHealthAndSafety/>,
+    TextA: 'Life Insurance',
+    TextB: 'Unlimited protection',
+  },
+  {
+    Icon: <AiFillShopping />,
+    TextA: 'Shopping',
+    TextB: 'Buy.Think.Grow',
+  },
+  {
+    Icon: <AiFillSafetyCertificate />,
+    TextA: 'Safety',
+    TextB: 'We are your allies',
+  },
+]
+export const ServicesList = [
+  {
+    Icon: <GiCash />,
+    ColAa: 'Business loans',
+    ColAb: 'It is a long established',
+    ColBa: 'Lorem ipsum',
+    ColBb: 'Lorem ipsum',
+    ColCa: 'Lorem ipsum',
+    ColCb: 'Lorem ipsum',
+    ColDa: 'Lorem ipsum',
+    ColDb: 'Lorem ipsum',
+    Details: 'View Details',
+  },
+  {
+    Icon: <FaBriefcase/>,
+    ColAa: 'Checking Accounts',
+    ColAb: 'It is a long established',
+    ColBa: 'Lorem ipsum',
+    ColBb: 'Lorem ipsum',
+    ColCa: 'Lorem ipsum',
+    ColCb: 'Lorem ipsum',
+    ColDa: 'Lorem ipsum',
+    ColDb: 'Lorem ipsum',
+    Details: 'View Details',
+  },
+  {
+    Icon: <MdSavings />,
+    ColAa: 'Savings Accounts',
+    ColAb: 'It is a long established',
+    ColBa: 'Lorem ipsum',
+    ColBb: 'Lorem ipsum',
+    ColCa: 'Lorem ipsum',
+    ColCb: 'Lorem ipsum',
+    ColDa: 'Lorem ipsum',
+    ColDb: 'Lorem ipsum',
+    Details: 'View Details',
+  },
+  {
+    Icon: <FaUser />,
+    ColAa: 'Debit and credit cards',
+    ColAb: 'It is a long established',
+    ColBa: 'Lorem ipsum',
+    ColBb: 'Lorem ipsum',
+    ColCa: 'Lorem ipsum',
+    ColCb: 'Lorem ipsum',
+    ColDa: 'Lorem ipsum',
+    ColDb: 'Lorem ipsum',
+    Details: 'View Details',
+  },
+  {
+    Icon: <AiFillSafetyCertificate />,
+    ColAa: 'Life insurance',
+    ColAb: 'It is a long established',
+    ColBa: 'Lorem ipsum',
+    ColBb: 'Lorem ipsum',
+    ColCa: 'Lorem ipsum',
+    ColCb: 'Lorem ipsum',
+    ColDa: 'Lorem ipsum',
+    ColDb: 'Lorem ipsum',
+    Details: 'View Details',
+  },
+  {
+    Icon: <GiCash />,
+    ColAa: 'Business Loans',
+    ColAb: 'It is a long established',
+    ColBa: 'Lorem ipsum',
+    ColBb: 'Lorem ipsum',
+    ColCa: 'Lorem ipsum',
+    ColCb: 'Lorem ipsum',
+    ColDa: 'Lorem ipsum',
+    ColDb: 'Lorem ipsum',
+    Details: 'View Details',
+  },
+];
+
+
+export const CardSettings = [
+  {
+    Icon: <HiCreditCard/>,
+    TextA: 'Block Card',
+    TextB: 'Instantly block card',
+  },
+  {
+    Icon: <BiLock/>,
+    TextA: 'Change Pin Code',
+    TextB: 'Choose another pin code',
+  },
+  {
+    Icon: <RiGoogleLine />,
+    TextA: 'Add To Google Pay',
+    TextB: 'Withdraw without any card',
+  },
+  {
+    Icon: <BsApple/>,
+    TextA: 'Add To Apple Pay',
+    TextB: 'Withdraw without any card',
+  },
+  {
+    Icon: <BsApple/>,
+    TextA: 'Add To Apple Store',
+    TextB: 'Withdraw without any card',
+  },
+]
+export const CardList = [
+  {
+    Icon: <HiCreditCard />,
+    ColAa: 'Card Type',
+    ColAb: 'Secondary',
+    ColBa: 'Bank',
+    ColBb: 'DBL Bank',
+    ColCa: 'Card Number',
+    ColCb: '**** **** 5600',
+    ColDa: 'Name In Card',
+    ColDb: 'William',
+    Details: 'View Details',
+  },
+  {
+    Icon: <HiCreditCard />,
+    ColAa: 'Card Type',
+    ColAb: 'Secondary',
+    ColBa: 'Bank',
+    ColBb: ' BRC Bank',
+    ColCa: 'Card Number',
+    ColCb: '**** **** 4300',
+    ColDa: 'Name In Card',
+    ColDb: 'Michel',
+    Details: 'View Details',
+  },
+  {
+    Icon: <HiCreditCard />,
+    ColAa: 'Card Type',
+    ColAb: 'Secondary',
+    ColBa: 'Bank',
+    ColBb: 'ABM Bank',
+    ColCa: 'Card Number',
+    ColCb: '**** **** 7560',
+    ColDa: 'Name In Card',
+    ColDb: 'Edward',
+    Details: 'View Details',
+  },
+];
+export const MyCard = [
+  {
+    IconA: <FcSimCardChip/>,
+    ColAa: 'Balance',
+    ColAb: 5756,
+    ColBa: 'CARD HOLDER',
+    ColBb: 'Eddy Cusuma',
+    ColCa: 'Valid Thru',
+    ColCb: '12/12',
+    ColDa: '3778 **** **** 1234',
+    IconB: <SiMastercard/>,
+  },
+  {
+    IconA: <FcSimCardChip/>,
+    ColAa: 'Balance',
+    ColAb: 5756,
+    ColBa: 'CARD HOLDER',
+    ColBb: 'Eddy Cusuma',
+    ColCa: 'Valid Thru',
+    ColCb: '12/12',
+    ColDa: '3778 **** **** 1234',
+    IconB: <SiMastercard/>,
+  },
+  {
+    IconA: <FcSimCardChip/>,
+    ColAa: 'Balance',
+    ColAb: 5756,
+    ColBa: 'CARD HOLDER',
+    ColBb: 'Eddy Cusuma',
+    ColCa: 'Valid Thru',
+    ColCb: '12/12',
+    ColDa: '3778 **** **** 1234',
+    IconB: <SiMastercard/>,
+  },
+]
+
+
+export const InvestmentsMain = [
+  {
+    icon: <GrMoney />,
+    TextA: 'Total Invested Amount',
+    TextB: '$150,000',
+  },
+  {
+    icon: <FaChartPie />,
+    TextA: 'number of investment',
+    TextB: '$1,250',
+  },
+  {
+    icon: <FaMoneyBillTransfer />,
+    TextA: 'rate of return',
+    TextB: '+5.80%',
+  },
+]
+export const investmentGrid = [
+  {
+    field: 'Serial',
+    headerText: 'SL NO',
+    textAlign: 'Center',
+    width: '120',
+  },
+  {
+    field: 'Name',
+    headerText: 'Name',
+    width: '150',
+    textAlign: 'Center',
+  },
+  { field: 'Price',
+    headerText: 'Price',
+    width: '150',
+    textAlign: 'Center',
+  },
+  {
+    field: 'Return',
+    headerText: 'Return',
+    textAlign: 'Center',
+    width: '150',
+  },
+];
+export const investmentData = [
+  {
+    Serial: 1,
+    Name: 'Trivago',
+    Price: '$520',
+    Return: '+5%',
+    Textcolor: '#16DBAA',
+  },
+  {
+    Serial: 2,
+    Name: 'Canon',
+    Price: '$480',
+    Return: '+10%',
+    Textcolor: '#16DBAA',
+  },
+  {
+    Serial: 3,
+    Name: 'Uber Food',
+    Price: '$350',
+    Return: '-3%',
+    Textcolor: '#FE5C73',
+  },
+  {
+    Serial: 4,
+    Name: 'Nokia',
+    Price: '$940',
+    Return: '+2%',
+    Textcolor: '#16DBAA',
+  },
+  {
+    Serial: 5,
+    Name: 'Tiktok',
+    Price: '$670',
+    Return: '12%',
+    Textcolor: '#FE5C73',
+  },
+];
+export const MyInvestment = [
+  {
+    Icon: <BsApple/>,
+    ColAa: 'Apple Store',
+    ColAb: 'E-Commerce, Marketplace',
+    ColBa: '$54,000',
+    ColBb: 'Investment Value',
+    ColCa: '+16%',
+    ColCb: 'Return Value',
+  },
+  {
+    Icon: <SiSamsung/>,
+    ColAa: 'Samsung Mobile',
+    ColAb: 'E-Commerce, Marketplace',
+    ColBa: '$25,300',
+    ColBb: 'Investment Value',
+    ColCa: '-4%',
+    ColCb: 'Return Value',
+  },
+  {
+    Icon: <SiTesla />,
+    ColAa: 'Tesla Motors',
+    ColAb: 'Electric Vehicles',
+    ColBa: '$8,200',
+    ColBb: 'Investment Value',
+    ColCa: '+25%',
+    ColCb: 'Return Value',
+  },
+]
+
+export const AccountsMain = [
+  {
+    icon: <FaPiggyBank />,
+    TextA: 'Personal Loans',
+    TextB: '$12,750',
+  },
+  {
+    icon: <GiReceiveMoney/>,
+    TextA: 'Income',
+    TextB: '$5,600',
+  },
+  {
+    icon: <MdSavings />,
+    TextA: 'Total Saving',
+    TextB: '$7,920',
+  },
+  {
+    icon: <GiExpense/>,
+    TextA: 'Expense',
+    TextB: '$3,460',
+  },
+]
+export const AccountsInvoice = [
+  {
+    icon: <BsApple />,
+    TextA: 'Apple Store',
+    TextB: '5h ago',
+    TextC: '$450',
+  },
+  {
+    icon: <PiUser />,
+    TextA: 'Michael',
+    TextB: '2 days ago',
+    TextC: '$160',
+  },
+  {
+    icon: <BsPlaystation/>,
+    TextA: 'Playstation',
+    TextB: '5 days ago',
+    TextC: '$1085',
+  },
+  {
+    icon: <PiUser/>,
+    TextA: 'Willian',
+    TextB: '10 days ago',
+    TextC: '$90',
+  },
+]
+export const LastAcct = [
+  {
+    Icon: <BsApple/>,
+    ColAa: 'Spotify Subscription',
+    ColAb: '25 Jan 2021',
+    TextA: 'Shopping',
+    TextB: '1234 ****',
+    TextC: 'Pending',
+    TextD: '-$150',
+    Textcolor: '#FE5C73',
+  },
+  {
+    Icon: <FaTools />,
+    ColAa: 'Mobile Service',
+    ColAb: '25 Jan 2021',
+    TextA: 'Services',
+    TextB: '1234 ****',
+    TextC: 'Pending',
+    TextD: '-$340',
+    Textcolor: '#FE5C73',
+  },
+  {
+    Icon: <PiUser />,
+    ColAa: 'Emilly Wilson',
+    ColAb: '25 Jan 2021',
+    TextA: 'Transfer',
+    TextB: '1234 ****',
+    TextC: 'Completed',
+    TextD: '$780',
+    Textcolor: '#16DBAA',
+  },
+]
+
+
+export const transactionGrid = [
+  { headerText: 'Description',
+    width: '150',
+    template: gridTransactionProfile,
+    textAlign: 'Center' },
+  { field: 'Name',
+    headerText: '',
+    width: '0',
+    textAlign: 'Center',
+  },
+  { field: 'TransactionID',
+    headerText: 'Transaction ID',
+    width: '125',
+    textAlign: 'Center' 
+  },
+
+  { field: 'Type',
+    headerText: 'Type',
+    width: '170',
+    textAlign: 'Center',
+  },
+  { field: 'Card',
+    headerText: 'Card',
+    width: '120',
+    textAlign: 'Center' 
+  },
+
+  { field: 'Date',
+    headerText: 'Date',
+    width: '135',
+    format: 'yMd',
+    textAlign: 'Center' },
+
+  { field: 'Amount',
+    headerText: 'Amount',
+    template: gridTransactionAmount,
+    width: '120',
+    textAlign: 'Center' 
+  },
+  { 
+    field: 'Receipt',
+    headerText: 'Receipt',
+    template: gridTransactionReceipt,
+    width: '120',
+    textAlign: 'Center' 
+  },
+];
+export const transactionData = [
+  {
+    TransactionID: '#12548796',
+    Name: 'Spotify Subscription',
+    Title: 'Transfer',
+    Card: '1234 ****',
+    Date: '01/02/2021',    
+    Amount: '-$2500',
+    Textcolor: '#FE5C73',
+    Receipt: 'Download',
+    EmployeeImage:
+    <IoArrowUpCircleOutline />,
+  },
+  {
+    TransactionID: '#12548796',
+    Name: 'Freepik Sales',
+    Title: 'Shopping',
+    Card: '1234 ****',
+    Date: '01/02/2021',    
+    Amount: '$750',
+    Textcolor: '#16DBAA',
+    Receipt: 'Download',
+    EmployeeImage:
+    <IoArrowDownCircleOutline />,
+  },
+  {
+    TransactionID: '#12548796',
+    Name: 'Mobile Services',
+    Title: 'Services',
+    Card: '1234 ****',
+    Date: '01/02/2021',    
+    Amount: '-$150',
+    Textcolor: '#FE5C73',
+    Receipt: 'Download',
+    EmployeeImage:
+    <IoArrowUpCircleOutline />,
+  },
+  {
+    TransactionID: '#12548796',
+    Name: 'Wilson',
+    Title: 'Transfer',
+    Card: '1234 ****',
+    Date: '01/02/2021',    
+    Amount: '-$1050',
+    Textcolor: '#FE5C73',
+    Receipt: 'Download',
+    EmployeeImage:
+    <IoArrowUpCircleOutline />,
+  },
+  {
+    TransactionID: '#12548796',
+    Name: 'Emily',
+    Title: 'Transfer',
+    Card: '1234 ****',
+    Date: '01/02/2021',    
+    Amount: '$840',
+    Textcolor: '#16DBAA',
+    Receipt: 'Download',
+    EmployeeImage:
+    <IoArrowDownCircleOutline />,
+  },
+  {
+    TransactionID: '#12548796',
+    Name: 'Mobile Services',
+    Title: 'Services',
+    Card: '1234 ****',
+    Date: '01/02/2021',    
+    Amount: '$150',
+    Textcolor: '#16DBAA',
+    Receipt: 'Download',
+    EmployeeImage:
+    <IoArrowUpCircleOutline />,
+  },
+  {
+    TransactionID: '#12548796',
+    Name: 'Wilson',
+    Title: 'Transfer',
+    Card: '1234 ****',
+    Date: '01/02/2021',
+    Amount: '$840',
+    Textcolor: '#16DBAA',
+    Receipt: 'Download',
+    EmployeeImage:
+    <IoArrowUpCircleOutline />,
+  },
+  {
+    TransactionID: '#12548796',
+    Name: 'Mobile Services',
+    Title: 'Services',
+    Card: '1234 ****',
+    Date: '01/02/2021',    
+    Amount: '$150',
+    Textcolor: '#16DBAA',
+    Receipt: 'Download',
+    EmployeeImage:
+    <IoArrowUpCircleOutline />,
+  },
+  {
+    TransactionID: '#12548796',
+    Name: 'Wilson',
+    Title: 'Transfer',
+    Card: '1234 ****',
+    Date: '01/02/2021',    
+    Amount: '$840',
+    Textcolor: '#16DBAA',
+    Receipt: 'Download',
+    EmployeeImage:
+    <IoArrowUpCircleOutline />,
+  },
+  {
+    TransactionID: '#12548796',
+    Name: 'Mobile Services',
+    Title: 'Services',
+    Card: '1234 ****',
+    Date: '01/02/2021',    
+    Amount: '$840',
+    Textcolor: '#16DBAA',
+    Receipt: 'Download',
+    EmployeeImage:
+    <IoArrowUpCircleOutline />,
+  },
+  {
+    TransactionID: '#12548796',
+    Name: 'Wilson',
+    Title: 'Transfer',
+    Card: '1234 ****',
+    Date: '01/02/2021',    
+    Amount: '$150',
+    Textcolor: '#16DBAA',
+    Receipt: 'Download',
+    EmployeeImage:
+    <IoArrowUpCircleOutline />,
+  },
+  {
+    TransactionID: '#12548796',
+    Name: 'Mobile Services',
+    Title: 'Services',
+    Card: '1234 ****',
+    Date: '01/02/2021',    
+    Amount: '$150',
+    Textcolor: '#16DBAA',
+    Receipt: 'Download',
+    EmployeeImage:
+    <IoArrowUpCircleOutline />,
+  },
+  {
+    TransactionID: '#12548796',
+    Name: 'Wilson',
+    Title: 'Transfer',
+    Card: '1234 ****',
+    Date: '01/02/2021',    
+    Amount: '$840',
+    Textcolor: '#16DBAA',
+    Receipt: 'Download',
+    EmployeeImage:
+    <IoArrowUpCircleOutline />,
+  },
+  {
+    TransactionID: '#12548796',
+    Name: 'Mobile Services',
+    Title: 'Services',
+    Card: '1234 ****',
+    Date: '01/02/2021',    
+    Amount: '$150',
+    Textcolor: '#16DBAA',
+    Receipt: 'Download',
+    EmployeeImage:
+    <IoArrowUpCircleOutline />,
+  },
+  {
+    TransactionID: '#12548796',
+    Name: 'Wilson',
+    Title: 'Transfer',
+    Card: '1234 ****',
+    Date: '01/02/2021',    
+    Amount: '$840',
+    Textcolor: '#16DBAA',
+    Receipt: 'Download',
+    EmployeeImage:
+    <IoArrowUpCircleOutline />,
+  },
+];
+const gridTransactionProfile = (props) => (
+  <div className="flex items-center gap-2">
+    <p
+      className="rounded-full w-10 h-10"
+      alt="employee"
+    >{props.EmployeeImage}</p>
+    <p>{props.Name}</p>
+  </div>
+);
+const gridTransactionAmount = (props) => (
+  <div className="flex items-center gap-2">
+    <p
+      style={{ color: props.Textcolor }}
+    >{props.Amount}</p>
+  </div>
+);
+export const gridTransactionReceipt = (props) => (
+  <button
+    type="button"
+    className="text-white py-1 px-2 rounded-2xl"
+  >
+    {props.Receipt}
+  </button>
+);
+
+
+
+
+
 export const gridOrderImage = (props) => (
   <div>
     <img
@@ -62,16 +865,7 @@ export const kanbanGrid = [
     keyField: 'Close',
     allowToggle: true },
 ];
-const gridEmployeeProfile = (props) => (
-  <div className="flex items-center gap-2">
-    <img
-      className="rounded-full w-10 h-10"
-      src={props.EmployeeImage}
-      alt="employee"
-    />
-    <p>{props.Name}</p>
-  </div>
-);
+
 
 const gridEmployeeCountry = (props) => (
   <div className="flex items-center justify-center gap-2">
@@ -394,51 +1188,7 @@ export const customersGrid = [
 
 ];
 
-export const employeesGrid = [
-  { headerText: 'Description',
-    width: '150',
-    template: gridEmployeeProfile,
-    textAlign: 'Center' },
-  { field: 'Name',
-    headerText: '',
-    width: '0',
-    textAlign: 'Center',
-  },
-  { field: 'TransactionID',
-    headerText: 'Transaction ID',
-    width: '125',
-    textAlign: 'Center' 
-  },
 
-  { field: 'Type',
-    headerText: 'Type',
-    width: '170',
-    textAlign: 'Center',
-  },
-  { field: 'Card',
-    headerText: 'Card',
-    width: '120',
-    textAlign: 'Center' 
-  },
-
-  { field: 'Date',
-    headerText: 'Date',
-    width: '135',
-    format: 'yMd',
-    textAlign: 'Center' },
-
-  { field: 'Amount',
-    headerText: 'Amount',
-    width: '120',
-    textAlign: 'Center' 
-  },
-  { 
-    field: 'Receipt',
-    headerText: 'Receipt',
-    width: '120',
-    textAlign: 'Center' 
-  },
-];
 
 export const links = [
   {
@@ -1398,173 +2148,7 @@ export const customersData = [
 
 ];
 
-export const employeesData = [
-  {
-    TransactionID: '#12548796',
-    Name: 'Spotify Subscription',
-    Title: 'Transfer',
-    Card: '1234 ****',
-    Date: '01/02/2021',    
-    Amount: 2500,
-    Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
-  },
-  {
-    TransactionID: '#12548796',
-    Name: 'Freepik Sales',
-    Title: 'Shopping',
-    Card: '1234 ****',
-    Date: '01/02/2021',    
-    Amount: 750,
-    Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowDownCircleOutline />,
-  },
-  {
-    TransactionID: '#12548796',
-    Name: 'Mobile Services',
-    Title: 'Services',
-    Card: '1234 ****',
-    Date: '01/02/2021',    
-    Amount: 150,
-    Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
-  },
-  {
-    TransactionID: '#12548796',
-    Name: 'Wilson',
-    Title: 'Transfer',
-    Card: '1234 ****',
-    Date: '01/02/2021',    
-    Amount: 1050,
-    Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
-  },
-  {
-    TransactionID: '#12548796',
-    Name: 'Emily',
-    Title: 'Transfer',
-    Card: '1234 ****',
-    Date: '01/02/2021',    
-    Amount: 840,
-    Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowDownCircleOutline />,
-  },
-  {
-    TransactionID: '#12548796',
-    Name: 'Mobile Services',
-    Title: 'Services',
-    Card: '1234 ****',
-    Date: '01/02/2021',    
-    Amount: 150,
-    Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
-  },
-  {
-    TransactionID: '#12548796',
-    Name: 'Wilson',
-    Title: 'Transfer',
-    Card: '1234 ****',
-    Date: '01/02/2021',    
-    Amount: 1050,
-    Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
-  },
-  {
-    TransactionID: '#12548796',
-    Name: 'Mobile Services',
-    Title: 'Services',
-    Card: '1234 ****',
-    Date: '01/02/2021',    
-    Amount: 150,
-    Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
-  },
-  {
-    TransactionID: '#12548796',
-    Name: 'Wilson',
-    Title: 'Transfer',
-    Card: '1234 ****',
-    Date: '01/02/2021',    
-    Amount: 1050,
-    Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
-  },
-  {
-    TransactionID: '#12548796',
-    Name: 'Mobile Services',
-    Title: 'Services',
-    Card: '1234 ****',
-    Date: '01/02/2021',    
-    Amount: 150,
-    Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
-  },
-  {
-    TransactionID: '#12548796',
-    Name: 'Wilson',
-    Title: 'Transfer',
-    Card: '1234 ****',
-    Date: '01/02/2021',    
-    Amount: 1050,
-    Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
-  },
-  {
-    TransactionID: '#12548796',
-    Name: 'Mobile Services',
-    Title: 'Services',
-    Card: '1234 ****',
-    Date: '01/02/2021',    
-    Amount: 150,
-    Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
-  },
-  {
-    TransactionID: '#12548796',
-    Name: 'Wilson',
-    Title: 'Transfer',
-    Card: '1234 ****',
-    Date: '01/02/2021',    
-    Amount: 1050,
-    Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
-  },
-  {
-    TransactionID: '#12548796',
-    Name: 'Mobile Services',
-    Title: 'Services',
-    Card: '1234 ****',
-    Date: '01/02/2021',    
-    Amount: 150,
-    Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
-  },
-  {
-    TransactionID: '#12548796',
-    Name: 'Wilson',
-    Title: 'Transfer',
-    Card: '1234 ****',
-    Date: '01/02/2021',    
-    Amount: 1050,
-    Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
-  },
-];
+
 
 
 
@@ -1796,548 +2380,7 @@ export const lineChartData = [
 
 
 
-export const LoansMain = [
-  {
-    icon: <FaUser />,
-    TextA: 'Personal Loans',
-    TextB: '$50,000',
-  },
-  {
-    icon: <MdAccountBalanceWallet />,
-    TextA: 'Corporate Loans',
-    TextB: '$100,000',
-  },
-  {
-    icon: <MdSavings />,
-    TextA: 'Business Loans',
-    TextB: '$500,000',
-  },
-  {
-    icon: <FaTools />,
-    TextA: 'Personal Loans',
-    TextB: 'Choose Money',
-  },
-]
-export const loansGrid = [
-  {
-    field: 'Serial',
-    headerText: 'SL NO',
-    textAlign: 'Center',
-    width: '120',
-  },
-  {
-    field: 'LoanMoney',
-    headerText: 'LoanMoney',
-    width: '150',
-    textAlign: 'Center',
-  },
-  { field: 'LeftToRepay',
-    headerText: 'Left to repay',
-    width: '150',
-    textAlign: 'Center',
-  },
-  {
-    field: 'Duration',
-    headerText: 'Duration',
-    textAlign: 'Center',
-    width: '150',
-  },
-  {
-    field: 'InterestRate',
-    headerText: 'Interest rate',
-    textAlign: 'Center',
-    width: '120',
-  },
-  {
-    field: 'Installment',
-    headerText: 'Installment',
-    width: '120',
-    textAlign: 'Center',
-  },
 
-  {
-    field: 'Repay',
-    headerText: 'Repay',
-    width: '150',
-    textAlign: 'Center',
-  },
-];
-export const loansData = [
-  {
-    Serial: 1,
-    LoanMoney: 100000,
-    LeftToPay: 40500,
-    DurationNo: 8,
-    DurationMonths: 'Months',
-    InterestRate: 12,
-    InstallmentNo: 2000,
-    InstallmentMonths: 'Months',
-    Repay: 'Repay',
-  },
-  {
-    Serial: 2,
-    LoanMoney: 500000,
-    LeftToPay: 250000,
-    DurationNo: 36,
-    DurationMonths: 'Months',
-    InterestRate: 10,
-    InstallmentNo: 8000,
-    InstallmentMonths: 'Months',
-    Repay: 'Repay',
-  },
-  {
-    Serial: 3,
-    LoanMoney: 900000,
-    LeftToPay: 40500,
-    DurationNo: 12,
-    DurationMonths: 'Months',
-    InterestRate: 12,
-    InstallmentNo: 5000,
-    InstallmentMonths: 'Months',
-    Repay: 'Repay',
-  },
-  {
-    Serial: 4,
-    LoanMoney: 50000,
-    LeftToPay: 40500,
-    DurationNo: 25,
-    DurationMonths: 'Months',
-    InterestRate: 5,
-    InstallmentNo: 2000,
-    InstallmentMonths: 'Months',
-    Repay: 'Repay',
-  },
-  {
-    Serial: 5,
-    LoanMoney: 50000,
-    LeftToPay: 40500,
-    DurationNo: 5,
-    DurationMonths: 'Months',
-    InterestRate: 16,
-    InstallmentNo: 10000,
-    InstallmentMonths: 'Months',
-    Repay: 'Repay',
-  },
-  {
-    Serial: 6,
-    LoanMoney: 80000,
-    LeftToPay: 25500,
-    DurationNo: 14,
-    DurationMonths: 'Months',
-    InterestRate: 8,
-    InstallmentNo: 2000,
-    InstallmentMonths: 'Months',
-    Repay: 'Repay',
-  },
-  {
-    Serial: 7,
-    LoanMoney: 12000,
-    LeftToPay: 5500,
-    DurationNo: 9,
-    DurationMonths: 'Months',
-    InterestRate: 13,
-    InstallmentNo: 500,
-    InstallmentMonths: 'Months',
-    Repay: 'Repay',
-  },
-  {
-    Serial: 8,
-    LoanMoney: 160000,
-    LeftToPay: 100800,
-    DurationNo: 3,
-    DurationMonths: 'Months',
-    InterestRate: 12,
-    InstallmentNo: 900,
-    InstallmentMonths: 'Months',
-    Repay: 'Repay',
-  },
-];
-
-
-export const ServicesMain = [
-  {
-    Icon: <MdHealthAndSafety/>,
-    TextA: 'Life Insurance',
-    TextB: 'Unlimited protection',
-  },
-  {
-    Icon: <AiFillShopping />,
-    TextA: 'Shopping',
-    TextB: 'Buy.Think.Grow',
-  },
-  {
-    Icon: <AiFillSafetyCertificate />,
-    TextA: 'Safety',
-    TextB: 'We are your allies',
-  },
-]
-export const ServicesList = [
-  {
-    Icon: <GiCash />,
-    ColAa: 'Business loans',
-    ColAb: 'It is a long established',
-    ColBa: 'Lorem ipsum',
-    ColBb: 'Lorem ipsum',
-    ColCa: 'Lorem ipsum',
-    ColCb: 'Lorem ipsum',
-    ColDa: 'Lorem ipsum',
-    ColDb: 'Lorem ipsum',
-    Details: 'View Details',
-  },
-  {
-    Icon: <FaBriefcase/>,
-    ColAa: 'Checking Accounts',
-    ColAb: 'It is a long established',
-    ColBa: 'Lorem ipsum',
-    ColBb: 'Lorem ipsum',
-    ColCa: 'Lorem ipsum',
-    ColCb: 'Lorem ipsum',
-    ColDa: 'Lorem ipsum',
-    ColDb: 'Lorem ipsum',
-    Details: 'View Details',
-  },
-  {
-    Icon: <MdSavings />,
-    ColAa: 'Savings Accounts',
-    ColAb: 'It is a long established',
-    ColBa: 'Lorem ipsum',
-    ColBb: 'Lorem ipsum',
-    ColCa: 'Lorem ipsum',
-    ColCb: 'Lorem ipsum',
-    ColDa: 'Lorem ipsum',
-    ColDb: 'Lorem ipsum',
-    Details: 'View Details',
-  },
-  {
-    Icon: <FaUser />,
-    ColAa: 'Debit and credit cards',
-    ColAb: 'It is a long established',
-    ColBa: 'Lorem ipsum',
-    ColBb: 'Lorem ipsum',
-    ColCa: 'Lorem ipsum',
-    ColCb: 'Lorem ipsum',
-    ColDa: 'Lorem ipsum',
-    ColDb: 'Lorem ipsum',
-    Details: 'View Details',
-  },
-  {
-    Icon: <AiFillSafetyCertificate />,
-    ColAa: 'Life insurance',
-    ColAb: 'It is a long established',
-    ColBa: 'Lorem ipsum',
-    ColBb: 'Lorem ipsum',
-    ColCa: 'Lorem ipsum',
-    ColCb: 'Lorem ipsum',
-    ColDa: 'Lorem ipsum',
-    ColDb: 'Lorem ipsum',
-    Details: 'View Details',
-  },
-  {
-    Icon: <GiCash />,
-    ColAa: 'Business Loans',
-    ColAb: 'It is a long established',
-    ColBa: 'Lorem ipsum',
-    ColBb: 'Lorem ipsum',
-    ColCa: 'Lorem ipsum',
-    ColCb: 'Lorem ipsum',
-    ColDa: 'Lorem ipsum',
-    ColDb: 'Lorem ipsum',
-    Details: 'View Details',
-  },
-];
-
-
-export const CardSettings = [
-  {
-    Icon: <HiCreditCard/>,
-    TextA: 'Block Card',
-    TextB: 'Instantly block card',
-  },
-  {
-    Icon: <BiLock/>,
-    TextA: 'Change Pin Code',
-    TextB: 'Choose another pin code',
-  },
-  {
-    Icon: <RiGoogleLine />,
-    TextA: 'Add To Google Pay',
-    TextB: 'Withdraw without any card',
-  },
-  {
-    Icon: <BsApple/>,
-    TextA: 'Add To Apple Pay',
-    TextB: 'Withdraw without any card',
-  },
-  {
-    Icon: <BsApple/>,
-    TextA: 'Add To Apple Store',
-    TextB: 'Withdraw without any card',
-  },
-]
-export const CardList = [
-  {
-    Icon: <HiCreditCard />,
-    ColAa: 'Card Type',
-    ColAb: 'Secondary',
-    ColBa: 'Bank',
-    ColBb: 'DBL Bank',
-    ColCa: 'Card Number',
-    ColCb: '**** **** 5600',
-    ColDa: 'Name In Card',
-    ColDb: 'William',
-    Details: 'View Details',
-  },
-  {
-    Icon: <HiCreditCard />,
-    ColAa: 'Card Type',
-    ColAb: 'Secondary',
-    ColBa: 'Bank',
-    ColBb: ' BRC Bank',
-    ColCa: 'Card Number',
-    ColCb: '**** **** 4300',
-    ColDa: 'Name In Card',
-    ColDb: 'Michel',
-    Details: 'View Details',
-  },
-  {
-    Icon: <HiCreditCard />,
-    ColAa: 'Card Type',
-    ColAb: 'Secondary',
-    ColBa: 'Bank',
-    ColBb: 'ABM Bank',
-    ColCa: 'Card Number',
-    ColCb: '**** **** 7560',
-    ColDa: 'Name In Card',
-    ColDb: 'Edward',
-    Details: 'View Details',
-  },
-];
-export const MyCard = [
-  {
-    IconA: <FcSimCardChip/>,
-    ColAa: 'Balance',
-    ColAb: 5756,
-    ColBa: 'CARD HOLDER',
-    ColBb: 'Eddy Cusuma',
-    ColCa: 'Valid Thru',
-    ColCb: '12/12',
-    ColDa: '3778 **** **** 1234',
-    IconB: <SiMastercard/>,
-  },
-  {
-    IconA: <FcSimCardChip/>,
-    ColAa: 'Balance',
-    ColAb: 5756,
-    ColBa: 'CARD HOLDER',
-    ColBb: 'Eddy Cusuma',
-    ColCa: 'Valid Thru',
-    ColCb: '12/12',
-    ColDa: '3778 **** **** 1234',
-    IconB: <SiMastercard/>,
-  },
-  {
-    IconA: <FcSimCardChip/>,
-    ColAa: 'Balance',
-    ColAb: 5756,
-    ColBa: 'CARD HOLDER',
-    ColBb: 'Eddy Cusuma',
-    ColCa: 'Valid Thru',
-    ColCb: '12/12',
-    ColDa: '3778 **** **** 1234',
-    IconB: <SiMastercard/>,
-  },
-]
-
-
-export const InvestmentsMain = [
-  {
-    icon: <GrMoney />,
-    TextA: 'Total Invested Amount',
-    TextB: '$150,000',
-  },
-  {
-    icon: <FaChartPie />,
-    TextA: 'number of investment',
-    TextB: '$1,250',
-  },
-  {
-    icon: <FaMoneyBillTransfer />,
-    TextA: 'rate of return',
-    TextB: '+5.80%',
-  },
-]
-export const investmentGrid = [
-  {
-    field: 'Serial',
-    headerText: 'SL NO',
-    textAlign: 'Center',
-    width: '120',
-  },
-  {
-    field: 'Name',
-    headerText: 'Name',
-    width: '150',
-    textAlign: 'Center',
-  },
-  { field: 'Price',
-    headerText: 'Price',
-    width: '150',
-    textAlign: 'Center',
-  },
-  {
-    field: 'Return',
-    headerText: 'Return',
-    textAlign: 'Center',
-    width: '150',
-  },
-];
-export const investmentData = [
-  {
-    Serial: 1,
-    Name: 'Trivago',
-    Price: '$520',
-    Return: '+5%',
-    Textcolor: '#16DBAA',
-  },
-  {
-    Serial: 2,
-    Name: 'Canon',
-    Price: '$480',
-    Return: '+10%',
-    Textcolor: '#16DBAA',
-  },
-  {
-    Serial: 3,
-    Name: 'Uber Food',
-    Price: '$350',
-    Return: '-3%',
-    Textcolor: '#FE5C73',
-  },
-  {
-    Serial: 4,
-    Name: 'Nokia',
-    Price: '$940',
-    Return: '+2%',
-    Textcolor: '#16DBAA',
-  },
-  {
-    Serial: 5,
-    Name: 'Tiktok',
-    Price: '$670',
-    Return: '12%',
-    Textcolor: '#FE5C73',
-  },
-];
-export const MyInvestment = [
-  {
-    Icon: <BsApple/>,
-    ColAa: 'Apple Store',
-    ColAb: 'E-Commerce, Marketplace',
-    ColBa: '$54,000',
-    ColBb: 'Investment Value',
-    ColCa: '+16%',
-    ColCb: 'Return Value',
-  },
-  {
-    Icon: <SiSamsung/>,
-    ColAa: 'Samsung Mobile',
-    ColAb: 'E-Commerce, Marketplace',
-    ColBa: '$25,300',
-    ColBb: 'Investment Value',
-    ColCa: '-4%',
-    ColCb: 'Return Value',
-  },
-  {
-    Icon: <SiTesla />,
-    ColAa: 'Tesla Motors',
-    ColAb: 'Electric Vehicles',
-    ColBa: '$8,200',
-    ColBb: 'Investment Value',
-    ColCa: '+25%',
-    ColCb: 'Return Value',
-  },
-]
-
-export const AccountsMain = [
-  {
-    icon: <FaPiggyBank />,
-    TextA: 'Personal Loans',
-    TextB: '$12,750',
-  },
-  {
-    icon: <GiReceiveMoney/>,
-    TextA: 'Income',
-    TextB: '$5,600',
-  },
-  {
-    icon: <MdSavings />,
-    TextA: 'Total Saving',
-    TextB: '$7,920',
-  },
-  {
-    icon: <GiExpense/>,
-    TextA: 'Expense',
-    TextB: '$3,460',
-  },
-]
-export const AccountsInvoice = [
-  {
-    icon: <BsApple />,
-    TextA: 'Apple Store',
-    TextB: '5h ago',
-    TextC: '$450',
-  },
-  {
-    icon: <PiUser />,
-    TextA: 'Michael',
-    TextB: '2 days ago',
-    TextC: '$160',
-  },
-  {
-    icon: <BsPlaystation/>,
-    TextA: 'Playstation',
-    TextB: '5 days ago',
-    TextC: '$1085',
-  },
-  {
-    icon: <PiUser/>,
-    TextA: 'Willian',
-    TextB: '10 days ago',
-    TextC: '$90',
-  },
-]
-export const LastAcct = [
-  {
-    Icon: <BsApple/>,
-    ColAa: 'Spotify Subscription',
-    ColAb: '25 Jan 2021',
-    TextA: 'Shopping',
-    TextB: '1234 ****',
-    TextC: 'Pending',
-    TextD: '-$150',
-    Textcolor: '#FE5C73',
-  },
-  {
-    Icon: <FaTools />,
-    ColAa: 'Mobile Service',
-    ColAb: '25 Jan 2021',
-    TextA: 'Services',
-    TextB: '1234 ****',
-    TextC: 'Pending',
-    TextD: '-$340',
-    Textcolor: '#FE5C73',
-  },
-  {
-    Icon: <PiUser />,
-    ColAa: 'Emilly Wilson',
-    ColAb: '25 Jan 2021',
-    TextA: 'Transfer',
-    TextB: '1234 ****',
-    TextC: 'Completed',
-    TextD: '-$780',
-    Textcolor: '#16DBAA',
-  },
-]
 
 
 export const dropdownData = [
