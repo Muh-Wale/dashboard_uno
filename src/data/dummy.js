@@ -25,6 +25,37 @@ import { FcSimCardChip } from 'react-icons/fc';
 import { PiUser } from 'react-icons/pi';
 
 
+
+
+
+
+export const DashboardTransaction = [
+  {
+    Icon: <BsApple/>,
+    ColAa: 'Deposit from my card',
+    ColAb: '25 Jan 2021',
+    Text: '-$850',
+    Textcolor: '#FE5C73',
+  },
+  {
+    Icon: <FaTools />,
+    ColAa: 'Deposit Paypal',
+    ColAb: '25 Jan 2021',
+    TextD: '+$2,500',
+    Textcolor: '#16DBAA',
+  },
+  {
+    Icon: <PiUser />,
+    ColAa: 'Jemi Wilson',
+    ColAb: '25 Jan 2021',
+    TextD: '+$5,400',
+    Textcolor: '#16DBAA',
+  },
+]
+
+
+
+
 export const LoansMain = [
   {
     icon: <FaUser />,
@@ -80,6 +111,7 @@ export const loansGrid = [
   {
     field: 'Installment',
     headerText: 'Installment',
+    template: gridLoanInstallment,
     width: '120',
     textAlign: 'Center',
   },
@@ -87,6 +119,7 @@ export const loansGrid = [
   {
     field: 'Repay',
     headerText: 'Repay',
+    template: gridLoanRepay,
     width: '150',
     textAlign: 'Center',
   },
@@ -181,6 +214,21 @@ export const loansData = [
     Repay: 'Repay',
   },
 ];
+export const gridLoanRepay = (props) => (
+  <button
+    type="button"
+    className="py-1 px-2 rounded-2xl"
+  >
+    {props.Repay}
+  </button>
+);
+const gridLoanInstallment = (props) => (
+  <div className="flex items-center gap-[1px]">
+    <p>{props.EmployeeImage}</p>
+    <p>/</p>
+    <p>{props.Name}</p>
+  </div>
+);
 
 
 export const ServicesMain = [
@@ -817,7 +865,7 @@ const gridTransactionAmount = (props) => (
 export const gridTransactionReceipt = (props) => (
   <button
     type="button"
-    className="text-white py-1 px-2 rounded-2xl"
+    className="py-1 px-2 rounded-2xl"
   >
     {props.Receipt}
   </button>
