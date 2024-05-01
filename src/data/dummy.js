@@ -7,7 +7,7 @@ import { MdOutlineSupervisorAccount } from 'react-icons/md';
 import { HiCreditCard, HiOutlineRefresh } from 'react-icons/hi';
 import { TiHome, TiTick } from 'react-icons/ti';
 import { GiCash, GiExpense, GiReceiveMoney } from 'react-icons/gi';
-import { GrLocation, GrMoney } from 'react-icons/gr';
+import {  GrMoney } from 'react-icons/gr';
 import avatar from './avatar.jpg';
 import avatar2 from './avatar2.jpg';
 import avatar3 from './avatar3.png';
@@ -400,6 +400,9 @@ export const MyCard = [
     ColCb: '12/12',
     ColDa: '3778 **** **** 1234',
     IconB: <SiMastercard/>,
+    BgA: '0A06F4',
+    BgB: '4C49ED',
+    TextColor: 'FFFFFF',
   },
   {
     IconA: <FcSimCardChip/>,
@@ -411,6 +414,9 @@ export const MyCard = [
     ColCb: '12/12',
     ColDa: '3778 **** **** 1234',
     IconB: <SiMastercard/>,
+    BgA: 'FFFFFF',
+    BgB: 'DFEAF2',
+    TextColor: '343C6A',
   },
   {
     IconA: <FcSimCardChip/>,
@@ -422,6 +428,9 @@ export const MyCard = [
     ColCb: '12/12',
     ColDa: '3778 **** **** 1234',
     IconB: <SiMastercard/>,
+    BgA: '539BFF',
+    BgB: '2D60FF',
+    TextColor: 'FFFFFF',
   },
 ]
 
@@ -875,6 +884,17 @@ export const gridTransactionReceipt = (props) => (
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 export const gridOrderImage = (props) => (
   <div>
     <img
@@ -915,12 +935,6 @@ export const kanbanGrid = [
 ];
 
 
-const gridEmployeeCountry = (props) => (
-  <div className="flex items-center justify-center gap-2">
-    <GrLocation />
-    <span>{props.Country}</span>
-  </div>
-);
 
 const customerGridImage = (props) => (
   <div className="image flex gap-4">
