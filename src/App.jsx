@@ -1,8 +1,18 @@
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Navbar, Footer, Sidebar } from './components';
-import { Dashboard, Transactions, Accounts, Investments, CreditCards, Loans, Services, Privileges, Settings } from './pages';
+import  Dashboard  from './pages/Dashboard';
+import  Transactions from './pages/Transactions';
+import  Accounts from './pages/Accounts';
+import  Investment  from './pages/Investment';
+import  CreditCards  from './pages/CreditCards';
+import  Loans  from './pages/Loans';
+import  Services  from './pages/Services';
+import  Privileges  from './pages/Privileges';
+import  Settings  from './pages/Settings';
 import { useStateContext } from './contexts/ContextProvider';
+import Sidebar from './components/Sidebar';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -36,8 +46,8 @@ function App() {
                 <Route path="/" element={(<Dashboard />)} />
                 <Route path="/dashboard" element={(<Dashboard />)} />
                 <Route path="/transactions" element={<Transactions />} />
-                <Route path="/employees" element={<Accounts />} />
-                <Route path="/investments" element={<Investments />} />
+                <Route path="/accounts" element={<Accounts />} />
+                <Route path="/investments" element={<Investment />} />
                 <Route path="/creditcards" element={<CreditCards />} />
                 <Route path="/loans" element={<Loans />} />
                 <Route path="/services" element={<Services/>} />
