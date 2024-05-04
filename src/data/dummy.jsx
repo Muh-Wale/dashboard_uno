@@ -160,7 +160,7 @@ export const loansGrid = [
   {
     field: 'Installment',
     headerText: 'Installment',
-    template: gridLoanInstallment,
+    // template: gridLoanInstallment,
     width: '120',
     textAlign: 'Center',
   },
@@ -168,7 +168,7 @@ export const loansGrid = [
   {
     field: 'Repay',
     headerText: 'Repay',
-    template: gridLoanRepay,
+    // template: gridLoanRepay,
     width: '150',
     textAlign: 'Center',
   },
@@ -263,21 +263,21 @@ export const loansData = [
     Repay: 'Repay',
   },
 ];
-export const gridLoanRepay = (props) => (
-  <button
-    type="button"
-    className="py-1 px-2 rounded-2xl"
-  >
-    {props.Repay}
-  </button>
-);
-const gridLoanInstallment = (props) => (
-  <div className="flex items-center gap-[1px]">
-    <p>{props.EmployeeImage}</p>
-    <p>/</p>
-    <p>{props.Name}</p>
-  </div>
-);
+// export const gridLoanRepay = (props) => (
+//   <button
+//     type="button"
+//     className="py-1 px-2 rounded-2xl"
+//   >
+//     {props.Repay}
+//   </button>
+// );
+// const gridLoanInstallment = (props) => (
+//   <div className="flex items-center gap-[1px]">
+//     <p>{props.EmployeeImage}</p>
+//     <p>/</p>
+//     <p>{props.Name}</p>
+//   </div>
+// );
 
 
 export const ServicesMain = [
@@ -678,7 +678,7 @@ export const LastAcct = [
 export const transactionGrid = [
   { headerText: 'Description',
     width: '150',
-    template: gridTransactionProfile,
+    // template: gridTransactionProfile,
     textAlign: 'Center' },
   { field: 'Name',
     headerText: '',
@@ -710,14 +710,14 @@ export const transactionGrid = [
 
   { field: 'Amount',
     headerText: 'Amount',
-    template: gridTransactionAmount,
+    // template: gridTransactionAmount,
     width: '120',
     textAlign: 'Center' 
   },
   { 
     field: 'Receipt',
     headerText: 'Receipt',
-    template: gridTransactionReceipt,
+    // template: gridTransactionReceipt,
     width: '120',
     textAlign: 'Center' 
   },
@@ -904,30 +904,31 @@ export const transactionData = [
     <IoArrowUpCircleOutline />,
   },
 ];
-const gridTransactionProfile = (props) => (
-  <div className="flex items-center gap-2">
-    <p
-      className="rounded-full w-10 h-10"
-      alt="employee"
-    >{props.EmployeeImage}</p>
-    <p>{props.Name}</p>
-  </div>
-);
-const gridTransactionAmount = (props) => (
-  <div className="flex items-center gap-2">
-    <p
-      style={{ color: props.Textcolor }}
-    >{props.Amount}</p>
-  </div>
-);
-export const gridTransactionReceipt = (props) => (
-  <button
-    type="button"
-    className="py-1 px-2 rounded-2xl"
-  >
-    {props.Receipt}
-  </button>
-);
+
+// const gridTransactionProfile = (props) => (
+//   <div className="flex items-center gap-2">
+//     <p
+//       className="rounded-full w-10 h-10"
+//       alt="employee"
+//     >{props.EmployeeImage}</p>
+//     <p>{props.Name}</p>
+//   </div>
+// );
+// const gridTransactionAmount = (props) => (
+//   <div className="flex items-center gap-2">
+//     <p
+//       style={{ color: props.Textcolor }}
+//     >{props.Amount}</p>
+//   </div>
+// );
+// export const gridTransactionReceipt = (props) => (
+//   <button
+//     type="button"
+//     className="py-1 px-2 rounded-2xl"
+//   >
+//     {props.Receipt}
+//   </button>
+// );
 
 
 
