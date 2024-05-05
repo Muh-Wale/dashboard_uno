@@ -4,8 +4,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import avatar from '../data/avatar.png'
 import { RiNotification3Line } from 'react-icons/ri';
-import { BsChatLeft } from 'react-icons/bs';
-import { FiShoppingCart } from 'react-icons/fi';
+import { IoSearch, IoSettingsOutline } from 'react-icons/io5';
 
 const Navbar = () => {
     const { activeMenu, setActiveMenu, setScreenSize, screenSize } = useStateContext();
@@ -31,10 +30,10 @@ const Navbar = () => {
     const handleActiveMenu = () => setActiveMenu(!activeMenu);
     
     return (
-        <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative">
+        <div className={`flex items-center p-2 relative bg-white w-full ${activeMenu ? 'justify-end' : 'justify-between'} `}>
             <div 
                 onClick={() => handleActiveMenu()}
-                className=' cursor-pointer'
+                className={ activeMenu ? 'cursor-pointer hidden' : 'block cursor-pointer' }
             >
                 <AiOutlineMenu 
                     color='blue'
@@ -42,37 +41,40 @@ const Navbar = () => {
                 />
             </div>
 
-        <div className="flex">
-            <div>
-                <FiShoppingCart/>
-            </div>
-            <div>
-                <BsChatLeft />
-            </div>
-            <div>
-                <RiNotification3Line />
-            </div>
+            <div className=" flex items-center gap-4 ">
+                <div className='relative'>
+                    <input type="search" className=' rounded-3xl py-2 px-11 bg-[#E5E5E5] placeholder:text-gray-400' placeholder='Search for something'/>
+                    <div className=' absolute bottom-2 left-4 text-gray-400'>
+                        <IoSearch size={23}/>
+                    </div>
+                </div>
+                <div className=' bg-[#E5E5E5] p-2 rounded-2xl text-[#718EBF]'>
+                    <IoSettingsOutline size={23}/>
+                </div>
+                <div className=' bg-[#E5E5E5] p-2 rounded-2xl text-[#FE5C73]'>
+                    <RiNotification3Line size={23}/>
+                </div>
 
-            <div content="Profile">
-                <div
-                    className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
-                >
-                <img
-                    className="rounded-full w-8 h-8"
-                    src={avatar}
-                    alt="user-profile"
-                />
-                <p>
-                    <span className="text-gray-400 text-14">Hi,</span>{' '}
-                    <span className="text-gray-400 font-bold ml-1 text-14">
-                        Michael
-                    </span>
-                </p>
-                    <MdKeyboardArrowDown className="text-gray-400 text-14" />
+                <div content="Profile">
+                    <div
+                        className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
+                    >
+                        <img
+                            className="rounded-full w-12"
+                            src={avatar}
+                            alt="user-profile"
+                        />
+                        <p>
+                            <span className="text-gray-400 text-14">Hi,</span>{' '}
+                            <span className="text-gray-400 font-bold ml-1 text-14">
+                                Michelle
+                            </span>
+                        </p>
+                        <MdKeyboardArrowDown className="text-gray-400 text-14" />
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     )
 }
 
