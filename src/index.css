@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.navlink {
+    @apply relative;
+}
+.navlink::after {
+    @apply content-[''] bg-[#2D60FF] h-[100%] w-[15px] -left-4 bottom-0  rounded-xl absolute duration-300;
+}

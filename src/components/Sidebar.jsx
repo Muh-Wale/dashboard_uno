@@ -18,10 +18,10 @@ const Sidebar = () => {
     const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-xl font-medium text-[#B1B1B1] dark:text-gray-200 dark:hover:text-[#2d61ff9c] hover:bg-light-gray m-2';
 
     return (
-        <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10">
+        <div className=" h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10">
         {activeMenu && (
             <>
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center ml-3">
                 <Link to="/" onClick={handleCloseSideBar} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight">
                     <img src={Logo} />
                 </Link>
@@ -44,9 +44,9 @@ const Sidebar = () => {
                         <NavLink 
                             to={`/${item.path}`} 
                             onClick={handleCloseSideBar} 
-                            className={({ isActive }) => (isActive ? activeLink : normalLink)} 
+                            className={({ isActive }) => (isActive ? `${activeLink} navlink` : `${normalLink}`)}
                             exact={true}
-                        >   <div className=' text-3xl'>
+                        >   <div className=' text-3xl ml-3'>
                                 {item.icon}
                             </div> 
                             <span className="capitalize ">
