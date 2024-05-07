@@ -7,7 +7,11 @@ import { RiNotification3Line } from 'react-icons/ri';
 import { IoSearch, IoSettingsOutline } from 'react-icons/io5';
 
 const Navbar = () => {
-    const { activeMenu, setActiveMenu, setScreenSize, screenSize } = useStateContext();
+    const { activeMenu, setActiveMenu, setScreenSize, screenSize, isClicked, setIsClicked, activeSearch, setActiveSearch } = useStateContext();
+
+    const handleSearchClick = () => {
+        setIsClicked(!isClicked);
+    };
 
     useEffect(() => {
         const handleResize = () => setScreenSize(window.innerWidth);
@@ -18,6 +22,14 @@ const Navbar = () => {
     
         return () => window.removeEventListener('resize', handleResize);
     }, [setScreenSize]);
+
+    useEffect(() => {
+        if (screenSize <= 570) {
+            setActiveSearch(false);
+        } else {
+            setActiveSearch(true);
+        }
+    }, [screenSize, setActiveSearch]);
 
     useEffect(() => {
         if (screenSize <= 900) {
@@ -42,9 +54,9 @@ const Navbar = () => {
             </div>
 
             <div className=" flex items-center gap-4 ">
-                <div className='relative'>
-                    <input type="search" className=' rounded-3xl py-2 px-11 bg-[#E5E5E5] placeholder:text-gray-400' placeholder='Search for something'/>
-                    <div className=' absolute bottom-2 left-4 text-gray-400'>
+                <div className='relative search-bar'>
+                    <input type="text" className={`rounded-3xl py-2 pl-8 md:px-11 bg-[#E5E5E5] placeholder:text-gray-400 ${ activeSearch ? '' : (isClicked ? '' : 'w-4') } md:w-auto`} placeholder='Search for something'/>
+                    <div className=' absolute bottom-2 left-1 md:left-4 text-gray-400 z-50' onClick={handleSearchClick}>
                         <IoSearch size={23}/>
                     </div>
                 </div>

@@ -12,14 +12,13 @@ import  Settings  from './pages/Settings';
 import { useStateContext } from './contexts/ContextProvider';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 
 function App() {
 
   const { activeMenu } = useStateContext();
 
   return (
-    <div>
+    <div className=' max-w-[1600px] mx-auto'>
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
           {activeMenu ? (
@@ -55,7 +54,6 @@ function App() {
                 <Route path="/settings" element={<Settings />} />
               </Routes>
             </div>
-            <Footer />
           </div>
         </div>
       </BrowserRouter>
