@@ -1,10 +1,13 @@
 import React from 'react'
 import { DashboardTransaction, MyCard } from '../data/dummy';
+import  BarStatUno  from '../data/BarStatUno.png';
+import  PieUno  from '../data/PieUno.png';
+import  FlowGraph  from '../data/FlowGraph.png';
 
 const Dashboard = () => {
     return (
         <>
-            <section className=' p-5 flex justify-between flex-wrap mt-14 md:mt-0'>
+            <section className=' p-5 flex justify-between flex-wrap mt-14 md:mt-0 bg-white md:bg-[#E5E5E5]'>
                 <div className='w-full xl:w-5/6 2xl:w-4/6'>
                     <div className='flex justify-between'>
                         <h1 className=' font-semibold text-2xl'>My Cards</h1>
@@ -13,7 +16,7 @@ const Dashboard = () => {
 
                     <div className='flex flex-col md:flex-row justify-between my-3 gap-10'>
                         {MyCard.slice(0, 2).map((item) => (
-                            <div key={item.id} style={{ backgroundColor: item.BgA, color: item.TextColor }} className=' rounded-2xl w-full'>
+                            <div key={item.id} style={{ backgroundColor: item.BgA, color: item.TextColor }} className=' rounded-2xl w-full shadow-2xl'>
                                 <div className='flex justify-between items-center px-5 pt-5'>
                                     <div>
                                         <p className='text-xs'>{item.ColAa}</p>
@@ -72,6 +75,49 @@ const Dashboard = () => {
                 </div>
             </section>
             
+            <section className='p-5 flex justify-between flex-wrap bg-white md:bg-[#E5E5E5]'>
+                <div className='w-full xl:w-5/6 2xl:w-4/6'>
+                    <div>
+                        <h1 className=' font-semibold text-2xl'>Weekly Activity</h1>
+                    </div>
+
+                    <div className=' w-full  bg-white p-5 rounded-2xl my-4'>
+                        <img src={BarStatUno} alt="" />
+                    </div>
+                </div>
+
+                <div className='w-fit'>
+                    <div>
+                        <h1 className=' font-semibold text-2xl'>Expense Statistics</h1>
+                    </div>
+
+                    <div className=' w-full  bg-white p-5 rounded-2xl my-4'>
+                        <img src={PieUno} alt="" />
+                    </div>
+                </div>
+            </section>
+
+            <section className='p-5 flex justify-between flex-wrap bg-white md:bg-[#E5E5E5]'>
+                {/* <div className='w-full xl:w-5/6 2xl:w-4/6'>
+                    <div>
+                        <h1 className=' font-semibold text-2xl'>Weekly Activity</h1>
+                    </div>
+
+                    <div className=' w-full  bg-white p-5 rounded-2xl my-4'>
+                        <img src={BarStatUno} alt="" />
+                    </div>
+                </div> */}
+
+                <div className='w-full'>
+                    <div>
+                        <h1 className=' font-semibold text-2xl'>Balance History</h1>
+                    </div>
+
+                    <div className=' w-full  bg-white p-5 rounded-2xl my-4'>
+                        <img src={FlowGraph} alt="" />
+                    </div>
+                </div>
+            </section>
         </>
     )
 }

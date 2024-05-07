@@ -60,10 +60,10 @@ const Navbar = () => {
                         <IoSearch size={23}/>
                     </div>
                 </div>
-                <div className=' bg-[#E5E5E5] p-2 rounded-2xl text-[#718EBF]'>
+                <div className=' bg-[#E5E5E5] p-2 rounded-2xl text-[#718EBF] hidden md:block'>
                     <IoSettingsOutline size={23}/>
                 </div>
-                <div className=' bg-[#E5E5E5] p-2 rounded-2xl text-[#FE5C73]'>
+                <div className=' bg-[#E5E5E5] p-2 rounded-2xl text-[#FE5C73] hidden md:block'>
                     <RiNotification3Line size={23}/>
                 </div>
 
