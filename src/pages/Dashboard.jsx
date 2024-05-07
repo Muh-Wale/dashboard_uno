@@ -3,6 +3,8 @@ import { DashboardTransaction, MyCard } from '../data/dummy';
 import  BarStatUno  from '../data/BarStatUno.png';
 import  PieUno  from '../data/PieUno.png';
 import  FlowGraph  from '../data/FlowGraph.png';
+import { FaGreaterThan } from 'react-icons/fa';
+import { GrSend } from 'react-icons/gr';
 
 const Dashboard = () => {
     return (
@@ -98,17 +100,38 @@ const Dashboard = () => {
             </section>
 
             <section className='p-5 flex justify-between flex-wrap bg-white md:bg-[#E5E5E5]'>
-                {/* <div className='w-full xl:w-5/6 2xl:w-4/6'>
+                <div className='w-full xl:w-5/6 2xl:w-4/6'>
                     <div>
-                        <h1 className=' font-semibold text-2xl'>Weekly Activity</h1>
+                        <h1 className=' font-semibold text-2xl'>Quick Transfer</h1>
                     </div>
 
                     <div className=' w-full  bg-white p-5 rounded-2xl my-4'>
-                        <img src={BarStatUno} alt="" />
-                    </div>
-                </div> */}
+                        <div>
+                            <div>
 
-                <div className='w-full'>
+                            </div>
+
+                            <div>
+                                <FaGreaterThan/>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div>
+
+                            </div>
+
+                            <div>
+                                <div></div>
+                                <div>
+                                    <GrSend />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* <div className='w-full'>
                     <div>
                         <h1 className=' font-semibold text-2xl'>Balance History</h1>
                     </div>
@@ -116,7 +139,7 @@ const Dashboard = () => {
                     <div className=' w-full  bg-white p-5 rounded-2xl my-4'>
                         <img src={FlowGraph} alt="" />
                     </div>
-                </div>
+                </div> */}
             </section>
         </>
     )
