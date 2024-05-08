@@ -1,4 +1,3 @@
-import React from 'react'
 import { DashboardTransaction, MyCard, QuickTransfer } from '../data/dummy';
 import  BarStatUno  from '../data/BarStatUno.png';
 import  PieUno  from '../data/PieUno.png';
@@ -11,7 +10,7 @@ const Dashboard = () => {
         <>
             <section className=' p-5 flex justify-between flex-wrap mt-14 md:mt-0 bg-white md:bg-[#E5E5E5]'>
                 <div className='w-full xl:w-5/6 2xl:w-4/6'>
-                    <div className='flex justify-between'>
+                    <div className='flex justify-between items-center'>
                         <h1 className=' font-semibold text-2xl'>My Cards</h1>
                         <p className=' font-semibold text-lg hover:underline cursor-pointer'>See All</p>
                     </div>
