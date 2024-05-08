@@ -14,6 +14,9 @@ import { FcSimCardChip } from 'react-icons/fc';
 import { PiUser } from 'react-icons/pi';
 import { TiHome } from 'react-icons/ti';
 import { VscGraph } from 'react-icons/vsc';
+import CeoUno from './CeoUno.png'
+import CeoDos from './CeoDos.png'
+import CeoTros from './CeoTres.png'
 
 
 
@@ -105,6 +108,23 @@ export const DashboardTransaction = [
     Textcolor: '#16DBAA',
     Iconcolor: '#16DBCC',
     IconBg: '#DCFAF8',
+  },
+]
+export const QuickTransfer = [
+  {
+    image: CeoUno,
+    Name: 'Livia Bator',
+    Position: 'CEO',
+  },
+  {
+    image: CeoDos,
+    Name: 'Randy Press',
+    Position: 'Director',
+  },
+  {
+    image: CeoTros,
+    Name: 'Workman',
+    Position: 'Designer',
   },
 ]
 

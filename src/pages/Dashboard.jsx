@@ -1,5 +1,5 @@
 import React from 'react'
-import { DashboardTransaction, MyCard } from '../data/dummy';
+import { DashboardTransaction, MyCard, QuickTransfer } from '../data/dummy';
 import  BarStatUno  from '../data/BarStatUno.png';
 import  PieUno  from '../data/PieUno.png';
 import  FlowGraph  from '../data/FlowGraph.png';
@@ -108,7 +108,19 @@ const Dashboard = () => {
                     <div className=' w-full  bg-white p-5 rounded-2xl my-4'>
                         <div>
                             <div>
-
+                                {QuickTransfer.map((item) => (
+                                    <div key={item.Name}>
+                                        <div>
+                                            <img src={item.image} alt="" />
+                                        </div>
+                                        <div>
+                                            {item.Name}
+                                        </div>
+                                        <div>
+                                            {item.Position}
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
 
                             <div>
