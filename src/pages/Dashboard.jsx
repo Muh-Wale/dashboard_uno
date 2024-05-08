@@ -57,7 +57,7 @@ const Dashboard = () => {
 
                     <div className='bg-white rounded-2xl my-3'>
                         {DashboardTransaction.map((item) =>(
-                            <div key={item.Text} className='px-8 flex gap-5 w-full items-center'>
+                            <div key={item.TextD} className='px-8 flex gap-5 w-full items-center'>
                                 <div className='my-4 text-2xl p-3 rounded-full' style={{ backgroundColor: item.IconBg, color: item.Iconcolor }}>
                                     {item.Icon}
                                 </div>

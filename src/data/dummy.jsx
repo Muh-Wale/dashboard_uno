@@ -625,23 +625,31 @@ export const MyInvestment = [
 export const AccountsMain = [
   {
     icon: <FaPiggyBank />,
-    TextA: 'Personal Loans',
+    TextA: 'My Balance',
     TextB: '$12,750',
+    iconColor: '#FFBB38',
+    iconBg: '#FFF5D9',
   },
   {
     icon: <GiReceiveMoney/>,
     TextA: 'Income',
     TextB: '$5,600',
+    iconColor: '#396AFF',
+    iconBg: '#E7EDFF',
   },
   {
     icon: <MdSavings />,
     TextA: 'Total Saving',
     TextB: '$7,920',
+    iconColor: '#FF82AC',
+    iconBg: '#FFE0EB',
   },
   {
     icon: <GiExpense/>,
     TextA: 'Expense',
     TextB: '$3,460',
+    iconColor: '#16DBCC',
+    iconBg: '#DCFAF8',
   },
 ]
 export const AccountsInvoice = [
@@ -673,6 +681,8 @@ export const AccountsInvoice = [
 export const LastAcct = [
   {
     Icon: <BsApple/>,
+    IconColor: '#16DBCC',
+    IconBg: '#DCFAF8',
     ColAa: 'Spotify Subscription',
     ColAb: '25 Jan 2021',
     TextA: 'Shopping',
@@ -683,6 +693,8 @@ export const LastAcct = [
   },
   {
     Icon: <FaTools />,
+    IconColor: '#396AFF',
+    IconBg: '#E7EDFF',
     ColAa: 'Mobile Service',
     ColAb: '25 Jan 2021',
     TextA: 'Services',
@@ -693,6 +705,8 @@ export const LastAcct = [
   },
   {
     Icon: <PiUser />,
+    IconColor: '#FF82AC',
+    IconBg: '#FFE0EB',
     ColAa: 'Emilly Wilson',
     ColAb: '25 Jan 2021',
     TextA: 'Transfer',
