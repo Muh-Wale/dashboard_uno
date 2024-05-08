@@ -100,41 +100,43 @@ const Dashboard = () => {
             </section>
 
             <section className='p-5 flex justify-between flex-wrap bg-white md:bg-[#E5E5E5]'>
-                <div className='w-full xl:w-5/6 2xl:w-4/6'>
+                <div className=' w-fit'>
                     <div>
                         <h1 className=' font-semibold text-2xl'>Quick Transfer</h1>
                     </div>
 
                     <div className=' w-full  bg-white p-5 rounded-2xl my-4'>
-                        <div>
-                            <div>
+                        <div className='flex items-center gap-14'>
+                            <div className='flex gap-10'>
                                 {QuickTransfer.map((item) => (
-                                    <div key={item.Name}>
+                                    <div key={item.Name} className='cursor-pointer text-center'>
                                         <div>
-                                            <img src={item.image} alt="" />
+                                            <img src={item.image} alt=""  className=' rounded-full'/>
                                         </div>
-                                        <div>
+                                        <div className=' font-medium hover:font-[650] w-fit'>
                                             {item.Name}
                                         </div>
-                                        <div>
+                                        <div className='text-[#718EBF] '>
                                             {item.Position}
                                         </div>
                                     </div>
                                 ))}
                             </div>
 
-                            <div>
-                                <FaGreaterThan/>
+                            <div className='text-[#718EBF] bg-white p-4 rounded-full shadow-lg cursor-pointer'>
+                                <FaGreaterThan size={20}/>
                             </div>
                         </div>
 
-                        <div>
+                        <div className='my-5 flex items-center gap-16'>
                             <div>
-
+                                <h1 className='text-lg text-[#718EBF]'>Write Amount</h1>
                             </div>
 
                             <div>
-                                <div></div>
+                                <div>
+                                    <input type="text" className='w-full p-3 placeholder:text-[#718EBF] rounded-full bg-[#EDF1F7] focus:outline-none' placeholder='525.50'/>
+                                </div>
                                 <div>
                                     <GrSend />
                                 </div>
