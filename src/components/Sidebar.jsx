@@ -29,7 +29,7 @@ const Sidebar = () => {
                 <button
                     type="button"
                     onClick={() => setActiveMenu(!activeMenu)}
-                    className="text-xl rounded-full p-3 mt-4 block lg:hidden"
+                    className="text-xl rounded-full p-3 mt-4 block 2xl:hidden"
                 >
                     <MdOutlineCancel 
                         color='blue'

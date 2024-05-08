@@ -100,14 +100,14 @@ const Dashboard = () => {
             </section>
 
             <section className='p-5 flex justify-between flex-wrap bg-white md:bg-[#E5E5E5]'>
-                <div className=' w-fit'>
+                <div className=' w-fit '>
                     <div>
                         <h1 className=' font-semibold text-2xl'>Quick Transfer</h1>
                     </div>
 
-                    <div className=' w-full  bg-white p-5 rounded-2xl my-4'>
-                        <div className='flex items-center gap-14'>
-                            <div className='flex gap-10'>
+                    <div className=' w-full  bg-white p-7 lg:p-3 2xl:p-7 rounded-2xl my-4'>
+                        <div className='flex items-center gap-10 lg:gap-5 2xl:gap-14 mt-4'>
+                            <div className='flex gap-8 lg:gap-5 2xl:gap-10'>
                                 {QuickTransfer.map((item) => (
                                     <div key={item.Name} className='cursor-pointer text-center'>
                                         <div>
@@ -128,32 +128,33 @@ const Dashboard = () => {
                             </div>
                         </div>
 
-                        <div className='my-5 flex items-center gap-16'>
+                        <div className='mt-12 flex items-center gap-16 lg:gap-7 2xl:gap-16'>
                             <div>
                                 <h1 className='text-lg text-[#718EBF]'>Write Amount</h1>
                             </div>
 
-                            <div>
+                            <div className='relative'>
                                 <div>
-                                    <input type="text" className='w-full p-3 placeholder:text-[#718EBF] rounded-full bg-[#EDF1F7] focus:outline-none' placeholder='525.50'/>
+                                    <input type="number" className='w-full p-3 placeholder:text-[#718EBF] rounded-full bg-[#EDF1F7] focus:outline-none' placeholder='525.50'/>
                                 </div>
-                                <div>
-                                    <GrSend />
+                                <div className='absolute right-0 -top-0 flex gap-2 items-center text-white rounded-full bg-[blue] py-3 px-6 z-50 cursor-pointer'>
+                                    <span className='font-medium'>Send</span>
+                                    <GrSend size={23}/>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {/* <div className='w-full'>
+                <div className='w-fit lg:w-7/12 2xl:w-fit'>
                     <div>
                         <h1 className=' font-semibold text-2xl'>Balance History</h1>
                     </div>
 
-                    <div className=' w-full  bg-white p-5 rounded-2xl my-4'>
+                    <div className=' w-full  bg-white p-1 rounded-2xl my-4'>
                         <img src={FlowGraph} alt="" />
                     </div>
-                </div> */}
+                </div>
             </section>
         </>
     )
