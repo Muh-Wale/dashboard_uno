@@ -658,24 +658,32 @@ export const AccountsInvoice = [
     TextA: 'Apple Store',
     TextB: '5h ago',
     TextC: '$450',
+    iconColor: '#16DBCC',
+    iconBg: '#DCFAF8',
   },
   {
     icon: <PiUser />,
     TextA: 'Michael',
     TextB: '2 days ago',
     TextC: '$160',
+    iconColor: '#FFBB38',
+    iconBg: '#FFF5D9',
   },
   {
     icon: <BsPlaystation/>,
     TextA: 'Playstation',
     TextB: '5 days ago',
     TextC: '$1085',
+    iconColor: '#FF82AC',
+    iconBg: '#FFE0EB',
   },
   {
     icon: <PiUser/>,
     TextA: 'Willian',
     TextB: '10 days ago',
     TextC: '$90',
+    iconColor: '#FF82AC',
+    iconBg: '#FFE0EB',
   },
 ]
 export const LastAcct = [

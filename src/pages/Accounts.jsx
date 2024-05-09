@@ -22,9 +22,9 @@ const Accounts = () => {
                 </div>
             </section>
 
-            <section className=' p-5 flex justify-between flex-wrap mt-14 md:mt-0 bg-[#E5E5E5]'>
+            <section className=' p-5 flex justify-between gap-2 flex-wrap mt-14 md:mt-0 bg-[#E5E5E5]'>
 
-                <div className='w-full xl:w-2/3'>
+                <div className='w-full xl:w-3/6 2xl:w-3/5'>
                     <div>
                         <h1 className=' font-semibold text-2xl'>Recent Transaction</h1>
                     </div>
@@ -55,7 +55,7 @@ const Accounts = () => {
                                     </div>
                                 </div>
                             
-                                <div className='font-medium col-span-1' style={{ color: item.Textcolor }}>
+                                <div className='font-medium col-span-1 flex justify-end' style={{ color: item.Textcolor }}>
                                     {item.TextD}
                                 </div>
                             </div>
@@ -63,7 +63,7 @@ const Accounts = () => {
                     </div>
                 </div>
 
-                <div className=' w-full lg:w-1/3 max-w-[450px]'>
+                <div className=' w-fit xl:w-2/6 2xl:2/5 max-w-[450px]'>
                     <div className='flex justify-between items-center'>
                         <h1 className=' font-semibold text-2xl'>My Cards</h1>
                         <p className=' font-semibold text-lg hover:underline cursor-pointer'>See All</p>
@@ -105,7 +105,7 @@ const Accounts = () => {
                 </div>
             </section>
 
-            <section className=' p-5 flex justify-between flex-wrap mt-14 md:mt-0 bg-white md:bg-[#E5E5E5]'>
+            <section className=' p-5 flex justify-between flex-wrap mt-14 md:mt-0 '>
                 <div className='w-full xl:w-5/6 2xl:w-4/6'>
                     <div className='flex justify-between items-center'>
                         <h1 className=' font-semibold text-2xl'>My Cards</h1>
@@ -116,25 +116,25 @@ const Accounts = () => {
                     </div>
                 </div>
 
-                <div className='w-fit'>
+                <div className='w-full lg:w-fit max-w-[450px]'>
                     <div>
                         <h1 className=' font-semibold text-2xl'>Invoices Sent</h1>
                     </div>
 
-                    <div className='bg-white rounded-2xl my-3'>
+                    <div className='bg-white rounded-2xl my-3 py-2'>
                         {AccountsInvoice.map((item) =>(
-                            <div key={item.TextA} className='px-8 flex gap-5 w-full items-center'>
-                                <div className='my-4 text-2xl p-3 rounded-full' style={{ backgroundColor: item.IconBg, color: item.Iconcolor }}>
+                            <div key={item.TextA} className='px-8 grid grid-cols-4 gap-5 w-full items-center'>
+                                <div className='my-5 w-fit text-2xl p-3 rounded-2xl col-span-1' style={{ backgroundColor: item.iconBg, color: item.iconColor }}>
                                     {item.icon}
                                 </div>
 
-                                <div className='my-4'>
-                                    <h1 className=' font-medium'>{item.ColAa}</h1>
-                                    <p className=' text-gray-300 font-light'>{item.ColAb}</p>
+                                <div className='my-5 col-span-2'>
+                                    <h1 className=' font-medium'>{item.TextA}</h1>
+                                    <p className=' text-[#718EBF] font-light'>{item.TextB}</p>
                                 </div>
 
-                                <div className='my-4 font-medium' style={{ color: item.Textcolor }}>
-                                    {item.TextD}
+                                <div className='my-5 font-medium text-[#718EBF] col-span-1 flex justify-end' style={{ color: item.Textcolor }}>
+                                    {item.TextC}
                                 </div>
                             </div>
                         ))}
