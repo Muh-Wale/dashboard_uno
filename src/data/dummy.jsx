@@ -518,16 +518,22 @@ export const InvestmentsMain = [
     icon: <GrMoney />,
     TextA: 'Total Invested Amount',
     TextB: '$150,000',
+    iconColor: '#FFBB38',
+    iconBg: '#FFF5D9',
   },
   {
     icon: <FaChartPie />,
     TextA: 'number of investment',
     TextB: '$1,250',
+    iconColor: '#FF82AC',
+    iconBg: '#FFE0EB',
   },
   {
     icon: <FaMoneyBillTransfer />,
     TextA: 'rate of return',
     TextB: '+5.80%',
+    iconColor: '#396AFF',
+    iconBg: '#E7EDFF',
   },
 ]
 export const investmentGrid = [
@@ -588,13 +594,17 @@ export const investmentData = [
     Serial: 5,
     Name: 'Tiktok',
     Price: '$670',
-    Return: '12%',
+    Return: '-12%',
     Textcolor: '#FE5C73',
   },
 ];
 export const MyInvestment = [
   {
     Icon: <BsApple/>,
+    IconBg: '#FFE0EB',
+    IconColor: '#FF82AC',
+    ColCaColor: '#16DBAA',
+    ColBColor: '#718EBF',
     ColAa: 'Apple Store',
     ColAb: 'E-Commerce, Marketplace',
     ColBa: '$54,000',
@@ -604,6 +614,10 @@ export const MyInvestment = [
   },
   {
     Icon: <SiSamsung/>,
+    IconBg: '#E7EDFF',
+    IconColor: '#4471FF',
+    ColCaColor: '#FE5C73',
+    ColBColor: '#718EBF',
     ColAa: 'Samsung Mobile',
     ColAb: 'E-Commerce, Marketplace',
     ColBa: '$25,300',
@@ -613,6 +627,10 @@ export const MyInvestment = [
   },
   {
     Icon: <SiTesla />,
+    IconBg: '#FFF5D9',
+    IconColor: '#FFBB38',
+    ColCaColor: '#16DBAA',
+    ColBColor: '#718EBF',
     ColAa: 'Tesla Motors',
     ColAb: 'Electric Vehicles',
     ColBa: '$8,200',
