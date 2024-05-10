@@ -82,25 +82,27 @@ const Investment = () => {
                         <h1 className=' font-semibold text-2xl'>Trending Stocks</h1>
                     </div>
 
-                    <div className=' my-3 gap-10'>
+                    <div className=' my-3 gap-10 bg-white p-5 rounded-2xl'>
 
-                        <ul className="grid grid-cols-4">
+                        <ul className="grid grid-cols-4 gap-2 font-semibold">
                             <h1>S/N</h1>
                             <h1>Name</h1>
                             <h1>Price</h1>
                             <h1>Return</h1>
                         </ul>
 
-                        {investmentData.map((item) => (
-                            <div key={item.Serial} className="">
-                                <ul className="grid grid-cols-4">
-                                    <li className=" list-none">{item.Serial}</li>
-                                    <li>{item.Name}</li>
-                                    <li>{item.Price}</li>
-                                    <li style={{ color: item.Textcolor }} className="flex justify-end w-fit">{item.Return}</li>
-                                </ul>
-                            </div>
-                        ))}
+                        <div className="my-4">
+                            {investmentData.map((item) => (
+                                <div key={item.Serial} className="my-3">
+                                    <ul className="grid grid-cols-4 gap-2">
+                                        <li className=" list-none font-semibold">{item.Serial}</li>
+                                        <li className="font-medium">{item.Name}</li>
+                                        <li className="font-medium">{item.Price}</li>
+                                        <li style={{ color: item.Textcolor }} className="font-medium flex justify-end w-fit">{item.Return}</li>
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
