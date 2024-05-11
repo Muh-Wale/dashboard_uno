@@ -404,26 +404,36 @@ export const CardSettings = [
     Icon: <HiCreditCard/>,
     TextA: 'Block Card',
     TextB: 'Instantly block card',
+    iconColor: '#FFBB38',
+    iconBg: '#FFF5D9',
   },
   {
     Icon: <BiLock/>,
     TextA: 'Change Pin Code',
     TextB: 'Choose another pin code',
+    iconColor: '#FF82AC',
+    iconBg: '#FFE0EB',
   },
   {
     Icon: <RiGoogleLine />,
     TextA: 'Add To Google Pay',
     TextB: 'Withdraw without any card',
+    iconColor: '#FF82AC',
+    iconBg: '#FFE0EB',
   },
   {
     Icon: <BsApple/>,
     TextA: 'Add To Apple Pay',
     TextB: 'Withdraw without any card',
+    iconColor: '#16DBCC',
+    iconBg: '#DCFAF8',
   },
   {
     Icon: <BsApple/>,
     TextA: 'Add To Apple Store',
     TextB: 'Withdraw without any card',
+    iconColor: '#16DBCC',
+    iconBg: '#DCFAF8',
   },
 ]
 export const CardList = [

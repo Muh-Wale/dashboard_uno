@@ -1,5 +1,5 @@
 import { useStateContext } from '../contexts/ContextProvider';
-import { CardList, MyCard } from '../data/dummy';
+import { CardList, CardSettings, MyCard } from '../data/dummy';
 import PieDos from '../data/PieDos.png'
 
 const CreditCards = () => {
@@ -105,7 +105,70 @@ const CreditCards = () => {
                 </div>
             </section>
 
-            
+            <section className=' p-5 flex justify-between flex-wrap mt-14 md:mt-0 '>
+                <div className='w-full xl:w-5/6 2xl:w-4/6'>
+                    <div className='flex justify-between items-center'>
+                        <h1 className=' font-semibold text-2xl'>Add New Card</h1>
+                    </div>
+
+                    <div className='my-3 bg-white rounded-2xl'>
+                        <div className='p-5'>
+                            <div className='my-2'>
+                                <p className='text-[#718EBF] font-medium text-lg'>Credit Card generally means a plastic card issued by Scheduled Commercial Banks assigned to a Cardholder, with a credit limit, that can be used to purchase goods and services on credit or obtain cash advances.</p>
+                            </div>
+
+                            <div className='flex flex-wrap justify-between my-8'>
+                                <div className='w-full md:w-fit'>
+                                    <h1 className='font-medium my-2'>Card Type</h1>
+                                    <input type="text" placeholder='Classic' className=' placeholder:text-[#718EBF] border-[#718EBF] border-2 px-3 py-4 focus:outline-[#718EBF] rounded-2xl w-full md:w-[300px]'/>
+                                </div>
+
+                                <div className='w-full md:w-fit'>
+                                    <h1 className='font-medium my-2'>Name On Cards</h1>
+                                    <input type="text" placeholder='My Cards' className=' placeholder:text-[#718EBF] border-[#718EBF] border-2 px-3 py-4 focus:outline-[#718EBF] rounded-2xl w-full md:w-[300px]'/>
+                                </div>
+
+                                <div className='w-full md:w-fit'>
+                                    <h1 className='font-medium my-2'>Card Number</h1>
+                                    <input type='number' placeholder='**** **** **** ****' className=' placeholder:text-[#718EBF] border-[#718EBF] border-2 px-3 py-4 focus:outline-[#718EBF] rounded-2xl w-full md:w-[300px]'/>
+                                </div>
+
+                                <div className='w-full md:w-fit'>
+                                    <h1 className='font-medium my-2'>Expiration Date</h1>
+                                    <input type="text" placeholder='25 January 2025' className=' placeholder:text-[#718EBF] border-[#718EBF] border-2 px-3 py-4 focus:outline-[#718EBF] rounded-2xl w-full md:w-[300px]'/>
+                                </div>
+                            </div>
+
+                            <div className='my-3'>
+                                <button className='px-8 py-3 rounded-2xl text-white font-medium bg-[#1814F3]'>
+                                Add Card
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className='w-full lg:w-fit max-w-[450px]'>
+                    <div>
+                        <h1 className=' font-semibold text-2xl'>Card Settings</h1>
+                    </div>
+
+                    <div className='bg-white rounded-2xl my-3 py-2'>
+                        {CardSettings.map((item) =>(
+                            <div key={item.TextA} className='px-8 flex gap-5 w-full items-center'>
+                                <div className='my-5 w-fit text-2xl p-3 rounded-2xl' style={{ backgroundColor: item.iconBg, color: item.iconColor }}>
+                                    {item.Icon}
+                                </div>
+
+                                <div className='my-5'>
+                                    <h1 className=' font-medium'>{item.TextA}</h1>
+                                    <p className=' text-[#718EBF] font-light'>{item.TextB}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
         </>
     )
 }
