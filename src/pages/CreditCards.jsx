@@ -7,7 +7,7 @@ const CreditCards = () => {
 
     return (
         <>
-            <section className={`p-5 flex justify-between flex-wrap ${ activeMenu ? 'mt-20 md:mt-5' : 'mt-20' } bg-white md:bg-[#E5E5E5]`}>
+            <section className={`p-5 flex justify-between flex-wrap ${ activeMenu ? 'mt-20 md:mt-5' : 'mt-20' } bg-[#E5E5E5]`}>
                 <div className='w-full md:1/3'>
                     <div className='flex items-center'>
                         <h1 className=' font-semibold text-2xl'>My Cards</h1>
@@ -61,37 +61,51 @@ const CreditCards = () => {
                     </div>
                 </div>
 
-                <div className='w-full lg:w-7/12 xl:w-3/6 2xl:w-3/5'>
+                <div className='w-full lg:w-fit 2xl:w-3/5'>
                     <div>
                         <h1 className=' font-semibold text-2xl'>Recent Transaction</h1>
                     </div>
 
                     <div className=''>
                         {CardList.map((item) =>(
-                            <div key={item.ColAa} className='px-5 py-4 grid grid-cols-5 md:grid-cols-6 gap-3 md:gap-7 items-center bg-white rounded-2xl my-3 w-full md:w-fit'>
-                                <div className='text-2xl p-3 rounded-2xl w-fit col-span-1' style={{ backgroundColor: item.IconBg, color: item.IconColor }}>
-                                    {item.Icon}
+                            <div key={item.ColAa} className=' p-2 md:px-5 md:py-4 flex justify-between gap-3 md:gap-7 items-center bg-white rounded-2xl my-3 w-full md:w-full'>
+                                
+                                <div className='flex gap-4'>
+                                    <div className='text-2xl p-3 rounded-2xl w-fit' style={{ backgroundColor: item.IconBg, color: item.IconColor }}>
+                                        {item.Icon}
+                                    </div>
+                                
+                                    <div className=''>
+                                        <h1 className='font-medium'>{item.ColAa}</h1>
+                                        <p className=' font-light text-[#718EBF]' >{item.ColAb}</p>
+                                    </div>
                                 </div>
                             
-                                <div className='col-span-2'>
-                                    <h1 className='font-medium'>{item.ColAa}</h1>
-                                    <p className='' style={{ color: item.ColBColor }}>{item.ColAb}</p>
-                                </div>
-                            
-                                <div className="md:flex flex-col col-span-2 hidden">
+                                <div className="md:flex flex-col">
                                     <h1 className='font-medium'>{item.ColBa}</h1>
-                                    <p className='' style={{ color: item.ColBColor }}>{item.ColBb}</p>
+                                    <p className='font-light text-[#718EBF]' >{item.ColBb}</p>
                                 </div>
                             
-                                <div className='font-medium col-span-2 md:col-span-1 flex flex-col justify-end'>
-                                    <h1 className='font-medium' style={{ color: item.ColCaColor }}>{item.ColCa}</h1>
-                                    <p className='' style={{ color: item.ColBColor }}>{item.ColCb}</p>
+                                <div className='md:flex flex-col hidden'>
+                                    <h1 className='font-medium'>{item.ColCa}</h1>
+                                    <p className='font-light text-[#718EBF]'>{item.ColCb}</p>
+                                </div>
+
+                                <div className='md:flex flex-col hidden'>
+                                    <h1 className='font-medium'>{item.ColDa}</h1>
+                                    <p className='font-light text-[#718EBF]'>{item.ColDb}</p>
+                                </div>
+
+                                <div className=''>
+                                    <h1 className='font-medium text-[#1814F3]'>{item.Details}</h1>
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
+
+            
         </>
     )
 }
