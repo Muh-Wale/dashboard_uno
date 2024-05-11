@@ -1,10 +1,13 @@
 import { MyCard} from '../data/dummy';
 import  BarStatDos  from '../data/BarStatDos.png';
+import { useStateContext } from '../contexts/ContextProvider';
 
 const Transactions = () => {
+    const { activeMenu } = useStateContext();
+
     return (
         <>
-            <section className=' p-5 flex justify-between flex-wrap mt-14 md:mt-0 bg-white md:bg-[#E5E5E5]'>
+            <section className={`p-5 flex justify-between flex-wrap ${ activeMenu ? 'mt-20 md:mt-5' : 'mt-20' } bg-[#E5E5E5]`}>
                 <div className='w-full xl:w-5/6 2xl:w-8/12'>
                     <div className='flex justify-between items-center'>
                         <h1 className=' font-semibold text-2xl'>My Cards</h1>

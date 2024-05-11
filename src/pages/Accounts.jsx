@@ -1,11 +1,13 @@
 import { AccountsInvoice, AccountsMain, LastAcct, MyCard } from "../data/dummy"
 import  BarStatTres  from '../data/BarStatTres.png';
-
+import { useStateContext } from '../contexts/ContextProvider';
 
 const Accounts = () => {
+    const { activeMenu } = useStateContext();
+
     return (
         <>
-            <section className="mt-20 md:mt-5">
+            <section className={`${ activeMenu ? 'mt-20 md:mt-5' : 'mt-20' } p-5`}>
                 <div className="flex justify-between items-center flex-wrap gap-x-0 gap-y-3 md:gap-5 p-2 md:p-5">
                     {AccountsMain.map((item) => (
                         <div key={item.TextB} className="flex justify-center gap-3 md:gap-5 2xl:gap-12 p-5 rounded-2xl bg-white items-center max-w-[200px] 2xl:max-w-[230px] w-full">

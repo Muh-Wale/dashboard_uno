@@ -1,11 +1,14 @@
 import { investmentData, InvestmentsMain, MyInvestment } from "../data/dummy"
 import  FlowGraphDos  from '../data/FlowGraphDos.png';
 import  FlowGraphTres  from '../data/FlowGraphTres.png';
+import { useStateContext } from '../contexts/ContextProvider';
 
 const Investment = () => {
+    const { activeMenu } = useStateContext();
+
     return (
         <>
-            <section className="mt-20 md:mt-5 p-5">
+            <section className={`${ activeMenu ? 'mt-20 md:mt-5' : 'mt-20' } p-5`}>
                 <div className="flex justify-between flex-wrap gap-5">
                     {InvestmentsMain.map((item) => (
                         <div key={item.TextB} className=" grid grid-cols-3 gap-3 md:gap-5 2xl:gap-12 p-5 rounded-2xl bg-white items-center w-full max-w-[320px] col-span-1">
@@ -22,7 +25,7 @@ const Investment = () => {
                 </div>
             </section>
 
-            <section className='p-5 flex justify-between gap-5 flex-wrap bg-white md:bg-[#E5E5E5]'>
+            <section className='p-5 flex justify-between gap-5 flex-wrap bg-[#E5E5E5]'>
                 <div className='w-fit'>
                     <div>
                         <h1 className=' font-semibold text-2xl'>Yearly Total Investment</h1>
@@ -46,14 +49,14 @@ const Investment = () => {
 
             <section className=' p-5 flex justify-between gap-2 flex-wrap mt-14 md:mt-0 bg-[#E5E5E5]'>
 
-                <div className='w-full xl:w-3/6 2xl:w-3/5'>
+                <div className='w-full lg:w-7/12 xl:w-3/6 2xl:w-3/5'>
                     <div>
                         <h1 className=' font-semibold text-2xl'>Recent Transaction</h1>
                     </div>
 
                     <div className=''>
                         {MyInvestment.map((item) =>(
-                            <div key={item.ColAa} className='px-5 py-4 grid grid-cols-4 md:grid-cols-6  gap-7 items-center bg-white rounded-2xl my-3 w-fit'>
+                            <div key={item.ColAa} className='px-5 py-4 grid grid-cols-5 md:grid-cols-6 gap-3 md:gap-7 items-center bg-white rounded-2xl my-3 w-full md:w-fit'>
                                 <div className='text-2xl p-3 rounded-2xl w-fit col-span-1' style={{ backgroundColor: item.IconBg, color: item.IconColor }}>
                                     {item.Icon}
                                 </div>
@@ -68,7 +71,7 @@ const Investment = () => {
                                     <p className='' style={{ color: item.ColBColor }}>{item.ColBb}</p>
                                 </div>
                             
-                                <div className='font-medium col-span-1 flex flex-col justify-end'>
+                                <div className='font-medium col-span-2 md:col-span-1 flex flex-col justify-end'>
                                     <h1 className='font-medium' style={{ color: item.ColCaColor }}>{item.ColCa}</h1>
                                     <p className='' style={{ color: item.ColBColor }}>{item.ColCb}</p>
                                 </div>
@@ -77,14 +80,14 @@ const Investment = () => {
                     </div>
                 </div>
 
-                <div className=' w-fit xl:w-2/6 2xl:2/5 max-w-[450px]'>
+                <div className=' w-fit xl:w-2/6 2xl:2/5 max-w-[500px] lg:max-w-[450px]'>
                     <div className='flex justify-between items-center'>
                         <h1 className=' font-semibold text-2xl'>Trending Stocks</h1>
                     </div>
 
                     <div className=' my-3 gap-10 bg-white p-5 rounded-2xl'>
 
-                        <ul className="grid grid-cols-4 gap-2 font-semibold">
+                        <ul className="grid grid-cols-4 gap-5 lg:gap-2 font-semibold">
                             <h1>S/N</h1>
                             <h1>Name</h1>
                             <h1>Price</h1>
@@ -94,7 +97,7 @@ const Investment = () => {
                         <div className="my-4">
                             {investmentData.map((item) => (
                                 <div key={item.Serial} className="my-3">
-                                    <ul className="grid grid-cols-4 gap-2">
+                                    <ul className="grid grid-cols-4 gap-5 lg:gap-2">
                                         <li className=" list-none font-semibold">{item.Serial}</li>
                                         <li className="font-medium">{item.Name}</li>
                                         <li className="font-medium">{item.Price}</li>

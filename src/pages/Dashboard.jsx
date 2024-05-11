@@ -4,11 +4,14 @@ import  PieUno  from '../data/PieUno.png';
 import  FlowGraph  from '../data/FlowGraph.png';
 import { FaGreaterThan } from 'react-icons/fa';
 import { GrSend } from 'react-icons/gr';
+import { useStateContext } from '../contexts/ContextProvider';
 
 const Dashboard = () => {
+    const { activeMenu } = useStateContext();
+
     return (
         <>
-            <section className=' p-5 flex justify-between flex-wrap mt-14 md:mt-0 bg-white md:bg-[#E5E5E5]'>
+            <section className={`p-5 flex justify-between flex-wrap ${ activeMenu ? 'mt-20 md:mt-5' : 'mt-20' } bg-white md:bg-[#E5E5E5]`}>
                 <div className='w-full xl:w-5/6 2xl:w-4/6'>
                     <div className='flex justify-between items-center'>
                         <h1 className=' font-semibold text-2xl'>My Cards</h1>

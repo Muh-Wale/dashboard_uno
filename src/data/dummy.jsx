@@ -429,6 +429,8 @@ export const CardSettings = [
 export const CardList = [
   {
     Icon: <HiCreditCard />,
+    IconBg: '#FFE0EB',
+    IconColor: '#FF82AC',
     ColAa: 'Card Type',
     ColAb: 'Secondary',
     ColBa: 'Bank',
@@ -441,6 +443,8 @@ export const CardList = [
   },
   {
     Icon: <HiCreditCard />,
+    IconBg: '#E7EDFF',
+    IconColor: '#4471FF',
     ColAa: 'Card Type',
     ColAb: 'Secondary',
     ColBa: 'Bank',
@@ -453,6 +457,8 @@ export const CardList = [
   },
   {
     Icon: <HiCreditCard />,
+    IconBg: '#FFF5D9',
+    IconColor: '#FFBB38',
     ColAa: 'Card Type',
     ColAb: 'Secondary',
     ColBa: 'Bank',
