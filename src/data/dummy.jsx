@@ -136,21 +136,29 @@ export const LoansMain = [
     icon: <FaUser />,
     TextA: 'Personal Loans',
     TextB: '$50,000',
+    iconColor: '#396AFF',
+    iconBg: '#E7EDFF',
   },
   {
     icon: <MdAccountBalanceWallet />,
     TextA: 'Corporate Loans',
     TextB: '$100,000',
+    iconColor: '#FFBB38',
+    iconBg: '#FFF5D9',
   },
   {
     icon: <MdSavings />,
     TextA: 'Business Loans',
     TextB: '$500,000',
+    iconColor: '#FF82AC',
+    iconBg: '#FFE0EB',
   },
   {
     icon: <FaTools />,
     TextA: 'Personal Loans',
-    TextB: 'Choose Money',
+    TextB: 'Choose',
+    iconColor: '#16DBCC',
+    iconBg: '#DCFAF8',
   },
 ]
 export const loansGrid = [
@@ -308,24 +316,32 @@ export const loansData = [
 
 export const ServicesMain = [
   {
-    Icon: <MdHealthAndSafety/>,
+    icon: <MdHealthAndSafety/>,
     TextA: 'Life Insurance',
     TextB: 'Unlimited protection',
+    iconColor: '#396AFF',
+    iconBg: '#E7EDFF',
   },
   {
-    Icon: <AiFillShopping />,
+    icon: <AiFillShopping />,
     TextA: 'Shopping',
     TextB: 'Buy.Think.Grow',
+    iconColor: '#FFBB38',
+    iconBg: '#FFF5D9'
   },
   {
-    Icon: <AiFillSafetyCertificate />,
+    icon: <AiFillSafetyCertificate />,
     TextA: 'Safety',
     TextB: 'We are your allies',
+    iconColor: '#16DBCC',
+    iconBg: '#DCFAF8',
   },
 ]
 export const ServicesList = [
   {
     Icon: <GiCash />,
+    IconBg: '#FFE0EB',
+    IconColor: '#FF82AC',
     ColAa: 'Business loans',
     ColAb: 'It is a long established',
     ColBa: 'Lorem ipsum',
@@ -338,6 +354,8 @@ export const ServicesList = [
   },
   {
     Icon: <FaBriefcase/>,
+    IconBg: '#FFF5D9',
+    IconColor: '#FFBB38',
     ColAa: 'Checking Accounts',
     ColAb: 'It is a long established',
     ColBa: 'Lorem ipsum',
@@ -350,6 +368,8 @@ export const ServicesList = [
   },
   {
     Icon: <MdSavings />,
+    IconBg: '#FFE0EB',
+    IconColor: '#FF82AC',
     ColAa: 'Savings Accounts',
     ColAb: 'It is a long established',
     ColBa: 'Lorem ipsum',
@@ -362,7 +382,9 @@ export const ServicesList = [
   },
   {
     Icon: <FaUser />,
-    ColAa: 'Debit and credit cards',
+    IconBg: '#E7EDFF',
+    IconColor: '#4471FF',
+    ColAa: 'Debit/credit cards',
     ColAb: 'It is a long established',
     ColBa: 'Lorem ipsum',
     ColBb: 'Lorem ipsum',
@@ -374,6 +396,8 @@ export const ServicesList = [
   },
   {
     Icon: <AiFillSafetyCertificate />,
+    IconBg: '#DCFAF8',
+    IconColor: '#16DBCC',
     ColAa: 'Life insurance',
     ColAb: 'It is a long established',
     ColBa: 'Lorem ipsum',
@@ -386,6 +410,8 @@ export const ServicesList = [
   },
   {
     Icon: <GiCash />,
+    IconBg: '#FFE0EB',
+    IconColor: '#FF82AC',
     ColAa: 'Business Loans',
     ColAb: 'It is a long established',
     ColBa: 'Lorem ipsum',

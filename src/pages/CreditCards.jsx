@@ -148,7 +148,7 @@ const CreditCards = () => {
                     </div>
                 </div>
 
-                <div className='w-full lg:w-fit max-w-[450px]'>
+                <div className='w-full md:w-fit max-w-[450px]'>
                     <div>
                         <h1 className=' font-semibold text-2xl'>Card Settings</h1>
                     </div>
