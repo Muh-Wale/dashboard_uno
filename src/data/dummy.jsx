@@ -398,7 +398,7 @@ export const ServicesList = [
   },
 ];
 
-
+//Card Settings//
 export const CardSettings = [
   {
     Icon: <HiCreditCard/>,
