@@ -11,12 +11,13 @@ export const ContextProvider = ({ children }) => {
     const [isClicked, setIsClicked] = useState(false);
     const [activeSearch, setActiveSearch] = useState(true);
     const [activeContent, setActiveContent] = useState(null);
+    const [isOn, setIsOn] = useState(false);
 
 
 
     return (
         // eslint-disable-next-line react/jsx-no-constructed-context-values
-        <StateContext.Provider value={{ activeMenu, setActiveMenu, screenSize, setScreenSize, clickedText, setClickedText, isClicked, setIsClicked, activeSearch, setActiveSearch, activeContent, setActiveContent }}>
+        <StateContext.Provider value={{ activeMenu, setActiveMenu, screenSize, setScreenSize, clickedText, setClickedText, isClicked, setIsClicked, activeSearch, setActiveSearch, activeContent, setActiveContent, isOn, setIsOn }}>
         {children}
         </StateContext.Provider>
     );
