@@ -13,9 +13,9 @@ const CreditCards = () => {
                         <h1 className=' font-semibold text-2xl'>My Cards</h1>
                     </div>
 
-                    <div className='flex flex-col flex-wrap md:flex-row  my-3 gap-10'>
+                    <div className='flex flex-col flex-wrap md:flex-row justify-normal xl:justify-between  my-3 gap-10'>
                         {MyCard.map((item) => (
-                            <div key={item.id} style={{ backgroundColor: item.BgA, color: item.TextColor }} className=' rounded-2xl w-full shadow-2xl max-w-[380px] md:max-w-[350px] lg:max-w-[380px]'>
+                            <div key={item.id} style={{ backgroundColor: item.BgA, color: item.TextColor }} className={` rounded-2xl w-full shadow-2xl max-w-[380px] ${activeMenu ? 'lg:max-w-[45%] xl:max-w-[30%]' : ' md:max-w-[45%]'} `}>
                                 <div className='flex justify-between items-center px-5 pt-5'>
                                     <div>
                                         <p className='text-xs'>{item.ColAa}</p>
@@ -86,7 +86,7 @@ const CreditCards = () => {
                                     <p className='font-light text-[#718EBF]' >{item.ColBb}</p>
                                 </div>
                             
-                                <div className={`${activeMenu ? '2xl:flex flex-col hidden' : 'lg:flex flex-col hidden'}`}>
+                                <div className={`${activeMenu ? '2xl:flex flex-col hidden' : 'xl:flex flex-col hidden'}`}>
                                     <h1 className='font-medium'>{item.ColCa}</h1>
                                     <p className='font-light text-[#718EBF]'>{item.ColCb}</p>
                                 </div>
