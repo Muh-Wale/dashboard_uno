@@ -30,7 +30,7 @@ const Settings = () => {
             <section className={`${ activeMenu ? 'mt-20 md:mt-5' : 'mt-20' } p-5`}>
                 <div className='w-full bg-white rounded-2xl'>
 
-                    <div className='my-3 p-3 md:p-7'>
+                    <div className='my-3 px-3 pt-3 md:px-7 md:pt-7'>
                         <div className=''>
                             <div className=' flex gap-1 justify-between md:justify-normal md:gap-5 py-2 border-b md:border-b-2 border-[#F4F5F7]'>
                                 <div className='w-fit' onClick={() => handleDivClick('profile')}>

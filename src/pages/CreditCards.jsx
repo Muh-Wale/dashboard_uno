@@ -51,7 +51,7 @@ const CreditCards = () => {
 
             <section className=' p-5 flex justify-between gap-2 flex-wrap mt-14 md:mt-0 bg-[#E5E5E5]'>
 
-                <div className=' w-fit xl:w-2/6 2xl:2/5 max-w-[500px] lg:max-w-[450px]'>
+                <div className={`${activeMenu ? 'w-fit xl:w-2/6 2xl:2/5 max-w-[500px] lg:max-w-[450px]' : 'w-fit md:w-2/5 xl:w-2/6 2xl:2/5 max-w-[500px] lg:max-w-[450px]'}`}>
                     <div className='flex justify-between items-center'>
                         <h1 className=' font-semibold text-2xl'>Trending Stocks</h1>
                     </div>
@@ -61,14 +61,14 @@ const CreditCards = () => {
                     </div>
                 </div>
 
-                <div className='w-full lg:w-fit 2xl:w-3/5'>
+                <div className={`w-full md:w-fit lg:w-fit 2xl:w-3/5 max-w-full  xl:max-w-full ${activeMenu ? 'md:max-w-[100%]' : 'md:max-w-[70%]'}`}>
                     <div>
                         <h1 className=' font-semibold text-2xl'>Recent Transaction</h1>
                     </div>
 
                     <div className=''>
                         {CardList.map((item) =>(
-                            <div key={item.ColAa} className=' p-2 md:px-5 md:py-4 flex justify-between gap-3 md:gap-7 items-center bg-white rounded-2xl my-3 w-full md:w-full'>
+                            <div key={item.ColAa} className={`p-2 md:px-5 md:py-4 flex justify-between gap-3 md:gap-7 items-center bg-white rounded-2xl my-3 w-full md:w-full ${activeMenu ? '' : ''}`}>
                                 
                                 <div className='flex gap-4'>
                                     <div className='text-2xl p-3 rounded-2xl w-fit' style={{ backgroundColor: item.IconBg, color: item.IconColor }}>
@@ -86,12 +86,12 @@ const CreditCards = () => {
                                     <p className='font-light text-[#718EBF]' >{item.ColBb}</p>
                                 </div>
                             
-                                <div className='md:flex flex-col hidden'>
+                                <div className={`${activeMenu ? '2xl:flex flex-col hidden' : 'lg:flex flex-col hidden'}`}>
                                     <h1 className='font-medium'>{item.ColCa}</h1>
                                     <p className='font-light text-[#718EBF]'>{item.ColCb}</p>
                                 </div>
 
-                                <div className='md:flex flex-col hidden'>
+                                <div className={`${activeMenu ? 'lg:flex flex-col hidden' : 'lg:flex flex-col hidden'}`}>
                                     <h1 className='font-medium'>{item.ColDa}</h1>
                                     <p className='font-light text-[#718EBF]'>{item.ColDb}</p>
                                 </div>
@@ -106,7 +106,7 @@ const CreditCards = () => {
             </section>
 
             <section className=' p-5 flex justify-between flex-wrap mt-14 md:mt-0 '>
-                <div className='w-full xl:w-5/6 2xl:w-4/6'>
+                <div className={`${ activeMenu ? 'w-full md:w-[70%] lg:w-[60%] 2xl:w-4/6' : 'w-full md:w-[55%] lg:w-4/6 2xl:w-4/6' }`}>
                     <div className='flex justify-between items-center'>
                         <h1 className=' font-semibold text-2xl'>Add New Card</h1>
                     </div>
