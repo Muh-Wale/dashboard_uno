@@ -26,38 +26,38 @@ const Accounts = () => {
 
             <section className=' p-5 flex justify-between gap-2 flex-wrap mt-14 md:mt-0 bg-[#E5E5E5]'>
 
-                <div className='w-full xl:w-3/6 2xl:w-3/5'>
+                <div className='w-full md:w-fit lg:w-[55%] xl:w-3/6 2xl:w-3/5 max-w-none md:max-w-[60%] lg:max-w-none'>
                     <div>
                         <h1 className=' font-semibold text-2xl'>Recent Transaction</h1>
                     </div>
 
                     <div className='bg-white rounded-2xl my-3 w-fit'>
                         {LastAcct.map((item) =>(
-                            <div key={item.TextD} className='px-5 py-4 grid grid-cols-4 md:grid-cols-7  gap-7 items-center'>
+                            <div key={item.TextD} className={` px-5 py-4 grid gap-7 md:gap-3 lg:gap-7 items-center ${activeMenu ? 'grid-cols-4 md:grid-cols-5 xl:grid-cols-7' : 'grid-cols-4 md:grid-cols-5 lg:grid-cols-7'}`}>
                                 <div className='text-2xl p-3 rounded-2xl w-fit col-span-1' style={{ backgroundColor: item.IconBg, color: item.IconColor }}>
                                     {item.Icon}
                                 </div>
                             
-                                <div className='col-span-2'>
+                                <div className={`${activeMenu ? 'col-span-2 ' : 'col-span-2 '}`}>
                                     <h1 className='font-medium'>{item.ColAa}</h1>
-                                    <p className='text-gray-300 font-light'>{item.ColAb}</p>
+                                    <p className='text-[#718EBF] font-light'>{item.ColAb}</p>
                                 </div>
                             
-                                <div className="md:flex flex-row gap-7 col-span-3 hidden">
+                                <div className={` md:flex flex-row gap-7 hidden ${activeMenu ? 'col-span-1 xl:col-span-3' : 'col-span-1 lg:col-span-3'}`}>
                                     <div>
-                                        <h1 className="text-gray-300 font-light">{item.TextA}</h1>
+                                        <h1 className="text-[#718EBF] font-light">{item.TextA}</h1>
                                     </div>
                             
                                     <div>
-                                        <h1 className="text-gray-300 font-light">{item.TextB}</h1>
+                                        <h1 className={`text-[#718EBF] font-light ${activeMenu ? ' block md:hidden xl:block' : ' block md:hidden lg:block'}`}>{item.TextB}</h1>
                                     </div>
                             
                                     <div>
-                                        <h1 className="text-gray-300 font-light">{item.TextC}</h1>
+                                        <h1 className="text-[#718EBF] font-light block md:hidden xl:block">{item.TextC}</h1>
                                     </div>
                                 </div>
                             
-                                <div className='font-medium col-span-1 flex justify-end' style={{ color: item.Textcolor }}>
+                                <div className={`font-medium flex justify-end ${activeMenu ? ' col-span-1 md:col-span-1 lg:col-span-1 ' : ' col-span-1 md:col-span-1 lg:col-span-1 '}`} style={{ color: item.Textcolor }}>
                                     {item.TextD}
                                 </div>
                             </div>
@@ -65,7 +65,7 @@ const Accounts = () => {
                     </div>
                 </div>
 
-                <div className=' w-fit xl:w-2/6 2xl:2/5 max-w-[450px]'>
+                <div className={`${activeMenu ? ' w-full lg:w-[38%] xl:w-2/6 2xl:2/5 max-w-[400px]' : ' w-full lg:w-full xl:w-2/6 2xl:2/5 max-w-[450px]'}`}>
                     <div className='flex justify-between items-center'>
                         <h1 className=' font-semibold text-2xl'>My Cards</h1>
                         <p className=' font-semibold text-lg hover:underline cursor-pointer'>See All</p>
