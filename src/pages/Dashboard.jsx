@@ -90,19 +90,19 @@ const Dashboard = () => {
                     </div>
                 </div>
 
-                <div className='w-fit'>
+                <div className='w-full md:w-fit'>
                     <div>
                         <h1 className=' font-semibold text-2xl'>Expense Statistics</h1>
                     </div>
 
-                    <div className=' w-full  bg-white p-5 rounded-2xl my-4'>
+                    <div className=' w-full flex justify-center md:justify-normal bg-white p-5 rounded-2xl my-4'>
                         <img src={PieUno} alt="" />
                     </div>
                 </div>
             </section>
 
             <section className='p-5 flex justify-between flex-wrap bg-white md:bg-[#E5E5E5]'>
-                <div className=' w-fit '>
+                <div className=' w-full md:w-fit '>
                     <div>
                         <h1 className=' font-semibold text-2xl'>Quick Transfer</h1>
                     </div>
@@ -148,7 +148,7 @@ const Dashboard = () => {
                     </div>
                 </div>
 
-                <div className='w-fit lg:w-7/12 2xl:w-fit'>
+                <div className={`${activeMenu ? 'w-full lg:w-full 2xl:w-fit' : 'w-full lg:w-7/12 2xl:w-fit'}`}>
                     <div>
                         <h1 className=' font-semibold text-2xl'>Balance History</h1>
                     </div>
