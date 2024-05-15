@@ -108,24 +108,24 @@ const Accounts = () => {
             </section>
 
             <section className=' p-5 flex justify-between flex-wrap mt-14 md:mt-0 '>
-                <div className='w-full xl:w-5/6 2xl:w-4/6'>
+                <div className={`${activeMenu ? 'w-full md:w-[100%] xl:w-5/6 2xl:w-4/6 ' : 'w-full md:w-[60%] xl:w-5/6 2xl:w-4/6 '}`}>
                     <div className='flex justify-between items-center'>
                         <h1 className=' font-semibold text-2xl'>My Cards</h1>
                     </div>
 
                     <div className='my-3'>
-                        <img src={BarStatTres} alt="" />
+                        <img src={BarStatTres} alt="" className="w-[100%]"/>
                     </div>
                 </div>
 
-                <div className='w-full lg:w-fit max-w-[450px]'>
+                <div className={`${activeMenu ? 'w-full lg:w-fit max-w-[450px]' : 'w-full md:w-fit lg:w-fit max-w-[450px]'}`}>
                     <div>
                         <h1 className=' font-semibold text-2xl'>Invoices Sent</h1>
                     </div>
 
                     <div className='bg-white rounded-2xl my-3 py-2'>
                         {AccountsInvoice.map((item) =>(
-                            <div key={item.TextA} className='px-8 grid grid-cols-4 gap-5 w-full items-center'>
+                            <div key={item.TextA} className='px-8 md:px-4 lg:px-8 grid grid-cols-4 gap-5 md:gap-2 lg:gap-5 w-full items-center'>
                                 <div className='my-5 w-fit text-2xl p-3 rounded-2xl col-span-1' style={{ backgroundColor: item.iconBg, color: item.iconColor }}>
                                     {item.icon}
                                 </div>
