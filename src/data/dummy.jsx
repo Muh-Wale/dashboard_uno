@@ -27,7 +27,7 @@ export const links = [
     id: 1,
     name: 'Dashboard',
     icon: <TiHome/>,
-    path: 'dashboard',
+    path: '',
   },
   {
     id: 2,
