@@ -1,10 +1,17 @@
-import Profile from '../components/Profile'
-import Preferences from '../components/Preferences'
-import Security from '../components/Security'
+import { useState, useEffect } from 'react';
+import Profile from '../components/Profile';
+import Preferences from '../components/Preferences';
+import Security from '../components/Security';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const Settings = () => {
     const { activeMenu, activeContent, setActiveContent } = useStateContext();
+    
+    // Set default active content to 'profile' when component mounts
+    useEffect(() => {
+        setActiveContent('profile');
+    }, []);
+
     const handleDivClick = (content) => {
         setActiveContent(content);
     };
@@ -14,7 +21,7 @@ const Settings = () => {
             case 'profile':
                 return <Profile />;
             case 'preferences':
-                return <Preferences/>;
+                return <Preferences />;
             case 'security':
                 return <Security />;
             default:
@@ -34,33 +41,17 @@ const Settings = () => {
                         <div className=''>
                             <div className=' flex gap-1 justify-between md:justify-normal md:gap-5 py-2 border-b md:border-b-2 border-[#F4F5F7]'>
                                 <div className='w-fit' onClick={() => handleDivClick('profile')}>
-                                    <a className={normalLink}>Edit Profile</a>
+                                    <a className={activeContent === 'profile' ? activeLink : normalLink}>Edit Profile</a>
                                 </div>
 
                                 <div className='w-fit' onClick={() => handleDivClick('preferences')}>
-                                    <a className={normalLink}>Preferences</a>
+                                    <a className={activeContent === 'preferences' ? activeLink : normalLink}>Preferences</a>
                                 </div>
 
                                 <div className='w-fit' onClick={() => handleDivClick('security')}>
-                                    <a className={normalLink}>Security</a>
+                                    <a className={activeContent === 'security' ? activeLink : normalLink}>Security</a>
                                 </div>
                             </div>
-
-                            {/* <div className=' flex gap-5 py-2 border-b-2 border-[#F4F5F7]'>
-                                <div>
-                                    <a className={({ isActive }) => (isActive ? `${activeLink} navlink` : `${normalLink}`)}>Edit Profile</a>
-                                </div>
-
-                                <div>
-                                    <a className={({ isActive }) => (isActive ? `${activeLink} navlink` : `${normalLink}`)}>Preferences</a>
-                                </div>
-
-                                <div>
-                                    <a className={({ isActive }) => (isActive ? `${activeLink} navlink` : `${normalLink}`)}>Security</a>
-                                </div>
-                            </div> */}
-
-
 
                         </div>
                     </div>
@@ -75,4 +66,4 @@ const Settings = () => {
     )
 }
 
-export default Settings
+export default Settings;
