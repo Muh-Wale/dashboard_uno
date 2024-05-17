@@ -127,6 +127,38 @@ export const QuickTransfer = [
     Position: 'Designer',
   },
 ]
+export const DashboardBar = {
+  labels: ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"],
+  datasets: [
+    {
+      label: "Deposit",
+      data: [480, 350, 320, 450, 150, 400, 400],
+      backgroundColor: "#1814F3",
+      borderWidth: 1,
+      borderRadius: Number.MAX_VALUE,
+      borderSkipped: false,
+    },
+    {
+      label: "Withdraw",
+      data: [230, 130, 150, 380, 230, 230, 350],
+      backgroundColor: "#16DBCC",
+      borderWidth: 1,
+      borderRadius: Number.MAX_VALUE,
+      borderSkipped: false,
+    }
+  ]
+}
+export const DashboardPie = {
+  labels: ["Entertainment", "Bill Expense", "Others", "Investment"],
+  datasets: [
+    {
+      label: "Expenses",
+      data: [108, 54, 126, 72],
+      backgroundColor: ["#343C6A","#FC7900", "#1814F3", "#FA00FF"],
+      hoverOffset: 4,
+    },
+  ]
+}
 
 
 
@@ -312,7 +344,6 @@ export const loansData = [
 //     <p>{props.Name}</p>
 //   </div>
 // );
-
 
 export const ServicesMain = [
   {

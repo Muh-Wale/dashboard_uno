@@ -5,6 +5,8 @@ import  FlowGraph  from '../data/FlowGraph.png';
 import { FaGreaterThan } from 'react-icons/fa';
 import { GrSend } from 'react-icons/gr';
 import { useStateContext } from '../contexts/ContextProvider';
+import BarChart from '../components/BarChart';
+import PieChart from '../components/PieChart';
 
 const Dashboard = () => {
     const { activeMenu } = useStateContext();
@@ -85,8 +87,8 @@ const Dashboard = () => {
                         <h1 className=' font-semibold text-2xl'>Weekly Activity</h1>
                     </div>
 
-                    <div className=' w-full  bg-white p-5 rounded-2xl my-4'>
-                        <img src={BarStatUno} alt="" />
+                    <div className=' fit md:w-full  bg-white p-5 rounded-2xl my-4'>
+                        <BarChart/>
                     </div>
                 </div>
 
@@ -96,7 +98,7 @@ const Dashboard = () => {
                     </div>
 
                     <div className=' w-full flex justify-center md:justify-normal bg-white p-5 rounded-2xl my-4'>
-                        <img src={PieUno} alt="" />
+                        <PieChart/>
                     </div>
                 </div>
             </section>

@@ -19,7 +19,9 @@
     "@syncfusion/ej2-react-inputs": "^25.1.40",
     "@syncfusion/ej2-react-popups": "^25.1.41",
     "@syncfusion/ej2-react-richtexteditor": "^25.1.41",
+    "chart.js": "^4.4.3",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.1.0",
     "react-router-dom": "^6.23.0"
