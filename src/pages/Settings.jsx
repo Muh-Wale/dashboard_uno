@@ -34,7 +34,7 @@ const Settings = () => {
 
     return (
         <>
-            <section className={`${ activeMenu ? 'mt-20 md:mt-5' : 'mt-20' } p-5`}>
+            <section className={`${ activeMenu ? 'mt-[130px] md:mt-5' : 'mt-[130px] md:mt-20' } p-5`}>
                 <div className='w-full bg-white rounded-2xl'>
 
                     <div className='my-3 px-3 pt-3 md:px-7 md:pt-7'>
