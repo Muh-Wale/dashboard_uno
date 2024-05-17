@@ -29,7 +29,7 @@ const Settings = () => {
         }
     };
 
-    const activeLink = 'flex items-center pl-0 md:pl-4 rounded-lg xs:text-lg  text-[#718EBF]  sm:text-xl font-medium cursor-pointer';
+    const activeLink = 'flex items-center pl-0 md:pl-4 rounded-lg xs:text-lg  text-[#718EBF]  sm:text-xl font-medium cursor-pointer text-center settings-active';
     const normalLink = 'flex items-center pl-0 md:pl-4 rounded-lg xs:text-lg sm:text-xl font-medium text-[#718EBF] dark:text-gray-200 dark:hover:text-[#2d61ff9c] hover:bg-light-gray cursor-pointer';
 
     return (
@@ -49,7 +49,7 @@ const Settings = () => {
                                 </div>
 
                                 <div className='w-fit' onClick={() => handleDivClick('security')}>
-                                    <a className={activeContent === 'security' ? activeLink : normalLink}>Security</a>
+                                    <a className={activeContent === 'security' ? `${activeLink}` : `${normalLink}`}>Security</a>
                                 </div>
                             </div>
 

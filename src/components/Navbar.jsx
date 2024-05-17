@@ -48,10 +48,16 @@ const Navbar = () => {
                 className={ activeMenu ? 'cursor-pointer hidden' : 'block cursor-pointer' }
             >
                 <AiOutlineMenu 
-                    color='blue'
                     size={30}
                 />
             </div>
+
+            {activeSearch ? 
+            
+                'hdhdh' :
+
+                'yus'
+            }
 
             <div className=" flex items-center gap-4 ">
                 <div className='relative search-bar'>

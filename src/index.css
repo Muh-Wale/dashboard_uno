@@ -8,3 +8,10 @@
 .navlink::after {
     @apply content-[''] bg-[#2D60FF] h-[100%] w-[15px] -left-4 bottom-0  rounded-xl absolute duration-300;
 }
+
+.settings-active {
+    @apply relative;
+}
+.settings-active::after {
+    @apply content-[''] bg-[#2D60FF] h-[18%] w-[100%] left-0 md:left-[10px] -bottom-2 rounded-t-md absolute duration-300;
+}
