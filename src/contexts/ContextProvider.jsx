@@ -10,7 +10,7 @@ export const ContextProvider = ({ children }) => {
     const [clickedText, setClickedText] = useState('');
     const [isClicked, setIsClicked] = useState(false);
     const [activeSearch, setActiveSearch] = useState(true);
-    const [activeNav, setActiveNav] = useState(true);
+    const [activeNav, setActiveNav] = useState(false);
     const [activeContent, setActiveContent] = useState(null);
     const [isDigitalCurrencyChecked, setIsDigitalCurrencyChecked] = useState(true);
     const [isMerchantOrderChecked, setIsMerchantOrderChecked] = useState(true);
