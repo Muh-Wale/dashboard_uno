@@ -7,7 +7,7 @@ const CreditCards = () => {
 
     return (
         <>
-            <section className={`p-5 flex justify-between flex-wrap ${ activeMenu ? 'mt-20 md:mt-5' : 'mt-20' } bg-[#E5E5E5]`}>
+            <section className={`p-5 flex justify-between flex-wrap ${ activeMenu ? 'mt-[130px] md:mt-5' : 'mt-[130px] md:mt-20' } bg-[#E5E5E5]`}>
                 <div className='w-full md:1/3'>
                     <div className='flex items-center'>
                         <h1 className=' font-semibold text-2xl'>My Cards</h1>

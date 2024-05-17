@@ -8,7 +8,7 @@ const Investment = () => {
 
     return (
         <>
-            <section className={`${ activeMenu ? 'mt-20 md:mt-5' : 'mt-20' } p-5`}>
+            <section className={`${ activeMenu ? 'mt-[130px] md:mt-5' : 'mt-[130px] md:mt-20' } p-5`}>
                 <div className="flex justify-between flex-wrap gap-5">
                     {InvestmentsMain.map((item) => (
                         <div key={item.TextB} className=" grid grid-cols-3 gap-3 md:gap-5 2xl:gap-12 p-5 rounded-2xl bg-white items-center w-full max-w-[320px] col-span-1">
