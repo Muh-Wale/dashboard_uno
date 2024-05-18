@@ -175,6 +175,20 @@ export const DashboardAreaChart = {
 
 
 
+export const TransactionsBar = {
+  labels: ["Aug", "Sep", "Oct", "Nov", "Dec", "Jan"],
+  datasets: [
+    {
+      label: "Deposit",
+      data: [480, 350, 320, 450, 150, 400, 400],
+      backgroundColor: "#EDF0F7",
+      hoverBackgroundColor: "#16DBCC",
+      borderWidth: 1,
+      borderRadius: 5,
+    }
+  ]
+}
+
 
 
 export const LoansMain = [

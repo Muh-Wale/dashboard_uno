@@ -1,6 +1,7 @@
 import { MyCard} from '../data/dummy';
 import  BarStatDos  from '../data/BarStatDos.png';
 import { useStateContext } from '../contexts/ContextProvider';
+import BarChartDos from '../components/BarChartDos';
 
 const Transactions = () => {
     const { activeMenu } = useStateContext();
@@ -56,7 +57,7 @@ const Transactions = () => {
 
                     <div className='bg-white rounded-2xl my-3'>
                             <div className='px-8 flex w-fit items-center'>
-                                <img src={BarStatDos} alt="" />
+                                <BarChartDos/>
                             </div>
                         
                     </div>

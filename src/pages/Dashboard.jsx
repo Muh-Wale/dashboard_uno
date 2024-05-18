@@ -1,7 +1,4 @@
 import { DashboardTransaction, MyCard, QuickTransfer } from '../data/dummy';
-import  BarStatUno  from '../data/BarStatUno.png';
-import  PieUno  from '../data/PieUno.png';
-import  FlowGraph  from '../data/FlowGraph.png';
 import { FaGreaterThan } from 'react-icons/fa';
 import { GrSend } from 'react-icons/gr';
 import { useStateContext } from '../contexts/ContextProvider';
