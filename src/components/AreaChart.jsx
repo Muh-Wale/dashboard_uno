@@ -41,7 +41,7 @@ const AreaChart = () => {
 
     return (
         <div>
-            <Line options={options} data={DashboardAreaChart} className=" w-fit lg:w-full max-w-[350px] lg:max-w-2xl h-96"/>
+            <Line options={options} data={DashboardAreaChart} className=" w-fit lg:w-full max-w-[320px] md:max-w-2xl h-96"/>
         </div>
     );
 };

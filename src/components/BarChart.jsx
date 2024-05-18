@@ -31,7 +31,7 @@ const BarChart = () => {
     }
     return (
         <div>
-            <Bar options={options} data={DashboardBar}/>
+            <Bar options={options} data={DashboardBar} className=" w-fit lg:w-full max-w-[320px] md:max-w-2xl 2xl:max-w-none h-96"/>
         </div>
     )
 }

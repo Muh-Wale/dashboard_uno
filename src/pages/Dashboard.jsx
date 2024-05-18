@@ -83,12 +83,12 @@ const Dashboard = () => {
             </section>
             
             <section className='p-5 flex justify-between flex-wrap bg-white md:bg-[#E5E5E5]'>
-                <div className='w-full xl:w-5/6 2xl:w-4/6'>
+                <div className='w-full xl:w-4/6 2xl:w-4/6'>
                     <div>
                         <h1 className=' font-semibold text-2xl'>Weekly Activity</h1>
                     </div>
 
-                    <div className=' w-fit md:w-fit xl:w-full bg-white p-5 rounded-2xl my-4'>
+                    <div className=' w-fit md:w-fit xl:w-full bg-white p-2 xl:p-5 rounded-2xl my-4'>
                         <BarChart/>
                     </div>
                 </div>
@@ -110,9 +110,9 @@ const Dashboard = () => {
                         <h1 className=' font-semibold text-2xl'>Quick Transfer</h1>
                     </div>
 
-                    <div className=' w-full  bg-white p-7 lg:p-3 2xl:p-7 rounded-2xl my-4'>
-                        <div className='flex items-center gap-10 lg:gap-5 2xl:gap-14 mt-4'>
-                            <div className='flex gap-8 lg:gap-5 2xl:gap-10'>
+                    <div className=' w-full  bg-white p-1 md:p-7 lg:p-3 2xl:p-7 rounded-2xl my-4'>
+                        <div className='flex items-center gap-6 md:gap-10 lg:gap-5 2xl:gap-14 mt-4'>
+                            <div className='flex gap-2 md:gap-8 lg:gap-5 2xl:gap-10'>
                                 {QuickTransfer.map((item) => (
                                     <div key={item.Name} className='cursor-pointer text-center'>
                                         <div>
@@ -151,12 +151,12 @@ const Dashboard = () => {
                     </div>
                 </div>
 
-                <div className={`${activeMenu ? 'w-full lg:w-full 2xl:w-fit' : 'w-full lg:w-7/12 2xl:w-fit'}`}>
+                <div className={`${activeMenu ? 'w-full lg:w-full 2xl:w-fit block md:hidden lg:block' : 'w-full lg:w-7/12 2xl:w-fit'}`}>
                     <div>
                         <h1 className=' font-semibold text-2xl'>Balance History</h1>
                     </div>
 
-                    <div className=' w-fit xl:w-full  bg-white p-1 rounded-2xl my-4'>
+                    <div className={`${activeMenu ? 'w-fit' : 'w-full'}  bg-white p-1 rounded-2xl my-4`}>
                         <AreaChart/>
                     </div>
                 </div>
