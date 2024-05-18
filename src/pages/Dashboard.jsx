@@ -7,6 +7,7 @@ import { GrSend } from 'react-icons/gr';
 import { useStateContext } from '../contexts/ContextProvider';
 import BarChart from '../components/BarChart';
 import PieChart from '../components/PieChart';
+import AreaChart from '../components/AreaChart';
 
 const Dashboard = () => {
     const { activeMenu } = useStateContext();
@@ -87,7 +88,7 @@ const Dashboard = () => {
                         <h1 className=' font-semibold text-2xl'>Weekly Activity</h1>
                     </div>
 
-                    <div className=' fit md:w-full  bg-white p-5 rounded-2xl my-4'>
+                    <div className=' w-fit md:w-fit xl:w-full bg-white p-5 rounded-2xl my-4'>
                         <BarChart/>
                     </div>
                 </div>
@@ -155,8 +156,8 @@ const Dashboard = () => {
                         <h1 className=' font-semibold text-2xl'>Balance History</h1>
                     </div>
 
-                    <div className=' w-full  bg-white p-1 rounded-2xl my-4'>
-                        <img src={FlowGraph} alt="" />
+                    <div className=' w-fit xl:w-full  bg-white p-1 rounded-2xl my-4'>
+                        <AreaChart/>
                     </div>
                 </div>
             </section>

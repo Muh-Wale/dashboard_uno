@@ -159,6 +159,20 @@ export const DashboardPie = {
     },
   ]
 }
+export const DashboardAreaChart = {
+  labels: ["Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan"],
+  datasets: [
+    {
+      label: "Sales",
+      data: [150, 465, 430, 790, 310, 595, 230],
+      fill: true,
+      backgroundColor: "#B5C6F9",
+      borderColor: "#1814F3",
+      tension: 0.6,
+    },
+  ],
+};
+
 
 
 

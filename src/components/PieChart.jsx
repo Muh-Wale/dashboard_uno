@@ -21,7 +21,7 @@ const BarChart = () => {
                 position: "bottom",
                 align: "end",
             }
-        }
+        },
     }
     return (
         <div>
