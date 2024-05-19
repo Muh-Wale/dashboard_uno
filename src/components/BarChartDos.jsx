@@ -20,6 +20,8 @@ ChartJS.register(
     Legend
 );
 
+/////
+
 const BarChartDos = () => {
     const options = {
         responsive: true,
