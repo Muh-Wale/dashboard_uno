@@ -27,11 +27,28 @@ const BarChart = () => {
                 position: "top",
                 align: "end",
             }
+        },
+        scales: {
+            x: {
+                // Configure the x-axis settings here
+            },
+            y: {
+                // Configure the y-axis settings here
+            }
         }
-    }
+    };
+
+    const data = {
+        ...DashboardBar,
+        datasets: DashboardBar.datasets.map(dataset => ({
+            ...dataset,
+            barThickness: 13  // Adjust the bar thickness as needed
+        }))
+    };
+
     return (
-        <div>
-            <Bar options={options} data={DashboardBar} className=" w-fit lg:w-full max-w-[320px] md:max-w-2xl 2xl:max-w-none h-96"/>
+        <div className=' xs:h-44 sm:h-44 w-full md:h-[300px]'>
+            <Bar options={options} data={data}  className='h-full w-full'/>
         </div>
     )
 }

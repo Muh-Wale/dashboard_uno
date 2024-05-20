@@ -85,7 +85,7 @@ const Dashboard = () => {
                         <h1 className=' font-semibold text-2xl'>Weekly Activity</h1>
                     </div>
 
-                    <div className=' w-fit md:w-fit xl:w-full bg-white p-2 xl:p-5 rounded-2xl my-4'>
+                    <div className=' w-full md:w-fit xl:w-fit bg-white p-2 xl:p-5 rounded-2xl my-4'>
                         <BarChart/>
                     </div>
                 </div>
@@ -148,12 +148,12 @@ const Dashboard = () => {
                     </div>
                 </div>
 
-                <div className={`${activeMenu ? 'w-full lg:w-full 2xl:w-fit block md:hidden lg:block' : 'w-full lg:w-7/12 2xl:w-fit'}`}>
+                <div className={`${activeMenu ? 'w-full lg:w-full 2xl:w-fit block md:hidden lg:block' : 'w-full lg:w-7/12 2xl:w-fit'}  `}>
                     <div>
                         <h1 className=' font-semibold text-2xl'>Balance History</h1>
                     </div>
 
-                    <div className={`${activeMenu ? 'w-fit' : 'w-full'}  bg-white p-1 rounded-2xl my-4`}>
+                    <div className={`${activeMenu ? 'w-fit' : 'w-fit'}  bg-white p-1 rounded-2xl my-4`}>
                         <AreaChart/>
                     </div>
                 </div>

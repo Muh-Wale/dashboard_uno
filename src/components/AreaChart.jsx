@@ -39,9 +39,17 @@ const AreaChart = () => {
         }
     };
 
+    const data = {
+        ...DashboardAreaChart,
+        datasets: DashboardAreaChart.datasets.map(dataset => ({
+            ...dataset,
+            barThickness: 20  // Adjust the bar thickness as needed
+        }))
+    };
+
     return (
-        <div>
-            <Line options={options} data={DashboardAreaChart} className=" w-fit lg:w-full max-w-[320px] md:max-w-2xl h-96"/>
+        <div className=' xs:h-44 sm:h-44 w-full md:h-72'>
+            <Line options={options} data={data} className='h-full w-full'/>
         </div>
     );
 };
