@@ -1,5 +1,13 @@
-import React from 'react';
-import { Bar } from 'react-chartjs-2';
+<div className=' xl:h-80 w-full'>
+    <Bar options={options} data={DashboardBar} className=" h-full w-full"/>
+</div>
+
+<div className=' w-fit md:w-fit xl:w-fit bg-white p-2 xl:p-5 rounded-2xl my-4'>
+<BarChart/>
+</div>
+
+import React from 'react'
+import { Bar } from 'react-chartjs-2'
 import { 
     Chart as ChartJS,
     CategoryScale,
@@ -8,9 +16,8 @@ import {
     Title,
     Tooltip,
     Legend
-} from 'chart.js';
-import { TransactionsBar } from '../data/dummy';
-
+} from 'chart.js'
+import { DashboardBar } from '../data/dummy';
 ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -20,9 +27,7 @@ ChartJS.register(
     Legend
 );
 
-/////
-
-const BarChartDos = () => {
+const BarChart = () => {
     const options = {
         responsive: true,
         plugins: {
@@ -41,20 +46,19 @@ const BarChartDos = () => {
         }
     };
 
-    // Clone the TransactionsBar data to modify the barThickness
     const data = {
-        ...TransactionsBar,
-        datasets: TransactionsBar.datasets.map(dataset => ({
+        ...DashboardBar,
+        datasets: DashboardBar.datasets.map(dataset => ({
             ...dataset,
-            barThickness: 20  // Adjust the bar thickness as needed
+            barThickness: 15  // Adjust the bar thickness as needed
         }))
     };
 
     return (
-        <div className=' xs:h-44 sm:h-44 w-full md:h-56'>
-            <Bar options={options} data={data} className='h-full w-full'/>
+        <div className=' xs:h-44 sm:h-44 w-full md:h-[300px]'>
+            <Bar options={options} data={data}  className='h-full w-full'/>
         </div>
-    );
-};
+    )
+}
 
-export default BarChartDos;
+export default BarChart

@@ -9,7 +9,7 @@ const Transactions = () => {
     return (
         <>
             <section className={`p-5 flex justify-between flex-wrap ${ activeMenu ? 'mt-[130px] md:mt-5' : 'mt-[130px] md:mt-20' } bg-[#E5E5E5]`}>
-                <div className='w-full xl:w-5/6 2xl:w-8/12'>
+                <div className='w-full xl:w-5/6 2xl:w-7/12'>
                     <div className='flex justify-between items-center'>
                         <h1 className=' font-semibold text-2xl'>My Cards</h1>
                         <p className=' font-semibold text-lg hover:underline cursor-pointer'>+ Add Card</p>
@@ -50,13 +50,13 @@ const Transactions = () => {
                     </div>
                 </div>
 
-                <div className='w-fit'>
+                <div className='w-full md:w-fit'>
                     <div>
                         <h1 className=' font-semibold text-2xl'>My Expense</h1>
                     </div>
 
                     <div className='bg-white rounded-2xl my-3'>
-                            <div className='px-8 flex w-fit items-center'>
+                            <div className='px-2 flex w-fit items-center'>
                                 <BarChartDos/>
                             </div>
                         
