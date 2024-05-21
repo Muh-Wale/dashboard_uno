@@ -11,7 +11,7 @@ import {
     Legend,
     Filler,
 } from 'chart.js';
-import { DashboardAreaChart, InvestmentAreaChartUno } from '../data/dummy'; // Adjust the path to where your data is located
+import { InvestmentAreaChartDos } from '../data/dummy'; // Adjust the path to where your data is located
 
 ChartJS.register(
     CategoryScale,
@@ -24,7 +24,7 @@ ChartJS.register(
     Filler
 );
 
-const AreaChartDos = () => {
+const AreaChartTres = () => {
     const options = {
         responsive: true,
         plugins: {
@@ -47,12 +47,17 @@ const AreaChartDos = () => {
                     }
                 }
             },
+        },
+        elements: {
+            point: {
+                radius: 0, // Removes the points from the line
+            }
         }
     };
 
     const data = {
-        ...InvestmentAreaChartUno,
-        datasets: InvestmentAreaChartUno.datasets.map(dataset => ({
+        ...InvestmentAreaChartDos,
+        datasets: InvestmentAreaChartDos.datasets.map(dataset => ({
             ...dataset,
         }))
     };
@@ -64,4 +69,4 @@ const AreaChartDos = () => {
     );
 };
 
-export default AreaChartDos;
+export default AreaChartTres;

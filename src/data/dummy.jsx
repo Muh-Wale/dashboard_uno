@@ -186,7 +186,18 @@ export const InvestmentAreaChartUno = {
     },
   ],
 };
-
+export const InvestmentAreaChartDos = {
+  labels: [ 2016, 2017, 2018, 2019, 2020, 2021],
+  datasets: [
+    {
+      label: "Sales",
+      data: [ 11000, 13000, 28000, 20000, 24500, 20000 ],
+      fill: false,
+      borderColor: "#16DBCC",
+      tension: 0.8,
+    },
+  ],
+};
 
 
 export const TransactionsBar = {
