@@ -2,6 +2,7 @@ import { investmentData, InvestmentsMain, MyInvestment } from "../data/dummy"
 import  FlowGraphDos  from '../data/FlowGraphDos.png';
 import  FlowGraphTres  from '../data/FlowGraphTres.png';
 import { useStateContext } from '../contexts/ContextProvider';
+import AreaChartDos from "../components/AreaChartDos";
 
 const Investment = () => {
     const { activeMenu } = useStateContext();
@@ -33,7 +34,7 @@ const Investment = () => {
                     </div>
 
                     <div className=' w-full  bg-white p-5 rounded-2xl my-4'>
-                        <img src={FlowGraphDos} alt="" />
+                        <AreaChartDos/>
                     </div>
                 </div>
 

@@ -173,6 +173,20 @@ export const DashboardAreaChart = {
   ],
 };
 
+export const InvestmentAreaChartUno = {
+  labels: [ 2016, 2017, 2018, 2019, 2020, 2021],
+  datasets: [
+    {
+      label: "Sales",
+      data: [ 5000, 25000, 15000,38000, 21000, 31000 ],
+      fill: false,
+      borderColor: "#FCAA0B",
+      pointBackgroundColor: '#ffffff', // Customize as needed
+      pointBorderColor: '#FCAA0B', // Customize as needed
+    },
+  ],
+};
+
 
 
 export const TransactionsBar = {
@@ -193,7 +207,7 @@ export const AccountsBar = {
   datasets: [
     {
       label: "Debit",
-      data: [480, 350, 320, 450, 150, 400, 400],
+      data: [280, 210, 180, 450, 150, 400, 300],
       backgroundColor: "#1A16F3",
       borderWidth: 1,
       borderRadius: 6,
@@ -201,7 +215,7 @@ export const AccountsBar = {
     },
     {
       label: "Credit",
-      data: [230, 130, 150, 380, 230, 230, 350],
+      data: [480, 350, 320, 380, 230, 230, 400],
       backgroundColor: "#FCAA0B",
       borderWidth: 1,
       borderRadius: 6,
