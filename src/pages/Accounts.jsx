@@ -113,7 +113,7 @@ const Accounts = () => {
                         <h1 className=' font-semibold text-2xl'>My Cards</h1>
                     </div>
 
-                    <div  className='bg-white rounded-2xl my-3 p-3 w-fit'>
+                    <div  className=' w-full md:w-fit xl:w-fit bg-white p-2 xl:p-5 rounded-2xl my-4'>
                         <BarChartTres/>
                     </div>
                 </div>

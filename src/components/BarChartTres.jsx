@@ -10,6 +10,8 @@ import {
     Legend
 } from 'chart.js'
 import { AccountsBar } from '../data/dummy';
+import { color } from 'chart.js/helpers';
+import { useStateContext } from '../contexts/ContextProvider';
 
 ChartJS.register(
     CategoryScale,
@@ -21,6 +23,8 @@ ChartJS.register(
 );
 
 const BarChartTres = () => {
+    const { isLargeScreen } = useStateContext();
+
     const options = {
         responsive: true,
         plugins: {
@@ -29,10 +33,14 @@ const BarChartTres = () => {
                 align: "end",
             },
             title: {
-                display: true,
+                display: isLargeScreen,
                 text: '$7,560 Debited & $5,420 Credited in this Week',
                 position: "top",
                 align: "start",
+                font: {
+                    size: 18,// Change the title text size here
+                },
+                color: '#718EBF'
             },
         },
         scales: {
@@ -52,12 +60,12 @@ const BarChartTres = () => {
         ...AccountsBar,
         datasets: AccountsBar.datasets.map(dataset => ({
             ...dataset,
-            barThickness: 20  // Adjust the bar thickness as needed
+            barThickness: isLargeScreen ? 18 : 10 // Adjust the bar thickness as needed
         }))
     };
 
     return (
-        <div className='xs:h-44 sm:h-44 w-full md:h-[355px]'>
+        <div className='xs:h-44 sm:h-56 w-full md:h-[355px]'>
             <Bar options={options} data={data} className='h-full w-full cursor-pointer'/>
         </div>
     )
