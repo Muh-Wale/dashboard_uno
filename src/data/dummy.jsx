@@ -188,6 +188,27 @@ export const TransactionsBar = {
     }
   ]
 }
+export const AccountsBar = {
+  labels: ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"],
+  datasets: [
+    {
+      label: "Debit",
+      data: [480, 350, 320, 450, 150, 400, 400],
+      backgroundColor: "#1A16F3",
+      borderWidth: 1,
+      borderRadius: 6,
+      borderSkipped: false,
+    },
+    {
+      label: "Credit",
+      data: [230, 130, 150, 380, 230, 230, 350],
+      backgroundColor: "#FCAA0B",
+      borderWidth: 1,
+      borderRadius: 6,
+      borderSkipped: false,
+    }
+  ]
+}
 
 
 

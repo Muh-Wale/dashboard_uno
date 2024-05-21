@@ -1,6 +1,6 @@
 import { AccountsInvoice, AccountsMain, LastAcct, MyCard } from "../data/dummy"
-import  BarStatTres  from '../data/BarStatTres.png';
 import { useStateContext } from '../contexts/ContextProvider';
+import BarChartTres from "../components/BarChartTres";
 
 const Accounts = () => {
     const { activeMenu } = useStateContext();
@@ -113,8 +113,8 @@ const Accounts = () => {
                         <h1 className=' font-semibold text-2xl'>My Cards</h1>
                     </div>
 
-                    <div className='my-3'>
-                        <img src={BarStatTres} alt="" className="w-[100%]"/>
+                    <div  className='bg-white rounded-2xl my-3 p-3 w-fit'>
+                        <BarChartTres/>
                     </div>
                 </div>
 
