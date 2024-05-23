@@ -10,7 +10,6 @@ import {
     Legend
 } from 'chart.js'
 import { AccountsBar } from '../data/dummy';
-import { color } from 'chart.js/helpers';
 import { useStateContext } from '../contexts/ContextProvider';
 
 ChartJS.register(
@@ -60,12 +59,12 @@ const BarChartTres = () => {
         ...AccountsBar,
         datasets: AccountsBar.datasets.map(dataset => ({
             ...dataset,
-            barThickness: isLargeScreen ? 18 : 10 // Adjust the bar thickness as needed
+            barThickness: isLargeScreen ? 23 : 10 // Adjust the bar thickness as needed
         }))
     };
 
     return (
-        <div className='xs:h-44 sm:h-56 w-full md:h-[355px]'>
+        <div className='xs:h-44 sm:h-56 w-full md:h-[280px] lg:h-[300px] xl:h-[355px]'>
             <Bar options={options} data={data} className='h-full w-full cursor-pointer'/>
         </div>
     )

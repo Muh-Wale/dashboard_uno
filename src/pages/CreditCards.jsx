@@ -15,7 +15,7 @@ const CreditCards = () => {
 
                     <div className='flex flex-col flex-wrap md:flex-row justify-normal xl:justify-between  my-3 gap-10'>
                         {MyCard.map((item) => (
-                            <div key={item.id} style={{ backgroundColor: item.BgA, color: item.TextColor }} className={` rounded-2xl w-full shadow-2xl max-w-[380px] ${activeMenu ? 'lg:max-w-[45%] xl:max-w-[30%]' : ' md:max-w-[45%]'} `}>
+                            <div key={item.id} style={{ backgroundColor: item.BgA, color: item.TextColor }} className={` rounded-2xl w-full shadow-2xl max-w-[380px] ${activeMenu ? 'lg:max-w-[45%] xl:max-w-[30%]' : ' md:max-w-[340px] lg:max-w-[400px]'} `}>
                                 <div className='flex justify-between items-center px-5 pt-5'>
                                     <div>
                                         <p className='text-xs'>{item.ColAa}</p>

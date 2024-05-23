@@ -10,6 +10,7 @@ import {
     Legend
 } from 'chart.js';
 import { TransactionsBar } from '../data/dummy';
+import { useStateContext } from '../contexts/ContextProvider';
 
 ChartJS.register(
     CategoryScale,
@@ -23,6 +24,8 @@ ChartJS.register(
 /////
 
 const BarChartDos = () => {
+    const { isLargeScreen } = useStateContext();
+
     const options = {
         responsive: true,
         plugins: {
@@ -46,7 +49,7 @@ const BarChartDos = () => {
         ...TransactionsBar,
         datasets: TransactionsBar.datasets.map(dataset => ({
             ...dataset,
-            barThickness: 20  // Adjust the bar thickness as needed
+            barThickness: isLargeScreen ? 25 : 15 // Adjust the bar thickness as needed
         }))
     };
 

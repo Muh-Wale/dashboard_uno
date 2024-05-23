@@ -93,7 +93,7 @@ const Navbar = () => {
                     <div className='relative search-bar mx-auto w-[80%]'>
                         <input 
                             type="text" 
-                            className={`rounded-3xl py-2 pl-8 md:px-11 bg-[#E5E5E5] placeholder:text-gray-400 w-full`} 
+                            className={`rounded-3xl py-2 pl-8 md:px-11 bg-[#E5E5E5] placeholder:text-gray-400 focus:outline-none w-full`} 
                             placeholder='Search for something' 
                         />
                         <div className='absolute bottom-2 left-1 md:left-4 text-gray-400 z-50' onClick={handleSearchClick}>
@@ -114,7 +114,7 @@ const Navbar = () => {
                     <div className='relative search-bar'>
                         <input 
                             type="text" 
-                            className={`rounded-3xl py-2 pl-8 md:px-11 bg-[#E5E5E5] placeholder:text-gray-400 ${activeSearch ? '' : (isClicked ? '' : 'w-4')} md:w-auto`} 
+                            className={`rounded-3xl py-2 pl-8 md:px-11 bg-[#E5E5E5] placeholder:text-gray-400 focus:outline-none ${activeSearch ? '' : (isClicked ? '' : 'w-4')} md:w-auto`} 
                             placeholder='Search for something' 
                         />
                         <div className='absolute bottom-2 left-1 md:left-4 text-gray-400 z-50' onClick={handleSearchClick}>

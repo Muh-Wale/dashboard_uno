@@ -11,7 +11,8 @@ import {
     Legend,
     Filler,
 } from 'chart.js';
-import { DashboardAreaChart, InvestmentAreaChartUno } from '../data/dummy'; // Adjust the path to where your data is located
+import { InvestmentAreaChartUno } from '../data/dummy'; // Adjust the path to where your data is located
+import { useStateContext } from '../contexts/ContextProvider';
 
 ChartJS.register(
     CategoryScale,
@@ -25,6 +26,8 @@ ChartJS.register(
 );
 
 const AreaChartDos = () => {
+    const { activeMenu } = useStateContext();
+    
     const options = {
         responsive: true,
         plugins: {
@@ -58,7 +61,7 @@ const AreaChartDos = () => {
     };
 
     return (
-        <div className='xs:h-44 sm:h-44 w-full md:h-72'>
+        <div className={`xs:h-44 sm:h-44 w-full ${activeMenu ? ' md:h-fit xl:h-72 ' : 'md:h-40 lg:h-52 xl:h-72 '}`}>
             <Line options={options} data={data} className='h-full w-full' />
         </div>
     );

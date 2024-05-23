@@ -10,6 +10,8 @@ import {
     Legend
 } from 'chart.js'
 import { DashboardBar } from '../data/dummy';
+import { useStateContext } from '../contexts/ContextProvider';
+
 ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -20,6 +22,8 @@ ChartJS.register(
 );
 
 const BarChart = () => {
+    const { isLargeScreen } = useStateContext();
+
     const options = {
         responsive: true,
         plugins: {
@@ -42,7 +46,7 @@ const BarChart = () => {
         ...DashboardBar,
         datasets: DashboardBar.datasets.map(dataset => ({
             ...dataset,
-            barThickness: 13  // Adjust the bar thickness as needed
+            barThickness: isLargeScreen ? 18 : 13   // Adjust the bar thickness as needed
         }))
     };
 

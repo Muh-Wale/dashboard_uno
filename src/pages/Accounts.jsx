@@ -65,7 +65,7 @@ const Accounts = () => {
                     </div>
                 </div>
 
-                <div className={`${activeMenu ? ' w-full lg:w-[38%] xl:w-2/6 2xl:2/5 max-w-[400px]' : ' w-full lg:w-full xl:w-2/6 2xl:2/5 max-w-[450px]'}`}>
+                <div className={`${activeMenu ? ' w-full lg:w-[38%] xl:w-2/6 2xl:2/5 max-w-[350px] xl:max-w-[400px]' : ' w-full lg:w-full xl:w-2/6 2xl:2/5 max-w-[350px] xl:max-w-[450px]'}`}>
                     <div className='flex justify-between items-center'>
                         <h1 className=' font-semibold text-2xl'>My Cards</h1>
                         <p className=' font-semibold text-lg hover:underline cursor-pointer'>See All</p>

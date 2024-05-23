@@ -27,22 +27,22 @@ const Investment = () => {
 
             <section className='p-5 flex justify-between gap-5 flex-wrap bg-[#E5E5E5]'>
 
-                <div className='w-fit md:w-[100%] lg:w-[48%]'>
+                <div className='w-fit md:w-[48%]'>
                     <div>
                         <h1 className=' font-semibold text-2xl'>Yearly Total Investment</h1>
                     </div>
 
-                    <div className=' w-full  bg-white p-5 rounded-2xl my-4'>
+                    <div className='w-fit lg:w-full  bg-white p-5 rounded-2xl my-4'>
                         <AreaChartDos/>
                     </div>
                 </div>
 
-                <div className='w-fit md:w-[100%] lg:w-[48%]'>
+                <div className='w-fit md:w-[48%]'>
                     <div>
                         <h1 className=' font-semibold text-2xl'>Monthly Revenue</h1>
                     </div>
 
-                    <div className=' w-full  bg-white p-5 rounded-2xl my-4'>
+                    <div className='w-fit lg:w-full  bg-white p-5 rounded-2xl my-4'>
                         <AreaChartTres/>
                     </div>
                 </div>

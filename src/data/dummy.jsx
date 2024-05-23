@@ -234,7 +234,17 @@ export const AccountsBar = {
     }
   ]
 }
-
+export const CreditcardPie = {
+  labels: ["DBL Bank", "BRC Bank", "ABM Bank", "MCP Bank"],
+  datasets: [
+    {
+      label: "Expenses",
+      data: [ 87, 90, 94, 89],
+      backgroundColor: ["#343C6A","#FC7900", "#1814F3", "#FA00FF"],
+      hoverOffset: 4,
+    },
+  ]
+}
 
 
 export const LoansMain = [

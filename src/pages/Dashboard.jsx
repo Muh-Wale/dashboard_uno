@@ -20,7 +20,7 @@ const Dashboard = () => {
 
                     <div className='flex flex-col md:flex-row justify-between my-3 gap-10'>
                         {MyCard.slice(0, 2).map((item) => (
-                            <div key={item.id} style={{ backgroundColor: item.BgA, color: item.TextColor }} className=' rounded-2xl w-full shadow-2xl'>
+                            <div key={item.id} style={{ backgroundColor: item.BgA, color: item.TextColor }} className=' max-w-[345px] xl:max-w-none rounded-2xl w-full shadow-2xl'>
                                 <div className='flex justify-between items-center px-5 pt-5'>
                                     <div>
                                         <p className='text-xs'>{item.ColAa}</p>
