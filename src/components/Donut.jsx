@@ -1,19 +1,20 @@
-import React from 'react'
-import { Pie } from 'react-chartjs-2'
+import React from 'react';
+import { Pie } from 'react-chartjs-2';
 import { 
     Chart as ChartJS,
     Tooltip,
     Legend,
     ArcElement
-} from 'chart.js'
-import { DashboardPie } from '../data/dummy';
+} from 'chart.js';
+import { CreditcardPie } from '../data/dummy';
+
 ChartJS.register(
     Tooltip,
     Legend,
     ArcElement
 );
 
-const PieChart = () => {
+const Donut = () => {
     const options = {
         responsive: true,
         plugins: {
@@ -22,12 +23,14 @@ const PieChart = () => {
                 align: "end",
             }
         },
-    }
+        cutout: '50%',
+    };
+
     return (
         <div>
-            <Pie options={options} data={DashboardPie}/>
+            <Pie options={options} data={CreditcardPie} />
         </div>
-    )
-}
+    );
+};
 
-export default PieChart
+export default Donut;

@@ -1,6 +1,6 @@
+import Donut from '../components/Donut';
 import { useStateContext } from '../contexts/ContextProvider';
 import { CardList, CardSettings, MyCard } from '../data/dummy';
-import PieDos from '../data/PieDos.png'
 
 const CreditCards = () => {
     const { activeMenu } = useStateContext();
@@ -57,7 +57,7 @@ const CreditCards = () => {
                     </div>
 
                     <div className=' my-3 gap-10 bg-white p-5 rounded-2xl'>
-                        <img src={PieDos} alt="" />
+                        <Donut/>
                     </div>
                 </div>
 
