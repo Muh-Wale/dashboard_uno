@@ -240,7 +240,7 @@ export const CreditcardPie = {
     {
       label: "Expenses",
       data: [ 87, 90, 94, 89],
-      backgroundColor: ["#343C6A","#FC7900", "#1814F3", "#FA00FF"],
+      backgroundColor: ["#4C78FF","#16DBCC", "#FF82AC", "#FFBB38"],
       hoverOffset: 4,
     },
   ]

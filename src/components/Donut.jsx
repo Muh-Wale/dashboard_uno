@@ -20,14 +20,14 @@ const Donut = () => {
         plugins: {
             legend: {
                 position: "bottom",
-                align: "end",
+                align: "start",
             }
         },
         cutout: '55%',
     };
 
     return (
-        <div>
+        <div className=' w-full md:w-[280px] lg:w-[300px] h-full md:h-[237px] lg:h-[300px] m-auto'>
             <Pie options={options} data={CreditcardPie} />
         </div>
     );
