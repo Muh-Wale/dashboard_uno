@@ -23,7 +23,7 @@ const Donut = () => {
                 align: "end",
             }
         },
-        cutout: '50%',
+        cutout: '55%',
     };
 
     return (
