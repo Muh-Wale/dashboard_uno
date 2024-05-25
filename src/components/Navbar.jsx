@@ -67,7 +67,8 @@ const Navbar = () => {
                         <div className='bg-[#E5E5E5] p-2 rounded-2xl text-[#718EBF] hidden md:block'>
                             <IoSettingsOutline size={23} />
                         </div>
-                        <div className='bg-[#E5E5E5] p-2 rounded-2xl text-[#FE5C73] hidden md:block'>
+                        <div className='relative bg-[#E5E5E5] p-2 rounded-2xl text-[#FE5C73] hidden md:block'>
+                            <span className="absolute top-0 left-0 w-2 h-2 bg-[#FE5C73] rounded-full"></span>
                             <RiNotification3Line size={23} />
                         </div>
                         <div title="Profile">
@@ -124,7 +125,8 @@ const Navbar = () => {
                     <div className='bg-[#E5E5E5] p-2 rounded-2xl text-[#718EBF] hidden md:block'>
                         <IoSettingsOutline size={23} />
                     </div>
-                    <div className='bg-[#E5E5E5] p-2 rounded-2xl text-[#FE5C73] hidden md:block'>
+                    <div className='relative bg-[#E5E5E5] p-2 rounded-2xl text-[#FE5C73] hidden md:block'>
+                        <span className="absolute top-2 right-2 w-2 h-2 border-2 border-[#FE5C73] bg-[#E5E5E5] rounded-full"></span>
                         <RiNotification3Line size={23} />
                     </div>
                     <div title="Profile">

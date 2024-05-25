@@ -1,16 +1,23 @@
 import React from 'react'
 import  ProfilePic  from '../data/ProfilePic.png';
 import { useStateContext } from '../contexts/ContextProvider';
+import { FaPencil } from 'react-icons/fa6';
 
 const Profile = () => {
     const { activeMenu } = useStateContext();
 
     return (
         <div className={` ${activeMenu ? 'grid grid-cols-1 xl:grid-cols-7 gap-4' : 'grid grid-cols-1 md:grid-cols-7 gap-4'}`}>
-            <div className={`${activeMenu ? 'col-span-1 flex justify-center xl:block ' : 'col-span-1 flex justify-center md:block '}`}>
-                <img src={ProfilePic} alt="" className={ `${activeMenu ? 'rounded-full max-w-[170px] xl:max-w-[130px]' : 'rounded-full max-w-[170px] md:max-w-[110px] lg:max-w-[130px]'}`}/>
+            <div className={`${activeMenu ? 'col-span-1 flex justify-center xl:block mx-auto xl:mx-0 ' : 'col-span-1 flex justify-center md:block mx-auto md:mx-0 '} w-fit relative`}>
+                <img 
+                    src={ProfilePic} 
+                    className={`${activeMenu ? 'rounded-full max-w-[170px] xl:max-w-[130px]' : 'rounded-full max-w-[170px] md:max-w-[110px] lg:max-w-[130px]'}`} 
+                />
+                <div className={`p-2 rounded-full bg-[blue] absolute  ${ activeMenu ? 'top-[115px] xl:top-[88px] -right-0 xl:right-0' : 'top-[115px] md:top-[70px] lg:top-[88px] -right-0 md:right-0' }`}>
+                    <FaPencil color='white'/>
+                </div>
             </div>
-
+            
             <div className={`${activeMenu ? 'col-span-1 xl:col-span-6' : 'col-span-1 md:col-span-6'}`}>
                 <div className='flex flex-col md:flex-row flex-wrap justify-between'>
                     <div className={`${activeMenu ? 'w-full md:w-1/2 px-0 md:px-2 xl:px-5' : 'w-full md:w-1/2 px-0 md:px-5'}`}>
