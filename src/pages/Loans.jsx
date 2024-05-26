@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStateContext } from '../contexts/ContextProvider';
 import { LoansMain } from '../data/dummy';
+import LoanTable from '../components/LoanTable';
 
 const Loans = () => {
     const { activeMenu } = useStateContext();
@@ -22,6 +23,10 @@ const Loans = () => {
                         </div>
                     ))}
                 </div>
+            </section>
+
+            <section>
+                <LoanTable/>
             </section>
         </>
     )
