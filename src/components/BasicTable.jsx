@@ -29,12 +29,15 @@ export default function BasicTable({ data, columns }) {
   });
 
   return (
-    <div className='w3-container w-[100%] bg-white rounded-3xl lg:px-8 md:px-5 p-0'>
-      <input
-        type='text'
-        value={filtering}
-        onChange={e => setFiltering(e.target.value)}
-      />
+    <div className='w3-container w-[100%] bg-white rounded-3xl lg:p-8 md:p-5 p-0'>
+      <div className='mb-3 hidden lg:block'>
+        <input
+          type='text'
+          value={filtering}
+          onChange={e => setFiltering(e.target.value)}
+          className=' placeholder:text-[#718EBF] border-[#718EBF] border-2 px-2 py-1 focus:outline-[#718EBF] rounded-xl w-1/4'
+        />
+      </div>
       <table className='w3-table-all w-[100%]'>
         <thead className=' border-b-[2px] border-[#E6EFF5] rounded'>
           {table.getHeaderGroups().map(headerGroup => (
