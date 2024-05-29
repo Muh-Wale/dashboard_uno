@@ -1,35 +1,47 @@
 import { DateTime } from 'luxon';
 import { useMemo } from 'react';
 import BasicTable from '../components/BasicTable';
-import { movies } from '../data/dummy';
+import { loansData } from '../data/dummy';
 
 const LoanData = () => {
-    const data = useMemo(() => movies, []);
+    const data = useMemo(() => loansData, []);
 
     const movieColumns = [
         {
-        header: 'ID',
+        header: 'SL No',
         accessorKey: 'id',
         },
         {
-        header: 'Name',
-        accessorKey: 'name',
+        header: 'Loan Money',
+        accessorKey: 'loanmoney',
         },
         {
-        header: 'Genre',
-        accessorKey: 'genre',
+        header: 'Left To Repay',
+        accessorKey: 'lefttorepay',
         },
         {
-        header: 'Rating',
-        accessorKey: 'rating',
+        header: 'Duration',
+        accessorKey: 'duration',
+        },
+        {
+            header: 'Interest Rate',
+            accessorKey: 'interestrate',
+        },
+        {
+            header: 'Installment',
+            accessorKey: 'installmentno',
+        },
+        {
+            header: 'Repay',
+            accessorKey: 'repay',
         },
     ];
 
     return (
-        <div>
-        <h1>React-table</h1>
-        <BasicTable data={data} columns={movieColumns} />
-        </div>
+        <section className=' p-5 mt-14 md:mt-0'>
+            <h1>React-table</h1>
+            <BasicTable data={data} columns={movieColumns} />
+        </section>
     );
 };
 

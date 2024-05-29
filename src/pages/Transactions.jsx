@@ -1,5 +1,4 @@
 import { MyCard} from '../data/dummy';
-import  BarStatDos  from '../data/BarStatDos.png';
 import { useStateContext } from '../contexts/ContextProvider';
 import BarChartDos from '../components/BarChartDos';
 
