@@ -7,11 +7,10 @@ import {
   getSortedRowModel,
   useReactTable,
 } from '@tanstack/react-table';
-import { useState } from 'react';
+import { useStateContext } from '../contexts/ContextProvider';
 
 export default function BasicTable({ data, columns }) {
-  const [sorting, setSorting] = useState([]);
-  const [filtering, setFiltering] = useState('');
+  const { activeMenu, filtering, setFiltering, sorting, setSorting } = useStateContext();
 
   const table = useReactTable({
     data,
@@ -29,30 +28,30 @@ export default function BasicTable({ data, columns }) {
   });
 
   return (
-    <div className='w3-container w-[100%] bg-white rounded-3xl lg:p-8 md:p-5 p-0'>
+    <div className='w3-container w-[100%] bg-white rounded-3xl lg:p-8 md:p-5 p-4'>
       <div className='mb-3 hidden lg:block'>
         <input
           type='text'
           value={filtering}
           onChange={e => setFiltering(e.target.value)}
-          className=' placeholder:text-[#718EBF] border-[#718EBF] border-2 px-2 py-1 focus:outline-[#718EBF] rounded-xl w-1/4'
+          className='placeholder:text-[#718EBF] border-[#718EBF] border-2 px-2 py-1 focus:outline-[#718EBF] rounded-xl w-2/5 xl:w-1/4'
         />
       </div>
       <table className='w3-table-all w-[100%]'>
-        <thead className=' border-b-[2px] border-[#E6EFF5] rounded'>
+        <thead className='border-b-[2px] border-[#E6EFF5] rounded'>
           {table.getHeaderGroups().map(headerGroup => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map(header => (
                 <th
                   key={header.id}
                   onClick={header.column.getToggleSortingHandler()}
+                  className={`
+                    ${(header.column.columnDef.accessorKey !== 'loanmoney' && header.column.columnDef.accessorKey !== 'lefttorepay' && header.column.columnDef.accessorKey !== 'repay') ? 'hidden-sm' : ''}
+                  `}
                 >
                   {header.isPlaceholder ? null : (
-                    <div className='text-[#718EBF] font-medium pb-1 flex '>
-                      {flexRender(
-                        header.column.columnDef.header,
-                        header.getContext()
-                      )}
+                    <div className='text-[#718EBF] font-medium pb-1 flex'>
+                      {flexRender(header.column.columnDef.header, header.getContext())}
                       {{
                         asc: '🔼',
                         desc: '🔽',
@@ -69,7 +68,13 @@ export default function BasicTable({ data, columns }) {
           {table.getRowModel().rows.map(row => (
             <tr key={row.id} className='border-b-[0.5px] border-[#E6EFF5] rounded'>
               {row.getVisibleCells().map(cell => (
-                <td key={cell.id} className=' font-light py-3'>
+                <td
+                  key={cell.id}
+                  className={`font-light py-3 
+                    ${(cell.column.columnDef.accessorKey === 'duration' || cell.column.columnDef.accessorKey === 'installmentno') ? 'hidden-md' : ''}
+                    ${(cell.column.columnDef.accessorKey !== 'loanmoney' && cell.column.columnDef.accessorKey !== 'lefttorepay' && cell.column.columnDef.accessorKey !== 'repay') ? 'hidden-sm' : ''}
+                  `}
+                >
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
               ))}
