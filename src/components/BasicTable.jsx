@@ -8,9 +8,20 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 import { useStateContext } from '../contexts/ContextProvider';
+import { useEffect, useState } from 'react';
 
 export default function BasicTable({ data, columns }) {
   const { activeMenu, filtering, setFiltering, sorting, setSorting } = useStateContext();
+  const [isMediumScreen, setIsMediumScreen] = useState(window.innerWidth >= 768 && window.innerWidth < 1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMediumScreen(window.innerWidth >= 768 && window.innerWidth < 1024);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const table = useReactTable({
     data,
@@ -46,7 +57,7 @@ export default function BasicTable({ data, columns }) {
                   key={header.id}
                   onClick={header.column.getToggleSortingHandler()}
                   className={`
-                    ${(header.column.columnDef.accessorKey !== 'loanmoney' && header.column.columnDef.accessorKey !== 'lefttorepay' && header.column.columnDef.accessorKey !== 'repay') ? 'hidden-sm' : ''}
+                    ${(header.column.columnDef.accessorKey !== 'loanmoney' && header.column.columnDef.accessorKey !== 'lefttorepay' && header.column.columnDef.accessorKey !== 'repay') ? (isMediumScreen && activeMenu ? 'hidden-sm' : 'hidden-md') : ''}
                   `}
                 >
                   {header.isPlaceholder ? null : (
@@ -70,9 +81,8 @@ export default function BasicTable({ data, columns }) {
               {row.getVisibleCells().map(cell => (
                 <td
                   key={cell.id}
-                  className={`font-light py-3 
-                    ${(cell.column.columnDef.accessorKey === 'duration' || cell.column.columnDef.accessorKey === 'installmentno') ? 'hidden-md' : ''}
-                    ${(cell.column.columnDef.accessorKey !== 'loanmoney' && cell.column.columnDef.accessorKey !== 'lefttorepay' && cell.column.columnDef.accessorKey !== 'repay') ? 'hidden-sm' : ''}
+                  className={`font-light py-3
+                    ${(cell.column.columnDef.accessorKey !== 'loanmoney' && cell.column.columnDef.accessorKey !== 'lefttorepay' && cell.column.columnDef.accessorKey !== 'repay') ? (isMediumScreen && activeMenu ? 'hidden-sm' : 'hidden-md') : ''}
                   `}
                 >
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}

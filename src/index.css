@@ -16,10 +16,11 @@
     @apply content-[''] bg-[#2D60FF] h-[18%] w-[100%] left-0 md:left-[10px] -bottom-2 rounded-t-md absolute duration-300;
 }
 
+/* Define the visibility rules */
 .hidden-md {
-    @apply hidden lg:table-cell
+    @apply hidden md:table-cell
 }
 
 .hidden-sm {
-    @apply hidden md:table-cell
+    @apply hidden
 }
