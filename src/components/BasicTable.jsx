@@ -8,11 +8,11 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 import { useStateContext } from '../contexts/ContextProvider';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 export default function BasicTable({ data, columns }) {
-  const { activeMenu, filtering, setFiltering, sorting, setSorting } = useStateContext();
-  const [isMediumScreen, setIsMediumScreen] = useState(window.innerWidth >= 768 && window.innerWidth < 1024);
+  const { activeMenu, filtering, setFiltering, sorting, setSorting, isMediumScreen, setIsMediumScreen } = useStateContext();
+  
 
   useEffect(() => {
     const handleResize = () => {
@@ -21,7 +21,7 @@ export default function BasicTable({ data, columns }) {
     
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [setIsMediumScreen]);
 
   const table = useReactTable({
     data,
