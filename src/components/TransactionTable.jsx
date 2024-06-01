@@ -20,6 +20,11 @@ export default function TransactionTable({ data, columns }) {
         getPaginationRowModel: getPaginationRowModel(),
         getSortedRowModel: getSortedRowModel(),
         getFilteredRowModel: getFilteredRowModel(),
+        initialState: {
+            pagination: {
+                pageSize: 5,  // Set the page size to 5
+            },
+        },
         state: {
             sorting,
             globalFilter: filtering,
@@ -38,7 +43,7 @@ export default function TransactionTable({ data, columns }) {
 
     return (
         <>
-            <div className={`w3-container w-[100%] bg-white rounded-3xl  ${activeMenu ? 'lg:p-8 p-4' : 'lg:p-8 md:p-2 p-4'}`}>
+            <div className={`w3-container w-[100%] bg-white rounded-3xl ${activeMenu ? 'lg:p-8 p-4' : 'lg:p-8 md:p-2 p-4'}`}>
                 <div className='mb-3 hidden lg:block'>
                     <input
                         type='text'
@@ -92,23 +97,28 @@ export default function TransactionTable({ data, columns }) {
                 </table>
             </div>
 
-            <div className='flex justify-end gap-6 mt-4'>
-                <button
-                    className='cursor-pointer flex items-center gap-1 text-[#123288]'
-                    onClick={() => table.previousPage()}
-                    disabled={!table.getCanPreviousPage()}
-                >
-                    <FaLessThan />
-                    Previous
-                </button>
-                <button
-                    className='cursor-pointer flex items-center gap-1 text-[#123288]'
-                    onClick={() => table.nextPage()}
-                    disabled={!table.getCanNextPage()}
-                >
-                    Next
-                    <FaGreaterThan/>
-                </button>
+            <div className='flex justify-between items-center mt-4'>
+                <div className='text-[#123288]'>
+                    Page {table.getState().pagination.pageIndex + 1} of {table.getPageCount()}
+                </div>
+                <div className='flex gap-6'>
+                    <button
+                        className='cursor-pointer flex items-center gap-1 text-[#123288]'
+                        onClick={() => table.previousPage()}
+                        disabled={!table.getCanPreviousPage()}
+                    >
+                        <FaLessThan />
+                        Previous
+                    </button>
+                    <button
+                        className='cursor-pointer flex items-center gap-1 text-[#123288]'
+                        onClick={() => table.nextPage()}
+                        disabled={!table.getCanNextPage()}
+                    >
+                        Next
+                        <FaGreaterThan/>
+                    </button>
+                </div>
             </div>
         </>
     );
