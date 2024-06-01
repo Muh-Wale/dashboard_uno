@@ -1,6 +1,6 @@
 import { DateTime } from 'luxon';
 import { useMemo } from 'react';
-import TransactionTable from '../components/TransactionTable';
+import BasicTable from '../components/BasicTable';
 import { loansData } from '../data/dummy';
 
 const LoanData = () => {
@@ -40,7 +40,7 @@ const LoanData = () => {
     return (
         <section className=' p-5 mt-14 md:mt-0'>
             <h1 className=' font-semibold text-2xl'>Active Loans Overview</h1>
-            <TransactionTable data={data} columns={movieColumns} />
+            <BasicTable data={data} columns={movieColumns} />
         </section>
     );
 };

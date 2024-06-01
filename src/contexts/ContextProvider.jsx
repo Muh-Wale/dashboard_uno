@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 const StateContext = createContext();
 
@@ -20,13 +20,26 @@ export const ContextProvider = ({ children }) => {
     const [sorting, setSorting] = useState([]);
     const [filtering, setFiltering] = useState('');
     const [isMediumScreen, setIsMediumScreen] = useState(window.innerWidth >= 768 && window.innerWidth < 1024);
-    const [selectedLink, setSelectedLink] = useState('Dashboard');
+    const [selectedLink, setSelectedLinkState] = useState('');
+
+    useEffect(() => {
+        // Load selectedLink from localStorage if it exists
+        const storedSelectedLink = localStorage.getItem('selectedLink');
+        if (storedSelectedLink) {
+            setSelectedLinkState(storedSelectedLink);
+        }
+    }, []);
+    
+        const setSelectedLink = (link) => {
+            setSelectedLinkState(link);
+            localStorage.setItem('selectedLink', link);
+    };
 
 
 
     return (
         // eslint-disable-next-line react/jsx-no-constructed-context-values
-        <StateContext.Provider value={{ activeMenu, setActiveMenu, screenSize, setScreenSize, clickedText, setClickedText, isClicked, setIsClicked, activeSearch, setActiveSearch, activeContent, setActiveContent, isOn, setIsOn, isDigitalCurrencyChecked, setIsDigitalCurrencyChecked, isMerchantOrderChecked, setIsMerchantOrderChecked, isRecommendationChecked, setIsRecommendationChecked, activeNav, setActiveNav, isLargeScreen, filtering, setFiltering, sorting, setSorting, isMediumScreen, setIsMediumScreen, selectedLink, setSelectedLink }}>
+        <StateContext.Provider value={{ activeMenu, setActiveMenu, screenSize, setScreenSize, clickedText, setClickedText, isClicked, setIsClicked, activeSearch, setActiveSearch, activeContent, setActiveContent, isOn, setIsOn, isDigitalCurrencyChecked, setIsDigitalCurrencyChecked, isMerchantOrderChecked, setIsMerchantOrderChecked, isRecommendationChecked, setIsRecommendationChecked, activeNav, setActiveNav, isLargeScreen, filtering, setFiltering, sorting, setSorting, isMediumScreen, setIsMediumScreen, selectedLink, setSelectedLink, setSelectedLinkState }}>
         {children}
         </StateContext.Provider>
     );
