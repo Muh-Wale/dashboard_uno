@@ -1,6 +1,7 @@
 import { MyCard} from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 import BarChartDos from '../components/BarChartDos';
+import TransactionData from './TransactionData';
 
 const Transactions = () => {
     const { activeMenu } = useStateContext();
@@ -61,6 +62,10 @@ const Transactions = () => {
                         
                     </div>
                 </div>
+            </section>
+
+            <section>
+                <TransactionData/>
             </section>
         </>
     )

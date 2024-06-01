@@ -10,18 +10,8 @@ import {
 import { useStateContext } from '../contexts/ContextProvider';
 import { useEffect } from 'react';
 
-export default function BasicTable({ data, columns }) {
+export default function TransactionTable({ data, columns }) {
   const { activeMenu, filtering, setFiltering, sorting, setSorting, isMediumScreen, setIsMediumScreen } = useStateContext();
-  
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMediumScreen(window.innerWidth >= 768 && window.innerWidth < 1024);
-    };
-    
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [setIsMediumScreen]);
-
   const table = useReactTable({
     data,
     columns,
@@ -36,6 +26,14 @@ export default function BasicTable({ data, columns }) {
     onSortingChange: setSorting,
     onGlobalFilterChange: setFiltering,
   });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMediumScreen(window.innerWidth >= 768 && window.innerWidth < 1024);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [setIsMediumScreen]);
 
   return (
     <div className='w3-container w-[100%] bg-white rounded-3xl lg:p-8 md:p-5 p-4'>
@@ -56,7 +54,7 @@ export default function BasicTable({ data, columns }) {
                   key={header.id}
                   onClick={header.column.getToggleSortingHandler()}
                   className={`
-                    ${(header.column.columnDef.accessorKey !== 'loanmoney' && header.column.columnDef.accessorKey !== 'lefttorepay' && header.column.columnDef.accessorKey !== 'repay') ? (isMediumScreen && activeMenu ? 'hidden-sm' : 'hidden-md') : ''}
+                    ${(header.column.columnDef.accessorKey !== 'Amount' && header.column.columnDef.accessorKey !== 'description') ? (isMediumScreen || !activeMenu ? 'hidden md:table-cell' : 'hidden') : ''}
                   `}
                 >
                   {header.isPlaceholder ? null : (
@@ -73,7 +71,6 @@ export default function BasicTable({ data, columns }) {
             </tr>
           ))}
         </thead>
-
         <tbody>
           {table.getRowModel().rows.map(row => (
             <tr key={row.id} className='border-b-[0.5px] border-[#E6EFF5] rounded'>
@@ -81,8 +78,7 @@ export default function BasicTable({ data, columns }) {
                 <td
                   key={cell.id}
                   className={`font-light py-3
-                    ${(cell.column.columnDef.accessorKey !== 'loanmoney' && cell.column.columnDef.accessorKey !== 'lefttorepay' && cell.column.columnDef.accessorKey !== 'repay') ? (isMediumScreen && activeMenu ? 'hidden-sm' : 'hidden-md') : ''}
-                    ${cell.column.columnDef.accessorKey === 'repay' ? 'custom-repay-cell' : ''}
+                    ${(cell.column.columnDef.accessorKey !== 'Amount' && cell.column.columnDef.accessorKey !== 'description') ? (isMediumScreen || !activeMenu ? 'hidden md:table-cell' : 'hidden') : ''}
                   `}
                 >
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -92,11 +88,27 @@ export default function BasicTable({ data, columns }) {
           ))}
         </tbody>
       </table>
+      <div className='flex justify-between mt-4'>
+        <button
+          className='px-4 py-2 bg-[#123288] text-white rounded'
+          onClick={() => table.previousPage()}
+          disabled={!table.getCanPreviousPage()}
+        >
+          Previous
+        </button>
+        <button
+          className='px-4 py-2 bg-[#123288] text-white rounded'
+          onClick={() => table.nextPage()}
+          disabled={!table.getCanNextPage()}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 }
 
-BasicTable.propTypes = {
+TransactionTable.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
   columns: PropTypes.arrayOf(
     PropTypes.shape({
@@ -106,4 +118,3 @@ BasicTable.propTypes = {
     })
   ).isRequired,
 };
-

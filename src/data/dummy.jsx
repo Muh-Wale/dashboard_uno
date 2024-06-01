@@ -5,9 +5,9 @@ import {  RiGoogleLine, } from 'react-icons/ri';
 import { HiCreditCard} from 'react-icons/hi';
 import { GiCash, GiExpense, GiReceiveMoney } from 'react-icons/gi';
 import {  GrMoney } from 'react-icons/gr';
-import { FaBriefcase, FaChartPie, FaPiggyBank, FaTools, FaUser } from 'react-icons/fa';
+import { FaArrowDown, FaArrowUp, FaBriefcase, FaChartPie, FaPiggyBank, FaTools, FaUser } from 'react-icons/fa';
 import { AiFillSafetyCertificate, AiFillShopping, AiOutlineTransaction } from 'react-icons/ai';
-import { IoArrowDownCircleOutline, IoArrowUpCircleOutline, IoSettingsOutline } from 'react-icons/io5';
+import { IoSettingsOutline } from 'react-icons/io5';
 import { FaMoneyBillTransfer } from 'react-icons/fa6';
 import { SiMastercard, SiSamsung, SiTesla } from 'react-icons/si';
 import { FcSimCardChip } from 'react-icons/fc';
@@ -1235,7 +1235,7 @@ export const transactionGrid = [
     textAlign: 'Center' 
   },
 ];
-export const transactionData = [
+export const transaction = [
   {
     TransactionID: '#12548796',
     Name: 'Spotify Subscription',
@@ -1245,8 +1245,7 @@ export const transactionData = [
     Amount: '-$2500',
     Textcolor: '#FE5C73',
     Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
+    EmployeeImage: <FaArrowUp />,
   },
   {
     TransactionID: '#12548796',
@@ -1257,8 +1256,7 @@ export const transactionData = [
     Amount: '$750',
     Textcolor: '#16DBAA',
     Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowDownCircleOutline />,
+    EmployeeImage: <FaArrowDown />,
   },
   {
     TransactionID: '#12548796',
@@ -1269,8 +1267,7 @@ export const transactionData = [
     Amount: '-$150',
     Textcolor: '#FE5C73',
     Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
+    EmployeeImage: <FaArrowUp />,
   },
   {
     TransactionID: '#12548796',
@@ -1281,8 +1278,7 @@ export const transactionData = [
     Amount: '-$1050',
     Textcolor: '#FE5C73',
     Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
+    EmployeeImage: <FaArrowUp />,
   },
   {
     TransactionID: '#12548796',
@@ -1290,11 +1286,10 @@ export const transactionData = [
     Title: 'Transfer',
     Card: '1234 ****',
     Date: '01/02/2021',    
-    Amount: '$840',
+    Amount: '+$840',
     Textcolor: '#16DBAA',
     Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowDownCircleOutline />,
+    EmployeeImage: <FaArrowDown />,
   },
   {
     TransactionID: '#12548796',
@@ -1302,11 +1297,10 @@ export const transactionData = [
     Title: 'Services',
     Card: '1234 ****',
     Date: '01/02/2021',    
-    Amount: '$150',
+    Amount: '+$150',
     Textcolor: '#16DBAA',
     Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
+    EmployeeImage: <FaArrowUp />,
   },
   {
     TransactionID: '#12548796',
@@ -1314,11 +1308,10 @@ export const transactionData = [
     Title: 'Transfer',
     Card: '1234 ****',
     Date: '01/02/2021',
-    Amount: '$840',
+    Amount: '+$840',
     Textcolor: '#16DBAA',
     Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
+    EmployeeImage: <FaArrowUp />,
   },
   {
     TransactionID: '#12548796',
@@ -1326,11 +1319,10 @@ export const transactionData = [
     Title: 'Services',
     Card: '1234 ****',
     Date: '01/02/2021',    
-    Amount: '$150',
+    Amount: '+$150',
     Textcolor: '#16DBAA',
     Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
+    EmployeeImage:<FaArrowUp />,
   },
   {
     TransactionID: '#12548796',
@@ -1338,11 +1330,10 @@ export const transactionData = [
     Title: 'Transfer',
     Card: '1234 ****',
     Date: '01/02/2021',    
-    Amount: '$840',
+    Amount: '+$840',
     Textcolor: '#16DBAA',
     Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
+    EmployeeImage:<FaArrowUp />,
   },
   {
     TransactionID: '#12548796',
@@ -1350,11 +1341,10 @@ export const transactionData = [
     Title: 'Services',
     Card: '1234 ****',
     Date: '01/02/2021',    
-    Amount: '$840',
+    Amount: '+$840',
     Textcolor: '#16DBAA',
     Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
+    EmployeeImage:<FaArrowUp />,
   },
   {
     TransactionID: '#12548796',
@@ -1362,11 +1352,10 @@ export const transactionData = [
     Title: 'Transfer',
     Card: '1234 ****',
     Date: '01/02/2021',    
-    Amount: '$150',
+    Amount: '+$150',
     Textcolor: '#16DBAA',
     Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
+    EmployeeImage:<FaArrowUp />,
   },
   {
     TransactionID: '#12548796',
@@ -1374,11 +1363,10 @@ export const transactionData = [
     Title: 'Services',
     Card: '1234 ****',
     Date: '01/02/2021',    
-    Amount: '$150',
+    Amount: '+$150',
     Textcolor: '#16DBAA',
     Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
+    EmployeeImage:<FaArrowUp />,
   },
   {
     TransactionID: '#12548796',
@@ -1386,11 +1374,10 @@ export const transactionData = [
     Title: 'Transfer',
     Card: '1234 ****',
     Date: '01/02/2021',    
-    Amount: '$840',
+    Amount: '+$840',
     Textcolor: '#16DBAA',
     Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
+    EmployeeImage:<FaArrowUp />,
   },
   {
     TransactionID: '#12548796',
@@ -1398,11 +1385,10 @@ export const transactionData = [
     Title: 'Services',
     Card: '1234 ****',
     Date: '01/02/2021',    
-    Amount: '$150',
+    Amount: '+$150',
     Textcolor: '#16DBAA',
     Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
+    EmployeeImage:<FaArrowUp />,
   },
   {
     TransactionID: '#12548796',
@@ -1410,11 +1396,10 @@ export const transactionData = [
     Title: 'Transfer',
     Card: '1234 ****',
     Date: '01/02/2021',    
-    Amount: '$840',
+    Amount: '+$840',
     Textcolor: '#16DBAA',
     Receipt: 'Download',
-    EmployeeImage:
-    <IoArrowUpCircleOutline />,
+    EmployeeImage:<FaArrowUp />,
   },
 ];
 

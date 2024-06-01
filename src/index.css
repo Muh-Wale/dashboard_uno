@@ -24,3 +24,7 @@
 .hidden-sm {
     @apply hidden
 }
+
+.custom-repay-cell {
+    @apply hover:text-[#1814F3] hover:font-semibold transition-all cursor-pointer
+  }

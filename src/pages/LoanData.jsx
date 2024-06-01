@@ -39,7 +39,7 @@ const LoanData = () => {
 
     return (
         <section className=' p-5 mt-14 md:mt-0'>
-            <h1>React-table</h1>
+            <h1 className=' font-semibold text-2xl'>Active Loans Overview</h1>
             <BasicTable data={data} columns={movieColumns} />
         </section>
     );
