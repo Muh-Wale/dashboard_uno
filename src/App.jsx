@@ -36,7 +36,7 @@ function App() {
                 : 'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 bg-[#E5E5E5]'
             }
           >
-            <div className={`${activeMenu ? 'fixed md:static ' : 'fixed'} bg-main-bg dark:bg-main-dark-bg navbar w-full`}>
+            <div className={`${activeMenu ? 'fixed md:static ' : 'fixed'} bg-main-bg dark:bg-main-dark-bg navbar z-50 w-full`}>
               <Navbar selectedLink={selectedLink} />
             </div>
             <div>
