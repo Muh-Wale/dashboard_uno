@@ -30,10 +30,10 @@ const Services = () => {
             <section className={`${ activeMenu ? 'mt-[150px] md:mt-5' : 'mt-[150px] md:mt-20' } px-0 pt-5 md:p-5`}>
                 <div>
                     {window.innerWidth < 540 ? (
-                        <Slider {...settings}>
+                        <Slider {...settings} className='mr-5'>
                             {ServicesMain.map((item) => (
                                 <div key={item.TextB}>
-                                    <div className=" flex gap-3 md:gap-5 2xl:gap-12 p-5 rounded-2xl bg-white items-center w-full max-w-[280px] mx-auto">
+                                    <div className=" flex gap-3 md:gap-5 2xl:gap-12 p-3 xlxs:p-5 rounded-2xl bg-white items-center w-full max-w-[280px] mx-auto">
                                         <div className='text-3xl p-3 md:p-5 rounded-full overflow-hidden w-fit' style={{ backgroundColor: item.iconBg, color: item.iconColor }}>
                                             {item.icon}
                                         </div>
