@@ -1,27 +1,68 @@
 import { investmentData, InvestmentsMain, MyInvestment } from "../data/dummy"
 import { useStateContext } from '../contexts/ContextProvider';
 import AreaChartDos from "../components/AreaChartDos";
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import AreaChartTres from "../components/AreaChartTres";
 
 const Investment = () => {
     const { activeMenu } = useStateContext();
 
+    const settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
+    };
+
     return (
         <>
             <section className={`${ activeMenu ? 'mt-[130px] md:mt-5' : 'mt-[130px] md:mt-20' } p-5`}>
-                <div className="flex justify-between flex-wrap gap-5">
-                    {InvestmentsMain.map((item) => (
-                        <div key={item.TextB} className=" grid grid-cols-3 gap-3 md:gap-5 2xl:gap-12 p-5 rounded-2xl bg-white items-center w-full max-w-[320px] col-span-1">
-                            <div className='text-3xl p-3 md:p-5 rounded-full overflow-hidden col-span-1 w-fit' style={{ backgroundColor: item.iconBg, color: item.iconColor }}>
-                                {item.icon}
-                            </div>
+                <div className="">
+                    {window.innerWidth < 768 ? (
+                        <Slider {...settings}>
+                            {InvestmentsMain.map((item) => (
+                                <div  key={item.TextB} className=" ml-4 xlxs:ml-5 flex justify-between flex-wrap gap-5">
+                                    <div className=" grid grid-cols-3 gap-3 md:gap-5 2xl:gap-12 p-5 rounded-2xl bg-white items-center h-full w-full max-w-[250px] xlxs:max-w-[300px] md:max-w-[320px] col-span-1">
+                                        <div className='text-3xl p-3 md:p-5 rounded-full overflow-hidden col-span-1 w-fit' style={{ backgroundColor: item.iconBg, color: item.iconColor }}>
+                                            {item.icon}
+                                        </div>
 
-                            <div className=" col-span-2">
-                                <p className="text-[#718EBF]">{item.TextA}</p>
-                                <h1 className="text-xl font-semibold">{item.TextB}</h1>
-                            </div>
+                                        <div className=" col-span-2">
+                                            <p className="text-[#718EBF]">{item.TextA}</p>
+                                            <h1 className="text-xl font-semibold">{item.TextB}</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </Slider>
+                    ) : (
+                        <div  className="flex justify-between flex-wrap gap-5">
+                            {InvestmentsMain.map((item) => (
+                                <div key={item.TextB} className=" grid grid-cols-3 gap-3 md:gap-5 2xl:gap-12 p-5 rounded-2xl bg-white items-center w-full max-w-[320px] col-span-1">
+                                    <div className='text-3xl p-3 md:p-5 rounded-full overflow-hidden col-span-1 w-fit' style={{ backgroundColor: item.iconBg, color: item.iconColor }}>
+                                        {item.icon}
+                                    </div>
+
+                                    <div className=" col-span-2">
+                                        <p className="text-[#718EBF]">{item.TextA}</p>
+                                        <h1 className="text-xl font-semibold">{item.TextB}</h1>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                    ))}
+                    )}
                 </div>
             </section>
 

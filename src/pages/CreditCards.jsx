@@ -1,9 +1,63 @@
 import Donut from '../components/Donut';
 import { useStateContext } from '../contexts/ContextProvider';
 import { CardList, CardSettings, MyCard } from '../data/dummy';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { useEffect } from 'react';
 
 const CreditCards = () => {
-    const { activeMenu } = useStateContext();
+    const { activeMenu, isMenu, setIsMenu } = useStateContext();
+
+    useEffect(() => {
+        const checkMenuStatus = () => {
+            if (window.innerWidth >= 768 && window.innerWidth < 1200 && activeMenu) {
+                setIsMenu(true);
+            } else {
+                setIsMenu(false);
+            }
+        };
+    
+        checkMenuStatus();
+        
+        // Optional: You can add a resize event listener to update the state if the window is resized
+        const handleResize = () => {
+            checkMenuStatus();
+        };
+    
+        window.addEventListener('resize', handleResize);
+    
+        // Clean up the event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [activeMenu, setIsMenu]);
+
+    const settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 540,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 1350,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+        ],
+    };
+    
+    
 
     return (
         <>
@@ -13,38 +67,80 @@ const CreditCards = () => {
                         <h1 className=' font-semibold text-2xl'>My Cards</h1>
                     </div>
 
-                    <div className='flex flex-col flex-wrap md:flex-row justify-normal xl:justify-between  my-3 gap-10'>
-                        {MyCard.map((item) => (
-                            <div key={item.id} style={{ backgroundColor: item.BgA, color: item.TextColor }} className={` rounded-2xl w-full shadow-2xl max-w-[380px] ${activeMenu ? 'lg:max-w-[45%] xl:max-w-[30%]' : ' md:max-w-[340px] lg:max-w-[400px]'} `}>
-                                <div className='flex justify-between items-center px-5 pt-5'>
-                                    <div>
-                                        <p className='text-xs'>{item.ColAa}</p>
-                                        <p className=' text-xl font-medium'>${item.ColAb}</p>
-                                    </div>
+                    <div>
+                        {(window.innerWidth < 540 || (window.innerWidth >= 768 && window.innerWidth < 1280 && !activeMenu)) ? (
+                            <div  className={` ${activeMenu ? '' : ''} card-swiper`}>
+                                <Slider {...settings}>
+                                    {MyCard.map((item) => (
+                                        <div key={item.id} className=' max-w-[330px] xs:max-w-[370px] sm:max-w-[345px] lg:max-w-[420px] xl:max-w-none w-full my-2 mx-1'>
+                                            <div style={{ backgroundColor: item.BgA, color: item.TextColor }} className='rounded-2xl'>
+                                                <div className='flex justify-between items-center px-5 pt-5'>
+                                                    <div>
+                                                        <p className='text-xs'>{item.ColAa}</p>
+                                                        <p className=' text-xl font-medium'>${item.ColAb}</p>
+                                                    </div>
 
-                                    <div className=' text-5xl'>
-                                        {item.IconA}
-                                    </div>
-                                </div>
+                                                    <div className=' text-5xl'>
+                                                        {item.IconA}
+                                                    </div>
+                                                </div>
 
-                                <div className='flex gap-16 items-center leading-3 my-7 px-5'>
-                                    <div className=''>
-                                        <p className=' font-light text-sm uppercase'>{item.ColBa}</p>
-                                        <p className='font-medium'>{item.ColBb}</p>
-                                    </div>
+                                                <div className='flex gap-16 items-center leading-3 my-7 px-5'>
+                                                    <div className=''>
+                                                        <p className=' font-light text-sm uppercase'>{item.ColBa}</p>
+                                                        <p className='font-medium'>{item.ColBb}</p>
+                                                    </div>
 
-                                    <div className=''>
-                                        <p className=' font-light text-sm uppercase'>{item.ColCa}</p>
-                                        <p className='font-medium'>{item.ColCb}</p>
-                                    </div>
-                                </div>
+                                                    <div className=''>
+                                                        <p className=' font-light text-sm uppercase'>{item.ColCa}</p>
+                                                        <p className='font-medium'>{item.ColCb}</p>
+                                                    </div>
+                                                </div>
 
-                                <div className='flex justify-between items-center w-full px-5 pb-5 rounded-b-2xl' style={{ backgroundColor: item.BgB }}>
-                                    <p className=' text-xl font-medium'>{item.ColDa}</p>
-                                    <p className=' text-5xl'>{item.IconB}</p>
-                                </div>
+                                                <div className='flex justify-between items-center w-full px-5 pb-5 rounded-b-2xl' style={{ backgroundColor: item.BgB }}>
+                                                    <p className=' text-xl font-medium'>{item.ColDa}</p>
+                                                    <p className=' text-5xl'>{item.IconB}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </Slider>
                             </div>
-                        ))}
+                        ) : (
+                            <div className='flex flex-col flex-wrap md:flex-row justify-normal xl:justify-between  my-3 gap-10'>
+                                {MyCard.slice(0, window.innerWidth >= 768 && window.innerWidth < 1280 && activeMenu ? 1 : 3).map((item) => (
+                                    <div key={item.id} style={{ backgroundColor: item.BgA, color: item.TextColor }} className={` rounded-2xl w-full shadow-2xl max-w-[380px] ${activeMenu ? 'lg:max-w-[50%] xl:max-w-[30%]' : ' md:max-w-[340px] lg:max-w-[450px] xl:max-w-[400px]'} `}>
+                                        <div className='flex justify-between items-center px-5 pt-5'>
+                                            <div>
+                                                <p className='text-xs'>{item.ColAa}</p>
+                                                <p className=' text-xl font-medium'>${item.ColAb}</p>
+                                            </div>
+
+                                            <div className=' text-5xl'>
+                                                {item.IconA}
+                                            </div>
+                                        </div>
+
+                                        <div className='flex gap-16 items-center leading-3 my-7 px-5'>
+                                            <div className=''>
+                                                <p className=' font-light text-sm uppercase'>{item.ColBa}</p>
+                                                <p className='font-medium'>{item.ColBb}</p>
+                                            </div>
+
+                                            <div className=''>
+                                                <p className=' font-light text-sm uppercase'>{item.ColCa}</p>
+                                                <p className='font-medium'>{item.ColCb}</p>
+                                            </div>
+                                        </div>
+
+                                        <div className='flex justify-between items-center w-full px-5 pb-5 rounded-b-2xl' style={{ backgroundColor: item.BgB }}>
+                                            <p className=' text-xl font-medium'>{item.ColDa}</p>
+                                            <p className=' text-5xl'>{item.IconB}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
                     </div>
                 </div>
             </section>

@@ -7,24 +7,24 @@ const Accounts = () => {
 
     return (
         <>
-            <section className={`${ activeMenu ? 'mt-[130px] md:mt-5' : 'mt-[130px] md:mt-20' } p-5`}>
-                <div className="flex justify-between items-center flex-wrap gap-x-0 gap-y-3 md:gap-5 p-2 md:p-5">
+            <section className={`${ activeMenu ? 'mt-[130px] md:mt-5' : 'mt-[130px] md:mt-20' } px-0 pt-5 md:p-5`}>
+                <div className="flex justify-between items-center flex-wrap gap-x-0 gap-y-3 md:gap-5 p-2 md:p-0">
                     {AccountsMain.map((item) => (
-                        <div key={item.TextB} className="flex justify-center gap-3 md:gap-5 2xl:gap-12 p-5 rounded-2xl bg-white items-center max-w-[200px] 2xl:max-w-[230px] w-full">
-                            <div className='text-3xl p-3 rounded-full' style={{ backgroundColor: item.iconBg, color: item.iconColor }}>
+                        <div key={item.TextB} className="flex justify-center gap-3 md:gap-5 2xl:gap-12 p-2 md:p-5 rounded-2xl bg-white items-center min-w-[150px] max-w-[160px] xss:max-w-[190px] md:max-w-[200px] 2xl:max-w-[230px] w-full">
+                            <div className=' text-xl md:text-3xl p-2 md:p-3 rounded-full' style={{ backgroundColor: item.iconBg, color: item.iconColor }}>
                                 {item.icon}
                             </div>
 
                             <div>
                                 <p className="text-[#718EBF]">{item.TextA}</p>
-                                <h1 className="text-xl font-semibold">{item.TextB}</h1>
+                                <h1 className=" text-base md:text-xl font-semibold">{item.TextB}</h1>
                             </div>
                         </div>
                     ))}
                 </div>
             </section>
 
-            <section className=' p-5 flex justify-between gap-2 flex-wrap mt-14 md:mt-0 bg-[#E5E5E5]'>
+            <section className=' p-5 flex justify-between gap-2 flex-wrap mt-5 md:mt-0 bg-[#E5E5E5]'>
 
                 <div className='w-full md:w-fit lg:w-[55%] xl:w-3/6 2xl:w-3/5 max-w-none md:max-w-[60%] lg:max-w-none'>
                     <div>

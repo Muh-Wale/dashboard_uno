@@ -10,6 +10,7 @@ export default {
         '2xl': '1390px', // Adding the custom breakpoint
         'xs': '413px',
         'xss': '400px',
+        'xlxs': '350px',
       },
     },
   },
