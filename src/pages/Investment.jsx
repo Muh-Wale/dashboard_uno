@@ -5,9 +5,14 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import AreaChartTres from "../components/AreaChartTres";
+import { useEffect } from "react";
 
 const Investment = () => {
-    const { activeMenu } = useStateContext();
+    const { activeMenu, Scroll_To_Top } = useStateContext();
+
+    useEffect(() => {
+        Scroll_To_Top();
+    }, []);
 
     const settings = {
         dots: true,

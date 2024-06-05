@@ -8,7 +8,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { useEffect } from 'react';
 
 const Transactions = () => {
-    const { activeMenu, isMenu, setIsMenu } = useStateContext();
+    const { activeMenu, isMenu, setIsMenu, Scroll_To_Top } = useStateContext();
 
     useEffect(() => {
         const checkMenuStatus = () => {
@@ -33,6 +33,10 @@ const Transactions = () => {
             window.removeEventListener('resize', handleResize);
         };
     }, [activeMenu, setIsMenu]);
+
+    useEffect(() => {
+        Scroll_To_Top();
+    }, []);
 
     const settings = {
         dots: true,

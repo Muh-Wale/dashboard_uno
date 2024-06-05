@@ -5,11 +5,15 @@ import Security from '../components/Security';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const Settings = () => {
-    const { activeMenu, activeContent, setActiveContent } = useStateContext();
+    const { activeMenu, activeContent, setActiveContent, Scroll_To_Top } = useStateContext();
     
     // Set default active content to 'profile' when component mounts
     useEffect(() => {
         setActiveContent('profile');
+    }, []);
+
+    useEffect(() => {
+        Scroll_To_Top();
     }, []);
 
     const handleDivClick = (content) => {

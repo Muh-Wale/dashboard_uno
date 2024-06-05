@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useStateContext } from '../contexts/ContextProvider';
 import { LoansMain } from '../data/dummy';
 import LoanData from './LoanData';
 
 const Loans = () => {
-    const { activeMenu } = useStateContext();
+    const { activeMenu, Scroll_To_Top } = useStateContext();
+
+    useEffect(() => {
+        Scroll_To_Top();
+    }, []);
 
     const settings = {
         dots: true,

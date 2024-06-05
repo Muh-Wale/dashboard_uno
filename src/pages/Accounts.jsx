@@ -1,9 +1,14 @@
 import { AccountsInvoice, AccountsMain, LastAcct, MyCard } from "../data/dummy"
 import { useStateContext } from '../contexts/ContextProvider';
 import BarChartTres from "../components/BarChartTres";
+import { useEffect } from "react";
 
 const Accounts = () => {
-    const { activeMenu } = useStateContext();
+    const { activeMenu, Scroll_To_Top } = useStateContext();
+
+    useEffect(() => {
+        Scroll_To_Top();
+    }, []);
 
     return (
         <>

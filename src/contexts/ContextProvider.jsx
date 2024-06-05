@@ -31,16 +31,20 @@ export const ContextProvider = ({ children }) => {
         }
     }, []);
     
-        const setSelectedLink = (link) => {
-            setSelectedLinkState(link);
-            localStorage.setItem('selectedLink', link);
+    const setSelectedLink = (link) => {
+        setSelectedLinkState(link);
+        localStorage.setItem('selectedLink', link);
     };
+
+    const Scroll_To_Top = () => {
+        window.scroll(0,0);
+    }
 
 
 
     return (
         // eslint-disable-next-line react/jsx-no-constructed-context-values
-        <StateContext.Provider value={{ activeMenu, setActiveMenu, screenSize, setScreenSize, clickedText, setClickedText, isClicked, setIsClicked, activeSearch, setActiveSearch, activeContent, setActiveContent, isOn, setIsOn, isDigitalCurrencyChecked, setIsDigitalCurrencyChecked, isMerchantOrderChecked, setIsMerchantOrderChecked, isRecommendationChecked, setIsRecommendationChecked, activeNav, setActiveNav, isLargeScreen, filtering, setFiltering, sorting, setSorting, isMediumScreen, setIsMediumScreen, selectedLink, setSelectedLink, setSelectedLinkState, isMenu, setIsMenu }}>
+        <StateContext.Provider value={{ activeMenu, setActiveMenu, screenSize, setScreenSize, clickedText, setClickedText, isClicked, setIsClicked, activeSearch, setActiveSearch, activeContent, setActiveContent, isOn, setIsOn, isDigitalCurrencyChecked, setIsDigitalCurrencyChecked, isMerchantOrderChecked, setIsMerchantOrderChecked, isRecommendationChecked, setIsRecommendationChecked, activeNav, setActiveNav, isLargeScreen, filtering, setFiltering, sorting, setSorting, isMediumScreen, setIsMediumScreen, selectedLink, setSelectedLink, setSelectedLinkState, isMenu, setIsMenu, Scroll_To_Top }}>
         {children}
         </StateContext.Provider>
     );
