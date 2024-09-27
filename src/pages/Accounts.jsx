@@ -1,13 +1,14 @@
 import { AccountsInvoice, AccountsMain, LastAcct, MyCard } from "../data/dummy"
-import { useStateContext } from '../contexts/ContextProvider';
 import BarChartTres from "../components/BarChartTres";
 import { useEffect } from "react";
+import { scrollToTop } from '../store/slices/uiSlice'; 
+import { useSelector } from "react-redux";
 
 const Accounts = () => {
-    const { activeMenu, Scroll_To_Top } = useStateContext();
+    const activeMenu = useSelector((state) => state.ui.activeMenu);
 
     useEffect(() => {
-        Scroll_To_Top();
+        scrollToTop(); 
     }, []);
 
     return (

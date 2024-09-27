@@ -1,10 +1,10 @@
 import React from 'react'
 import  ProfilePic  from '../data/ProfilePic.png';
-import { useStateContext } from '../contexts/ContextProvider';
 import { FaPencil } from 'react-icons/fa6';
+import { useSelector } from 'react-redux';
 
 const Profile = () => {
-    const { activeMenu } = useStateContext();
+    const activeMenu = useSelector((state) => state.ui.activeMenu);
 
     return (
         <div className={` ${activeMenu ? 'grid grid-cols-1 xl:grid-cols-7 gap-4' : 'grid grid-cols-1 md:grid-cols-7 gap-4'}`}>

@@ -1,30 +1,34 @@
+// Sidebar.jsx
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { MdOutlineCancel } from 'react-icons/md';
 import Logo from '../data/Logo.png';
-import { useStateContext } from '../contexts/ContextProvider';
-import { links } from '../data/dummy';
+import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import { setActiveMenu, setSelectedLink } from '../store/slices/uiSlice';
+import { links } from '../data/dummy';
 
-const Sidebar = ({ setSelectedLink }) => {
-    const { activeMenu, setActiveMenu, screenSize } = useStateContext();
+const Sidebar = () => {
+    const dispatch = useDispatch();
+    const activeMenu = useSelector((state) => state.ui.activeMenu);
+    const screenSize = useSelector((state) => state.screen.screenSize);
     const location = useLocation();
 
     const handleCloseSideBar = () => {
         if (activeMenu !== undefined && screenSize <= 900) {
-            setActiveMenu(false);
+            dispatch(setActiveMenu(false));
         }
     };
 
-    const activeLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg  text-[#2D60FF]  text-xl font-medium m-2';
+    const activeLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-[#2D60FF] text-xl font-medium m-2';
     const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-xl font-medium text-[#B1B1B1] dark:text-gray-200 dark:hover:text-[#2d61ff9c] hover:bg-light-gray m-2';
 
     useEffect(() => {
         const path = location.pathname.substring(1); // Remove the leading '/'
         const link = links.find(link => link.path === path);
         if (link) {
-            setSelectedLink(link.name);
+            dispatch(setSelectedLink(link.name));
         }
-    }, [location.pathname, setSelectedLink]);
+    }, [location.pathname, dispatch]);
 
     return (
         <div className="h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10">
@@ -36,7 +40,7 @@ const Sidebar = ({ setSelectedLink }) => {
                         </Link>
                         <button
                             type="button"
-                            onClick={() => setActiveMenu(!activeMenu)}
+                            onClick={() => dispatch(setActiveMenu(!activeMenu))}
                             className="text-xl rounded-full p-3 mt-4 block 2xl:hidden"
                         >
                             <MdOutlineCancel color='blue' />
@@ -48,7 +52,7 @@ const Sidebar = ({ setSelectedLink }) => {
                                 <NavLink
                                     to={`/${item.path}`}
                                     onClick={() => {
-                                        setSelectedLink(item.name);
+                                        dispatch(setSelectedLink(item.name));
                                         handleCloseSideBar();
                                     }}
                                     className={({ isActive }) => (isActive ? activeLink : normalLink)}

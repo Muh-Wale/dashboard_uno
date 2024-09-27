@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react'
-import { useStateContext } from '../contexts/ContextProvider';
 import { LoansMain } from '../data/dummy';
 import LoanData from './LoanData';
+import { scrollToTop } from '../store/slices/uiSlice';
+import { useSelector } from 'react-redux';
 
 const Loans = () => {
-    const { activeMenu, Scroll_To_Top } = useStateContext();
+    const activeMenu = useSelector((state) => state.ui.activeMenu);
 
     useEffect(() => {
-        Scroll_To_Top();
+        scrollToTop(); 
     }, []);
 
     const settings = {

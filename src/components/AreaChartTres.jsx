@@ -11,8 +11,8 @@ import {
     Legend,
     Filler,
 } from 'chart.js';
-import { InvestmentAreaChartDos } from '../data/dummy'; // Adjust the path to where your data is located
-import { useStateContext } from '../contexts/ContextProvider';
+import { InvestmentAreaChartDos } from '../data/dummy';
+import { useSelector } from 'react-redux';
 
 ChartJS.register(
     CategoryScale,
@@ -26,7 +26,7 @@ ChartJS.register(
 );
 
 const AreaChartTres = () => {
-    const { activeMenu } = useStateContext();
+    const activeMenu = useSelector((state) => state.ui.activeMenu);
 
     const options = {
         responsive: true,

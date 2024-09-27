@@ -1,8 +1,11 @@
 import React from 'react'
-import { useStateContext } from '../contexts/ContextProvider';
+import { setIsOn } from '../store/slices/uiSlice'; 
+import { useDispatch, useSelector } from 'react-redux';
 
 const Security = () => {
-    const { activeMenu, isOn, setIsOn } = useStateContext();
+    const dispatch = useDispatch();
+    const activeMenu = useSelector((state) => state.ui.activeMenu);
+    const isOn = useSelector((state) => state.ui.isOn);
 
     return (
         <div>
@@ -15,7 +18,7 @@ const Security = () => {
 
                     <div>
                         <label className="flex items-center cursor-pointer mt-3">
-                            <div className="relative" onChange={() => setIsOn(!isOn)}>
+                            <div className="relative" onChange={() => dispatch(setIsOn(!isOn))}>
                                 <input
                                 type="checkbox"
                                 className="sr-only"

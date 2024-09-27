@@ -1,17 +1,18 @@
 import { investmentData, InvestmentsMain, MyInvestment } from "../data/dummy"
-import { useStateContext } from '../contexts/ContextProvider';
 import AreaChartDos from "../components/AreaChartDos";
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import AreaChartTres from "../components/AreaChartTres";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { scrollToTop } from "../store/slices/uiSlice";
 
 const Investment = () => {
-    const { activeMenu, Scroll_To_Top } = useStateContext();
+    const activeMenu = useSelector((state) => state.ui.activeMenu);
 
     useEffect(() => {
-        Scroll_To_Top();
+        scrollToTop(); 
     }, []);
 
     const settings = {

@@ -10,7 +10,7 @@ import {
     Legend
 } from 'chart.js';
 import { TransactionsBar } from '../data/dummy';
-import { useStateContext } from '../contexts/ContextProvider';
+import { useSelector } from 'react-redux';
 
 ChartJS.register(
     CategoryScale,
@@ -21,10 +21,9 @@ ChartJS.register(
     Legend
 );
 
-/////
 
 const BarChartDos = () => {
-    const { isLargeScreen } = useStateContext();
+    const isLargeScreen = useSelector((state) => state.screen.isLargeScreen);
 
     const options = {
         responsive: true,

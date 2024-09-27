@@ -1,5 +1,7 @@
-import './App.css'
+// App.jsx
+import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import Dashboard from './pages/Dashboard';
 import Transactions from './pages/Transactions';
 import Accounts from './pages/Accounts';
@@ -9,12 +11,19 @@ import Loans from './pages/Loans';
 import Services from './pages/Services';
 import Privileges from './pages/Privileges';
 import Settings from './pages/Settings';
-import { useStateContext } from './contexts/ContextProvider';
+import { setSelectedLink } from './store/slices/uiSlice';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 
 function App() {
-  const { activeMenu, selectedLink, setSelectedLink } = useStateContext();
+  const dispatch = useDispatch();
+  const activeMenu = useSelector((state) => state.ui.activeMenu);
+  const selectedLink = useSelector((state) => state.ui.selectedLink);
+
+  // Update selectedLink state in Redux store
+  const handleSetSelectedLink = (link) => {
+    dispatch(setSelectedLink(link));
+  };
 
   return (
     <div className='max-w-[1600px] mx-auto'>
@@ -22,13 +31,14 @@ function App() {
         <div className="flex relative dark:bg-main-dark-bg">
           {activeMenu ? (
             <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white z-[100] shadow-2xl">
-              <Sidebar setSelectedLink={setSelectedLink} />
+              <Sidebar setSelectedLink={handleSetSelectedLink} />
             </div>
           ) : (
             <div className="w-0 dark:bg-secondary-dark-bg">
-              <Sidebar setSelectedLink={setSelectedLink} />
+              <Sidebar setSelectedLink={handleSetSelectedLink} />
             </div>
           )}
+          
           <div
             className={
               activeMenu

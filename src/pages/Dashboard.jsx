@@ -1,45 +1,50 @@
+// Dashboard.jsx
 import { DashboardTransaction, MyCard, QuickTransfer } from '../data/dummy';
 import { FaGreaterThan } from 'react-icons/fa';
 import { GrSend } from 'react-icons/gr';
-import { useStateContext } from '../contexts/ContextProvider';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import BarChart from '../components/BarChart';
 import PieChart from '../components/PieChart';
 import AreaChart from '../components/AreaChart';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { useEffect } from 'react';
+import { setIsMenu, scrollToTop } from '../store/slices/uiSlice'; 
 
 const Dashboard = () => {
-    const { activeMenu, isMenu, setIsMenu, Scroll_To_Top } = useStateContext();
+    const dispatch = useDispatch();
+    const activeMenu = useSelector((state) => state.ui.activeMenu);
+    const isMenu = useSelector((state) => state.ui.isMenu);
 
     useEffect(() => {
-        Scroll_To_Top();
+        scrollToTop(); 
     }, []);
+
 
     useEffect(() => {
         const checkMenuStatus = () => {
             if (window.innerWidth >= 768 && window.innerWidth < 1200 && activeMenu) {
-                setIsMenu(true);
+                dispatch(setIsMenu(true));
             } else {
-                setIsMenu(false);
+                dispatch(setIsMenu(false));
             }
         };
     
         checkMenuStatus();
         
-        // Optional: You can add a resize event listener to update the state if the window is resized
+        
         const handleResize = () => {
             checkMenuStatus();
         };
     
         window.addEventListener('resize', handleResize);
     
-        // Clean up the event listener on component unmount
+        
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, [activeMenu, setIsMenu]);
+    }, [activeMenu, dispatch]);
 
     const settings = {
         dots: true,
@@ -62,7 +67,7 @@ const Dashboard = () => {
         <>
             <section className={`p-5 flex justify-between flex-wrap ${ activeMenu ? 'mt-[130px] md:mt-5' : 'mt-[130px] md:mt-20' } bg-white md:bg-[#E5E5E5]`}>
                 <div className='w-full xl:w-5/6 2xl:w-4/6'>
-                    <div className='flex justify-between items-center '>
+                    <div className='flex justify-between items-center'>
                         <h1 className=' font-semibold text-2xl'>My Cards</h1>
                         <p className={`font-semibold text-lg hover:underline cursor-pointer ${isMenu ? 'hidden' : 'block'}`}>See All</p>
                     </div>
@@ -146,7 +151,7 @@ const Dashboard = () => {
                     </div>
 
                     <div className='bg-white rounded-2xl my-3'>
-                        {DashboardTransaction.map((item) =>(
+                        {DashboardTransaction.map((item) => (
                             <div key={item.TextD} className='px-8 flex gap-5 w-full items-center'>
                                 <div className='my-4 text-2xl p-3 rounded-full' style={{ backgroundColor: item.IconBg, color: item.Iconcolor }}>
                                     {item.Icon}
@@ -246,7 +251,7 @@ const Dashboard = () => {
                 </div>
             </section>
         </>
-    )
-}
+    );
+};
 
-export default Dashboard
+export default Dashboard;

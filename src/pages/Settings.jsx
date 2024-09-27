@@ -2,22 +2,24 @@ import { useState, useEffect } from 'react';
 import Profile from '../components/Profile';
 import Preferences from '../components/Preferences';
 import Security from '../components/Security';
-import { useStateContext } from '../contexts/ContextProvider';
+import { setActiveContent, scrollToTop } from '../store/slices/uiSlice'; 
+import { useDispatch, useSelector } from 'react-redux';
 
 const Settings = () => {
-    const { activeMenu, activeContent, setActiveContent, Scroll_To_Top } = useStateContext();
+    const dispatch = useDispatch();
+    const activeMenu = useSelector((state) => state.ui.activeMenu);
+    const activeContent = useSelector((state) => state.ui.activeContent);
     
-    // Set default active content to 'profile' when component mounts
     useEffect(() => {
-        setActiveContent('profile');
-    }, []);
+        dispatch(setActiveContent('profile'));
+    }, [dispatch]);
 
     useEffect(() => {
-        Scroll_To_Top();
+        scrollToTop(); 
     }, []);
 
     const handleDivClick = (content) => {
-        setActiveContent(content);
+        dispatch(setActiveContent(content));
     };
 
     const renderPage = () => {

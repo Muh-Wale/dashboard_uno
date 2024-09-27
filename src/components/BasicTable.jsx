@@ -7,20 +7,17 @@ import {
   getSortedRowModel,
   useReactTable,
 } from '@tanstack/react-table';
-import { useStateContext } from '../contexts/ContextProvider';
+import { setSorting, setFiltering } from '../store/slices/uiSlice';
+import { setIsMediumScreen } from '../store/slices/screenSlice';
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function BasicTable({ data, columns }) {
-  const { activeMenu, filtering, setFiltering, sorting, setSorting, isMediumScreen, setIsMediumScreen } = useStateContext();
-  
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMediumScreen(window.innerWidth >= 768 && window.innerWidth < 1024);
-    };
-    
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [setIsMediumScreen]);
+  const dispatch = useDispatch();
+  const activeMenu = useSelector((state) => state.ui.activeMenu);
+  const filtering = useSelector((state) => state.ui.filtering);
+  const sorting = useSelector((state) => state.ui.sorting);
+  const isMediumScreen = useSelector((state) => state.screen.isMediumScreen);
 
   const table = useReactTable({
     data,
@@ -36,6 +33,14 @@ export default function BasicTable({ data, columns }) {
     onSortingChange: setSorting,
     onGlobalFilterChange: setFiltering,
   });
+
+  useEffect(() => {
+    const handleResize = () => {
+        dispatch(setIsMediumScreen(window.innerWidth >= 768 && window.innerWidth < 1024));
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [dispatch]);
 
   return (
     <div className='w3-container w-[100%] bg-white rounded-3xl lg:p-8 md:p-5 p-4'>

@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react'
-import { useStateContext } from '../contexts/ContextProvider';
 import { ServicesList, ServicesMain } from '../data/dummy';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { scrollToTop } from '../store/slices/uiSlice';
+import { useSelector } from 'react-redux';
 
 const Services = () => {
-    const { activeMenu, Scroll_To_Top } = useStateContext();
+    const activeMenu = useSelector((state) => state.ui.activeMenu);
 
     useEffect(() => {
-        Scroll_To_Top();
+        scrollToTop(); 
     }, []);
 
     const settings = {

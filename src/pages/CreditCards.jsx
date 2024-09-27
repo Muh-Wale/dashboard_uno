@@ -1,41 +1,45 @@
 import Donut from '../components/Donut';
-import { useStateContext } from '../contexts/ContextProvider';
+import { setIsMenu, scrollToTop } from '../store/slices/uiSlice'
 import { CardList, CardSettings, MyCard } from '../data/dummy';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 const CreditCards = () => {
-    const { activeMenu, isMenu, setIsMenu, Scroll_To_Top } = useStateContext();
+    const dispatch = useDispatch();
+    const activeMenu = useSelector((state) => state.ui.activeMenu);
+    const isMenu = useSelector((state) => state.ui.isMenu);
 
     useEffect(() => {
-        Scroll_To_Top();
+        scrollToTop(); 
     }, []);
+
 
     useEffect(() => {
         const checkMenuStatus = () => {
             if (window.innerWidth >= 768 && window.innerWidth < 1200 && activeMenu) {
-                setIsMenu(true);
+                dispatch(setIsMenu(true));
             } else {
-                setIsMenu(false);
+                dispatch(setIsMenu(false));
             }
         };
     
         checkMenuStatus();
         
-        // Optional: You can add a resize event listener to update the state if the window is resized
+        
         const handleResize = () => {
             checkMenuStatus();
         };
     
         window.addEventListener('resize', handleResize);
     
-        // Clean up the event listener on component unmount
+        
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, [activeMenu, setIsMenu]);
+    }, [activeMenu, dispatch]);
 
     const settings = {
         dots: true,

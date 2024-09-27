@@ -1,7 +1,13 @@
-import { useStateContext } from '../contexts/ContextProvider';
+import { useDispatch, useSelector } from 'react-redux';
+import { setIsDigitalCurrencyChecked, setIsMerchantOrderChecked, setIsRecommendationChecked } from '../store/slices/uiSlice';
 
 const Preferences = () => {
-    const { activeMenu, isDigitalCurrencyChecked, setIsDigitalCurrencyChecked, isMerchantOrderChecked, setIsMerchantOrderChecked, isRecommendationChecked, setIsRecommendationChecked } = useStateContext();
+    const dispatch = useDispatch();
+    const activeMenu = useSelector((state) => state.ui.activeMenu);
+    const isDigitalCurrencyChecked = useSelector((state) => state.ui.isDigitalCurrencyChecked);
+    const isMerchantOrderChecked = useSelector((state) => state.ui.isMerchantOrderChecked);
+    const isRecommendationChecked = useSelector((state) => state.ui.isRecommendationChecked);
+
 
     return (
         <div>
@@ -30,7 +36,7 @@ const Preferences = () => {
                                     type="checkbox"
                                     className="sr-only"
                                     checked={isDigitalCurrencyChecked}
-                                    onChange={() => setIsDigitalCurrencyChecked(!isDigitalCurrencyChecked)}
+                                    onChange={() => dispatch(setIsDigitalCurrencyChecked(!isDigitalCurrencyChecked))}
                                 />
                                 <div className={`block ${isDigitalCurrencyChecked ? 'bg-[#16DBCC]' : 'bg-gray-300'} w-14 h-8 rounded-full`}></div>
                                 <div className={`dot absolute ${isDigitalCurrencyChecked ? 'right-1 top-1' : 'left-1 top-1'} w-6 h-6 bg-white rounded-full transition`}></div>
@@ -44,7 +50,7 @@ const Preferences = () => {
                                     type="checkbox"
                                     className="sr-only"
                                     checked={isMerchantOrderChecked}
-                                    onChange={() => setIsMerchantOrderChecked(!isMerchantOrderChecked)}
+                                    onChange={() => dispatch(setIsMerchantOrderChecked(!isMerchantOrderChecked))}
                                 />
                                 <div className={`block ${isMerchantOrderChecked ? 'bg-[#16DBCC]' : 'bg-gray-300'} w-14 h-8 rounded-full`}></div>
                                 <div className={`dot absolute ${isMerchantOrderChecked ? 'right-1 top-1' : 'left-1 top-1'} w-6 h-6 bg-white rounded-full transition`}></div>
@@ -58,7 +64,7 @@ const Preferences = () => {
                                     type="checkbox"
                                     className="sr-only"
                                     checked={isRecommendationChecked}
-                                    onChange={() => setIsRecommendationChecked(!isRecommendationChecked)}
+                                    onChange={() => dispatch(setIsRecommendationChecked(!isRecommendationChecked))}
                                 />
                                 <div className={`block ${isRecommendationChecked ? 'bg-[#16DBCC]' : 'bg-gray-300'} w-14 h-8 rounded-full`}></div>
                                 <div className={`dot absolute ${isRecommendationChecked ? 'right-1 top-1' : 'left-1 top-1'} w-6 h-6 bg-white rounded-full transition`}></div>

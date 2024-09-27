@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react'
-import { useStateContext } from '../contexts/ContextProvider';
+import { scrollToTop } from '../store/slices/uiSlice';
 
 const Privileges = () => {
-    const { Scroll_To_Top } = useStateContext();
-
     useEffect(() => {
-        Scroll_To_Top();
+        scrollToTop(); 
     }, []);
 
     return (

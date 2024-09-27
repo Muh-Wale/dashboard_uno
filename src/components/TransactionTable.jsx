@@ -7,12 +7,19 @@ import {
   getSortedRowModel,
   useReactTable,
 } from '@tanstack/react-table';
-import { useStateContext } from '../contexts/ContextProvider';
+import { setSorting, setFiltering } from '../store/slices/uiSlice';
+import { setIsMediumScreen } from '../store/slices/screenSlice';
 import { useEffect } from 'react';
 import { FaGreaterThan, FaLessThan } from 'react-icons/fa';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function TransactionTable({ data, columns }) {
-    const { activeMenu, filtering, setFiltering, sorting, setSorting, isMediumScreen, setIsMediumScreen } = useStateContext();
+    const dispatch = useDispatch();
+    const activeMenu = useSelector((state) => state.ui.activeMenu);
+    const filtering = useSelector((state) => state.ui.filtering);
+    const sorting = useSelector((state) => state.ui.sorting);
+    const isMediumScreen = useSelector((state) => state.screen.isMediumScreen);
+
     const table = useReactTable({
         data,
         columns,
@@ -22,7 +29,7 @@ export default function TransactionTable({ data, columns }) {
         getFilteredRowModel: getFilteredRowModel(),
         initialState: {
             pagination: {
-                pageSize: 5,  // Set the page size to 5
+                pageSize: 5, 
             },
         },
         state: {
@@ -35,11 +42,11 @@ export default function TransactionTable({ data, columns }) {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMediumScreen(window.innerWidth >= 768 && window.innerWidth < 1024);
+            dispatch(setIsMediumScreen(window.innerWidth >= 768 && window.innerWidth < 1024));
         };
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
-    }, [setIsMediumScreen]);
+    }, [dispatch]);
 
     return (
         <>
@@ -48,7 +55,7 @@ export default function TransactionTable({ data, columns }) {
                     <input
                         type='text'
                         value={filtering}
-                        onChange={e => setFiltering(e.target.value)}
+                        onChange={e => dispatch(setFiltering(e.target.value))}
                         className='placeholder:text-[#718EBF] border-[#718EBF] border-2 px-2 py-1 focus:outline-[#718EBF] rounded-xl w-2/5 xl:w-1/4'
                     />
                 </div>
